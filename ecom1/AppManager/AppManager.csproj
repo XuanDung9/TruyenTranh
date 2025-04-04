@@ -1,0 +1,2141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9DA80382-91A9-4868-9E63-5BB04C91B94B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HamtruyenAdmin</RootNamespace>
+    <AssemblyName>HamtruyenAdmin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.Apis, Version=1.9.2.27817, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.9.2\lib\net40\Google.Apis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.9.2.27817, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.9.2\lib\net40\Google.Apis.Auth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.9.2.27820, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.9.2\lib\net40\Google.Apis.Auth.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.9.2.27816, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.9.2\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.9.2.27818, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.9.2\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Apis.YouTube.v3, Version=1.9.2.156, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.YouTube.v3.1.9.2.1560\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.YouTube.v3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.GData.Client, Version=2.2.0.0, Culture=neutral, PublicKeyToken=04a59ca9b0273830, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.GData.Client.2.2.0.0\lib\Google.GData.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\Wallpaper\Wallpaper\bin\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=1.10.0.62, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>..\packages\mongocsharpdriver.1.10.0\lib\net35\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.10.0.62, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>..\packages\mongocsharpdriver.1.10.0\lib\net35\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WYSIWYGEditor">
+      <HintPath>..\..\Batdongsanngoisao\Ecom01\NgoiSao\bin\WYSIWYGEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Zlib.Portable, Version=1.11.0.0, Culture=neutral, PublicKeyToken=431cba815f6a8b5b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zlib.Portable.Signed.1.11.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin.aspx" />
+    <Content Include="assetmanager\assetmanager.aspx" />
+    <Content Include="assetmanager\bg.gif" />
+    <Content Include="assetmanager\button.png" />
+    <Content Include="assetmanager\download.gif" />
+    <Content Include="assetmanager\example.htm" />
+    <Content Include="assetmanager\images\blank.gif" />
+    <Content Include="assetmanager\images\ico_asp.gif" />
+    <Content Include="assetmanager\images\ico_bmp.gif" />
+    <Content Include="assetmanager\images\ico_css.gif" />
+    <Content Include="assetmanager\images\ico_doc.gif" />
+    <Content Include="assetmanager\images\ico_exe.gif" />
+    <Content Include="assetmanager\images\ico_folder.gif" />
+    <Content Include="assetmanager\images\ico_gif.gif" />
+    <Content Include="assetmanager\images\ico_htm.gif" />
+    <Content Include="assetmanager\images\ico_jpg.gif" />
+    <Content Include="assetmanager\images\ico_js.gif" />
+    <Content Include="assetmanager\images\ico_mdb.gif" />
+    <Content Include="assetmanager\images\ico_mov.gif" />
+    <Content Include="assetmanager\images\ico_mp3.gif" />
+    <Content Include="assetmanager\images\ico_pdf.gif" />
+    <Content Include="assetmanager\images\ico_png.gif" />
+    <Content Include="assetmanager\images\ico_ppt.gif" />
+    <Content Include="assetmanager\images\ico_sound.gif" />
+    <Content Include="assetmanager\images\ico_swf.gif" />
+    <Content Include="assetmanager\images\ico_txt.gif" />
+    <Content Include="assetmanager\images\ico_unknown.gif" />
+    <Content Include="assetmanager\images\ico_vbs.gif" />
+    <Content Include="assetmanager\images\ico_video.gif" />
+    <Content Include="assetmanager\images\ico_xls.gif" />
+    <Content Include="assetmanager\images\ico_zip.gif" />
+    <Content Include="assetmanager\image_thumbnail.aspx" />
+    <Content Include="assetmanager\language\da-DK\asset.js" />
+    <Content Include="assetmanager\language\da-DK\folderdel.js" />
+    <Content Include="assetmanager\language\da-DK\folderdel_.js" />
+    <Content Include="assetmanager\language\da-DK\foldernew.js" />
+    <Content Include="assetmanager\language\de-DE\asset.js" />
+    <Content Include="assetmanager\language\de-DE\folderdel.js" />
+    <Content Include="assetmanager\language\de-DE\folderdel_.js" />
+    <Content Include="assetmanager\language\de-DE\foldernew.js" />
+    <Content Include="assetmanager\language\en-US\asset.js" />
+    <Content Include="assetmanager\language\en-US\folderdel.js" />
+    <Content Include="assetmanager\language\en-US\folderdel_.js" />
+    <Content Include="assetmanager\language\en-US\foldernew.js" />
+    <Content Include="assetmanager\language\es-ES\asset.js" />
+    <Content Include="assetmanager\language\es-ES\folderdel.js" />
+    <Content Include="assetmanager\language\es-ES\folderdel_.js" />
+    <Content Include="assetmanager\language\es-ES\foldernew.js" />
+    <Content Include="assetmanager\language\fi-FI\asset.js" />
+    <Content Include="assetmanager\language\fi-FI\folderdel.js" />
+    <Content Include="assetmanager\language\fi-FI\folderdel_.js" />
+    <Content Include="assetmanager\language\fi-FI\foldernew.js" />
+    <Content Include="assetmanager\language\fr-FR\asset.js" />
+    <Content Include="assetmanager\language\fr-FR\folderdel.js" />
+    <Content Include="assetmanager\language\fr-FR\folderdel_.js" />
+    <Content Include="assetmanager\language\fr-FR\foldernew.js" />
+    <Content Include="assetmanager\language\it-IT\asset.js" />
+    <Content Include="assetmanager\language\it-IT\folderdel.js" />
+    <Content Include="assetmanager\language\it-IT\folderdel_.js" />
+    <Content Include="assetmanager\language\it-IT\foldernew.js" />
+    <Content Include="assetmanager\language\nl-NL\asset.js" />
+    <Content Include="assetmanager\language\nl-NL\folderdel.js" />
+    <Content Include="assetmanager\language\nl-NL\folderdel_.js" />
+    <Content Include="assetmanager\language\nl-NL\foldernew.js" />
+    <Content Include="assetmanager\language\nn-NO\asset.js" />
+    <Content Include="assetmanager\language\nn-NO\folderdel.js" />
+    <Content Include="assetmanager\language\nn-NO\folderdel_.js" />
+    <Content Include="assetmanager\language\nn-NO\foldernew.js" />
+    <Content Include="assetmanager\language\sv-SE\asset.js" />
+    <Content Include="assetmanager\language\sv-SE\folderdel.js" />
+    <Content Include="assetmanager\language\sv-SE\folderdel_.js" />
+    <Content Include="assetmanager\language\sv-SE\foldernew.js" />
+    <Content Include="assetmanager\language\vn-VI\asset.js" />
+    <Content Include="assetmanager\language\vn-VI\folderdel.js" />
+    <Content Include="assetmanager\language\vn-VI\folderdel_.js" />
+    <Content Include="assetmanager\language\vn-VI\foldernew.js" />
+    <Content Include="assetmanager\language\zh-CHS\asset.js" />
+    <Content Include="assetmanager\language\zh-CHS\folderdel.js" />
+    <Content Include="assetmanager\language\zh-CHS\folderdel_.js" />
+    <Content Include="assetmanager\language\zh-CHS\foldernew.js" />
+    <Content Include="assetmanager\language\zh-CHT\asset.js" />
+    <Content Include="assetmanager\language\zh-CHT\folderdel.js" />
+    <Content Include="assetmanager\language\zh-CHT\folderdel_.js" />
+    <Content Include="assetmanager\language\zh-CHT\foldernew.js" />
+    <Content Include="assetmanager\style.css" />
+    <Content Include="assets\bootstrap-colorpicker\css\colorpicker.css" />
+    <Content Include="assets\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
+    <Content Include="assets\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="assets\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="assets\bootstrap-daterangepicker\date.js" />
+    <Content Include="assets\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="assets\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="assets\bootstrap-inputmask\bootstrap-inputmask.min.js" />
+    <Content Include="assets\bootstrap-timepicker\compiled\timepicker.css" />
+    <Content Include="assets\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="assets\bootstrap-toggle-buttons\static\js\jquery.toggle.buttons.js" />
+    <Content Include="assets\bootstrap-toggle-buttons\static\stylesheets\bootstrap-toggle-buttons.css" />
+    <Content Include="assets\bootstrap-tree\bootstrap-tree\css\bootstrap-tree.css" />
+    <Content Include="assets\bootstrap-tree\bootstrap-tree\img\bstree-halflings.png" />
+    <Content Include="assets\bootstrap-tree\bootstrap-tree\js\bootstrap-tree.js" />
+    <Content Include="assets\bootstrap-tree\htmlexample.html" />
+    <Content Include="assets\bootstrap-tree\xmlexample.xml" />
+    <Content Include="assets\bootstrap-wizard\jquery.bootstrap.wizard.min.js" />
+    <Content Include="assets\bootstrap-wysihtml5\bootstrap-wysihtml5.css" />
+    <Content Include="assets\bootstrap-wysihtml5\bootstrap-wysihtml5.js" />
+    <Content Include="assets\bootstrap-wysihtml5\wysihtml5-0.3.0.js" />
+    <Content Include="assets\bootstrap\css\bootstrap-fileupload.css" />
+    <Content Include="assets\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="assets\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="assets\bootstrap\js\bootstrap-fileupload.js" />
+    <Content Include="assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\chart-master\Chart.js" />
+    <Content Include="assets\chosen-bootstrap\chosen\chosen-sprite.png" />
+    <Content Include="assets\chosen-bootstrap\chosen\chosen.css" />
+    <Content Include="assets\chosen-bootstrap\chosen\chosen.jquery.min.js" />
+    <Content Include="assets\ckeditor\ckeditor.js" />
+    <Content Include="assets\clockface\css\clockface.css" />
+    <Content Include="assets\clockface\js\clockface.js" />
+    <Content Include="assets\data-tables\DT_bootstrap.css" />
+    <Content Include="assets\data-tables\DT_bootstrap.js" />
+    <Content Include="assets\data-tables\images\sort_asc.png" />
+    <Content Include="assets\data-tables\images\sort_asc_disabled.html" />
+    <Content Include="assets\data-tables\images\sort_both.png" />
+    <Content Include="assets\data-tables\images\sort_desc.png" />
+    <Content Include="assets\data-tables\images\sort_desc_disabled.html" />
+    <Content Include="assets\data-tables\jquery.dataTables.js" />
+    <Content Include="assets\dropzone\css\dropzone.css" />
+    <Content Include="assets\dropzone\dropzone.js" />
+    <Content Include="assets\dropzone\images\spritemap.png" />
+    <Content Include="assets\fancybox\source\blank.gif" />
+    <Content Include="assets\fancybox\source\fancybox_loading.gif" />
+    <Content Include="assets\fancybox\source\fancybox_overlay.png" />
+    <Content Include="assets\fancybox\source\fancybox_sprite.png" />
+    <Content Include="assets\fancybox\source\jquery.fancybox.css" />
+    <Content Include="assets\fancybox\source\jquery.fancybox.pack.js" />
+    <Content Include="assets\flot\jquery.flot.crosshair.js" />
+    <Content Include="assets\flot\jquery.flot.js" />
+    <Content Include="assets\flot\jquery.flot.pie.js" />
+    <Content Include="assets\flot\jquery.flot.resize.js" />
+    <Content Include="assets\flot\jquery.flot.stack.js" />
+    <Content Include="assets\font-awesome\css\font-awesome.css" />
+    <Content Include="assets\font-awesome\font\fontawesome-webfont.svg" />
+    <Content Include="assets\fullcalendar\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="assets\fullcalendar\fullcalendar\fullcalendar.min.js" />
+    <Content Include="assets\gritter\css\jquery.gritter.css" />
+    <Content Include="assets\gritter\images\ie-spacer.gif" />
+    <Content Include="assets\gritter\js\jquery.gritter.js" />
+    <Content Include="assets\jquery-easy-pie-chart\jquery.easy-pie-chart.css" />
+    <Content Include="assets\jquery-easy-pie-chart\jquery.easy-pie-chart.js" />
+    <Content Include="assets\jquery-slimscroll\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="assets\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="assets\jquery-tags-input\jquery.tagsinput.css" />
+    <Content Include="assets\jquery-tags-input\jquery.tagsinput.min.js" />
+    <Content Include="assets\jquery-ui\images\animated-overlay.gif" />
+    <Content Include="assets\jquery-ui\jquery-ui-1.10.1.custom.min.css" />
+    <Content Include="assets\jquery-ui\jquery-ui-1.10.1.custom.min.js" />
+    <Content Include="assets\metr-folio\css\metro-gallery.css" />
+    <Content Include="assets\metr-folio\js\jquery.metro-gal.megafoliopro.js" />
+    <Content Include="assets\metr-folio\js\jquery.metro-gal.plugins.min.js" />
+    <Content Include="assets\nestable\jquery.nestable.css" />
+    <Content Include="assets\nestable\jquery.nestable.js" />
+    <Content Include="assets\uniform\css\uniform.default.css" />
+    <Content Include="assets\uniform\images\bg-input-focus.png" />
+    <Content Include="assets\uniform\images\bg-input.png" />
+    <Content Include="assets\uniform\jquery.uniform.min.js" />
+    <Content Include="assets\uniform\images\sprite.png" />
+    <Content Include="Config\hethong.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Crawlers\Complete.html" />
+    <Content Include="CreateProduct.aspx" />
+    <Content Include="Css\style-default.css" />
+    <Content Include="Css\style-gray.css" />
+    <Content Include="Css\style-green.css" />
+    <Content Include="Css\style-purple.css" />
+    <Content Include="Css\style-red.css" />
+    <Content Include="Css\style-responsive.css" />
+    <Content Include="Css\style.css" />
+    <Content Include="Css\timeline-component.css" />
+    <Content Include="FetchData.aspx" />
+    <Content Include="font\fontawesome-webfont.svg" />
+    <Content Include="font\myriadprobold.svg" />
+    <Content Include="font\myriadproit.svg" />
+    <Content Include="font\myriadprolight.svg" />
+    <Content Include="font\myriadproregular.svg" />
+    <Content Include="GetJson.aspx" />
+    <Content Include="img\404bg.jpg" />
+    <Content Include="img\500bg.jpg" />
+    <Content Include="img\about-us\img-1.jpg" />
+    <Content Include="img\about-us\img-2.jpg" />
+    <Content Include="img\about-us\img-3.jpg" />
+    <Content Include="img\about-us\img-4.jpg" />
+    <Content Include="img\avatar-mini.png" />
+    <Content Include="img\avatar1.jpg" />
+    <Content Include="img\avatar1_small.jpg" />
+    <Content Include="img\avatar2.jpg" />
+    <Content Include="img\blog\blog-thumb-1.jpg" />
+    <Content Include="img\blog\blog-thumb-2.jpg" />
+    <Content Include="img\blog\blog-thumb-3.jpg" />
+    <Content Include="img\blog\blog1-big.jpg" />
+    <Content Include="img\blog\blog2-big.jpg" />
+    <Content Include="img\blog\blog3-big.jpg" />
+    <Content Include="img\file-search\ai.png" />
+    <Content Include="img\file-search\doc.png" />
+    <Content Include="img\file-search\email.png" />
+    <Content Include="img\file-search\eps.png" />
+    <Content Include="img\file-search\jpg.png" />
+    <Content Include="img\file-search\pdf.png" />
+    <Content Include="img\file-search\ppt.png" />
+    <Content Include="img\file-search\psd.png" />
+    <Content Include="img\file-search\rss.png" />
+    <Content Include="img\file-search\xls.png" />
+    <Content Include="img\file-search\zip.png" />
+    <Content Include="img\gallery\icons\flexible.html" />
+    <Content Include="img\gallery\icons\grid.html" />
+    <Content Include="img\gallery\icons\leaf.html" />
+    <Content Include="img\gallery\icons\light.html" />
+    <Content Include="img\gallery\icons\mobile.html" />
+    <Content Include="img\gallery\icons\nike.html" />
+    <Content Include="img\gallery\icons\runner.html" />
+    <Content Include="img\gallery\image1.jpg" />
+    <Content Include="img\gallery\image10.jpg" />
+    <Content Include="img\gallery\image11.jpg" />
+    <Content Include="img\gallery\image12.jpg" />
+    <Content Include="img\gallery\image13.jpg" />
+    <Content Include="img\gallery\image14.jpg" />
+    <Content Include="img\gallery\image15.jpg" />
+    <Content Include="img\gallery\image16.jpg" />
+    <Content Include="img\gallery\image17.jpg" />
+    <Content Include="img\gallery\image18.jpg" />
+    <Content Include="img\gallery\image2.jpg" />
+    <Content Include="img\gallery\image3.jpg" />
+    <Content Include="img\gallery\image4.jpg" />
+    <Content Include="img\gallery\image5.jpg" />
+    <Content Include="img\gallery\image6.jpg" />
+    <Content Include="img\gallery\image7.jpg" />
+    <Content Include="img\gallery\image8.jpg" />
+    <Content Include="img\gallery\image9.jpg" />
+    <Content Include="img\lock-thumb.jpg" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\overlay-icon.png" />
+    <Content Include="img\product1.jpg" />
+    <Content Include="img\product2.png" />
+    <Content Include="img\product3.png" />
+    <Content Include="img\product4.png" />
+    <Content Include="img\product5.png" />
+    <Content Include="img\sprites.png" />
+    <Content Include="img\vector-lab.jpg" />
+    <Content Include="js\additional-methods.min.js" />
+    <Content Include="js\chartjs.js" />
+    <Content Include="js\common-scripts.js" />
+    <Content Include="js\custom-flot-chart.js" />
+    <Content Include="js\dynamic-table.js" />
+    <Content Include="js\easy-pie-chart.js" />
+    <Content Include="js\editable-table.js" />
+    <Content Include="js\external-dragging-calendar.js" />
+    <Content Include="js\flot-chart.js" />
+    <Content Include="js\form-component.js" />
+    <Content Include="js\form-validation-script.js" />
+    <Content Include="js\form-wizard.js" />
+    <Content Include="js\gritter.js" />
+    <Content Include="js\home-page-calender.js" />
+    <Content Include="js\jquery-1.7.1.intellisense.js" />
+    <Content Include="js\jquery-1.7.1.js" />
+    <Content Include="js\jquery-1.7.1.min.js" />
+    <Content Include="js\jquery-1.8.2.min.js" />
+    <Content Include="js\jquery-1.8.3.min.js" />
+    <Content Include="js\jquery-te-1.4.0.css" />
+    <Content Include="js\jquery-te-1.4.0.min.js" />
+    <Content Include="js\jquery-te.png" />
+    <Content Include="js\jquery.blockui.js" />
+    <Content Include="js\jquery.nicescroll.js" />
+    <Content Include="js\jquery.pulsate.min.js" />
+    <Content Include="js\jquery.sparkline.js" />
+    <Content Include="js\jquery.uploadify.min.js" />
+    <Content Include="js\jquery.validate.min.js" />
+    <Content Include="js\nestable.js" />
+    <Content Include="js\pulstate.js" />
+    <Content Include="js\sliders.js" />
+    <Content Include="js\sparkline-chart.js" />
+    <Content Include="js\tree.js" />
+    <Content Include="js\uploader.swf" />
+    <Content Include="js\uploadify.css" />
+    <Content Include="js\uploadify.swf" />
+    <Content Include="Login.aspx" />
+    <Content Include="scripts\blank.gif" />
+    <Content Include="scripts\bookmark.htm" />
+    <Content Include="scripts\border.htm" />
+    <Content Include="scripts\border\border_bottom.gif" />
+    <Content Include="scripts\border\border_left.gif" />
+    <Content Include="scripts\border\border_none.gif" />
+    <Content Include="scripts\border\border_outside.gif" />
+    <Content Include="scripts\border\border_right.gif" />
+    <Content Include="scripts\border\border_top.gif" />
+    <Content Include="scripts\box.htm" />
+    <Content Include="scripts\characters.htm" />
+    <Content Include="scripts\color_picker.htm" />
+    <Content Include="scripts\color_picker.js" />
+    <Content Include="scripts\color_picker_bg.htm" />
+    <Content Include="scripts\color_picker_fg.htm" />
+    <Content Include="scripts\common.js" />
+    <Content Include="scripts\dropbtn.gif" />
+    <Content Include="scripts\editor.js" />
+    <Content Include="scripts\editor_source.js" />
+    <Content Include="scripts\FileUpload.aspx" />
+    <Content Include="scripts\flash.htm" />
+    <Content Include="scripts\FlashUpload.aspx" />
+    <Content Include="scripts\FlashVideo.htm" />
+    <Content Include="scripts\flash_org.htm" />
+    <Content Include="scripts\form_button.htm" />
+    <Content Include="scripts\form_check.htm" />
+    <Content Include="scripts\form_file.htm" />
+    <Content Include="scripts\form_form.htm" />
+    <Content Include="scripts\form_hidden.htm" />
+    <Content Include="scripts\form_list.htm" />
+    <Content Include="scripts\form_radio.htm" />
+    <Content Include="scripts\form_text.htm" />
+    <Content Include="scripts\hyperlink.htm" />
+    <Content Include="scripts\icons\bg.gif" />
+    <Content Include="scripts\icons\blank.gif" />
+    <Content Include="scripts\icons\brkspace.gif" />
+    <Content Include="scripts\icons\btnAbsolute.gif" />
+    <Content Include="scripts\icons\btnAutoTable.gif" />
+    <Content Include="scripts\icons\btnBackColor.gif" />
+    <Content Include="scripts\icons\btnBold.gif" />
+    <Content Include="scripts\icons\btnBookmark.gif" />
+    <Content Include="scripts\icons\btnBoxFormatting.gif" />
+    <Content Include="scripts\icons\btnCenter.gif" />
+    <Content Include="scripts\icons\btnClean.gif" />
+    <Content Include="scripts\icons\btnClose.gif" />
+    <Content Include="scripts\icons\btnClose2.gif" />
+    <Content Include="scripts\icons\btnContentBlock.gif" />
+    <Content Include="scripts\icons\btnCopy.gif" />
+    <Content Include="scripts\icons\btnCustom1.gif" />
+    <Content Include="scripts\icons\btnCustom2.gif" />
+    <Content Include="scripts\icons\btnCustom3.gif" />
+    <Content Include="scripts\icons\btnCustom4.gif" />
+    <Content Include="scripts\icons\btnCustom5.gif" />
+    <Content Include="scripts\icons\btnCustom6.gif" />
+    <Content Include="scripts\icons\btnCustom7.gif" />
+    <Content Include="scripts\icons\btnCustomCss.gif" />
+    <Content Include="scripts\icons\btnCustomObject.gif" />
+    <Content Include="scripts\icons\btnCustomTag.gif" />
+    <Content Include="scripts\icons\btnCut.gif" />
+    <Content Include="scripts\icons\btnDelete.gif" />
+    <Content Include="scripts\icons\btnEditCell.gif" />
+    <Content Include="scripts\icons\btnEditTable.gif" />
+    <Content Include="scripts\icons\btnFlash.gif" />
+    <Content Include="scripts\icons\btnFontName.gif" />
+    <Content Include="scripts\icons\btnFontSize.gif" />
+    <Content Include="scripts\icons\btnForeColor.gif" />
+    <Content Include="scripts\icons\btnForm.gif" />
+    <Content Include="scripts\icons\btnFull.gif" />
+    <Content Include="scripts\icons\btnFullScreen.gif" />
+    <Content Include="scripts\icons\btnGuideline.gif" />
+    <Content Include="scripts\icons\btnHyperlink.gif" />
+    <Content Include="scripts\icons\btnImage.gif" />
+    <Content Include="scripts\icons\btnIndent.gif" />
+    <Content Include="scripts\icons\btnInternalImage.gif" />
+    <Content Include="scripts\icons\btnInternalLink.gif" />
+    <Content Include="scripts\icons\btnItalic.gif" />
+    <Content Include="scripts\icons\btnLeft.gif" />
+    <Content Include="scripts\icons\btnLine.gif" />
+    <Content Include="scripts\icons\btnList.gif" />
+    <Content Include="scripts\icons\btnListFormatting.gif" />
+    <Content Include="scripts\icons\btnLTR.gif" />
+    <Content Include="scripts\icons\btnMedia.gif" />
+    <Content Include="scripts\icons\btnMusic.gif" />
+    <Content Include="scripts\icons\btnNumber.gif" />
+    <Content Include="scripts\icons\btnOpenAsset.gif" />
+    <Content Include="scripts\icons\btnOutdent.gif" />
+    <Content Include="scripts\icons\btnParagraph.gif" />
+    <Content Include="scripts\icons\btnParagraphFormatting.gif" />
+    <Content Include="scripts\icons\btnPaste.gif" />
+    <Content Include="scripts\icons\btnPasteClip.gif" />
+    <Content Include="scripts\icons\btnPasteText.gif" />
+    <Content Include="scripts\icons\btnPasteWord.gif" />
+    <Content Include="scripts\icons\btnPreview.gif" />
+    <Content Include="scripts\icons\btnPrint.gif" />
+    <Content Include="scripts\icons\btnRedo.gif" />
+    <Content Include="scripts\icons\btnRemoveFormat.gif" />
+    <Content Include="scripts\icons\btnRight.gif" />
+    <Content Include="scripts\icons\btnRTL.gif" />
+    <Content Include="scripts\icons\btnSave.gif" />
+    <Content Include="scripts\icons\btnSearch.gif" />
+    <Content Include="scripts\icons\btnSource.gif" />
+    <Content Include="scripts\icons\btnSpellCheck.gif" />
+    <Content Include="scripts\icons\btnStrikethrough.gif" />
+    <Content Include="scripts\icons\btnStyle.gif" />
+    <Content Include="scripts\icons\btnStyleSelect.gif" />
+    <Content Include="scripts\icons\btnSubscript.gif" />
+    <Content Include="scripts\icons\btnSuperscript.gif" />
+    <Content Include="scripts\icons\btnSwf.gif" />
+    <Content Include="scripts\icons\btnSymbol.gif" />
+    <Content Include="scripts\icons\btnTable.gif" />
+    <Content Include="scripts\icons\btnTableEdit.gif" />
+    <Content Include="scripts\icons\btnTableSize.gif" />
+    <Content Include="scripts\icons\btnTextFormatting.gif" />
+    <Content Include="scripts\icons\btnUnderline.gif" />
+    <Content Include="scripts\icons\btnUndo.gif" />
+    <Content Include="scripts\icons\btnVideo.gif" />
+    <Content Include="scripts\icons\btnYoutubeVideo.gif" />
+    <Content Include="scripts\icons\da-DK\btnCustomObject.gif" />
+    <Content Include="scripts\icons\da-DK\btnCustomTag.gif" />
+    <Content Include="scripts\icons\da-DK\btnFlash.gif" />
+    <Content Include="scripts\icons\da-DK\btnFontName.gif" />
+    <Content Include="scripts\icons\da-DK\btnFontSize.gif" />
+    <Content Include="scripts\icons\da-DK\btnInternalLink.gif" />
+    <Content Include="scripts\icons\da-DK\btnMedia.gif" />
+    <Content Include="scripts\icons\da-DK\btnParagraph.gif" />
+    <Content Include="scripts\icons\danish\btnCustomTag.gif" />
+    <Content Include="scripts\icons\danish\btnFontName.gif" />
+    <Content Include="scripts\icons\danish\btnFontSize.gif" />
+    <Content Include="scripts\icons\danish\btnParagraph.gif" />
+    <Content Include="scripts\icons\de-DE\btnCustomObject.gif" />
+    <Content Include="scripts\icons\de-DE\btnCustomTag.gif" />
+    <Content Include="scripts\icons\de-DE\btnFlash.gif" />
+    <Content Include="scripts\icons\de-DE\btnFontName.gif" />
+    <Content Include="scripts\icons\de-DE\btnFontSize.gif" />
+    <Content Include="scripts\icons\de-DE\btnInternalLink.gif" />
+    <Content Include="scripts\icons\de-DE\btnMedia.gif" />
+    <Content Include="scripts\icons\de-DE\btnParagraph.gif" />
+    <Content Include="scripts\icons\decrease.gif" />
+    <Content Include="scripts\icons\decrease_.gif" />
+    <Content Include="scripts\icons\dialogbg.gif" />
+    <Content Include="scripts\icons\dutch\btnCustomTag.gif" />
+    <Content Include="scripts\icons\dutch\btnFontName.gif" />
+    <Content Include="scripts\icons\dutch\btnFontSize.gif" />
+    <Content Include="scripts\icons\dutch\btnParagraph.gif" />
+    <Content Include="scripts\icons\en-US\btnCustomObject.gif" />
+    <Content Include="scripts\icons\en-US\btnCustomTag.gif" />
+    <Content Include="scripts\icons\en-US\btnFlash.gif" />
+    <Content Include="scripts\icons\en-US\btnFontName.gif" />
+    <Content Include="scripts\icons\en-US\btnFontSize.gif" />
+    <Content Include="scripts\icons\en-US\btnInternalLink.gif" />
+    <Content Include="scripts\icons\en-US\btnMedia.gif" />
+    <Content Include="scripts\icons\en-US\btnParagraph.gif" />
+    <Content Include="scripts\icons\english\btnCustomTag.gif" />
+    <Content Include="scripts\icons\english\btnFontName.gif" />
+    <Content Include="scripts\icons\english\btnFontSize.gif" />
+    <Content Include="scripts\icons\english\btnParagraph.gif" />
+    <Content Include="scripts\icons\es-ES\btnCustomObject.gif" />
+    <Content Include="scripts\icons\es-ES\btnCustomTag.gif" />
+    <Content Include="scripts\icons\es-ES\btnFlash.gif" />
+    <Content Include="scripts\icons\es-ES\btnFontName.gif" />
+    <Content Include="scripts\icons\es-ES\btnFontSize.gif" />
+    <Content Include="scripts\icons\es-ES\btnInternalLink.gif" />
+    <Content Include="scripts\icons\es-ES\btnMedia.gif" />
+    <Content Include="scripts\icons\es-ES\btnParagraph.gif" />
+    <Content Include="scripts\icons\fi-FI\btnCustomObject.gif" />
+    <Content Include="scripts\icons\fi-FI\btnCustomTag.gif" />
+    <Content Include="scripts\icons\fi-FI\btnFlash.gif" />
+    <Content Include="scripts\icons\fi-FI\btnFontName.gif" />
+    <Content Include="scripts\icons\fi-FI\btnFontSize.gif" />
+    <Content Include="scripts\icons\fi-FI\btnInternalLink.gif" />
+    <Content Include="scripts\icons\fi-FI\btnMedia.gif" />
+    <Content Include="scripts\icons\fi-FI\btnParagraph.gif" />
+    <Content Include="scripts\icons\finnish\btnCustomTag.gif" />
+    <Content Include="scripts\icons\finnish\btnFontName.gif" />
+    <Content Include="scripts\icons\finnish\btnFontSize.gif" />
+    <Content Include="scripts\icons\finnish\btnParagraph.gif" />
+    <Content Include="scripts\icons\fr-FR\btnCustomObject.gif" />
+    <Content Include="scripts\icons\fr-FR\btnCustomTag.gif" />
+    <Content Include="scripts\icons\fr-FR\btnFlash.gif" />
+    <Content Include="scripts\icons\fr-FR\btnFontName.gif" />
+    <Content Include="scripts\icons\fr-FR\btnFontSize.gif" />
+    <Content Include="scripts\icons\fr-FR\btnInternalLink.gif" />
+    <Content Include="scripts\icons\fr-FR\btnMedia.gif" />
+    <Content Include="scripts\icons\fr-FR\btnParagraph.gif" />
+    <Content Include="scripts\icons\french\btnCustomTag.gif" />
+    <Content Include="scripts\icons\french\btnFontName.gif" />
+    <Content Include="scripts\icons\french\btnFontSize.gif" />
+    <Content Include="scripts\icons\french\btnParagraph.gif" />
+    <Content Include="scripts\icons\german\btnCustomTag.gif" />
+    <Content Include="scripts\icons\german\btnFontName.gif" />
+    <Content Include="scripts\icons\german\btnFontSize.gif" />
+    <Content Include="scripts\icons\german\btnParagraph.gif" />
+    <Content Include="scripts\icons\grpbg.gif" />
+    <Content Include="scripts\icons\increase.gif" />
+    <Content Include="scripts\icons\increase_.gif" />
+    <Content Include="scripts\icons\it-IT\btnCustomObject.gif" />
+    <Content Include="scripts\icons\it-IT\btnCustomTag.gif" />
+    <Content Include="scripts\icons\it-IT\btnFlash.gif" />
+    <Content Include="scripts\icons\it-IT\btnFontName.gif" />
+    <Content Include="scripts\icons\it-IT\btnFontSize.gif" />
+    <Content Include="scripts\icons\it-IT\btnInternalLink.gif" />
+    <Content Include="scripts\icons\it-IT\btnMedia.gif" />
+    <Content Include="scripts\icons\it-IT\btnParagraph.gif" />
+    <Content Include="scripts\icons\italian\btnCustomTag.gif" />
+    <Content Include="scripts\icons\italian\btnFontName.gif" />
+    <Content Include="scripts\icons\italian\btnFontSize.gif" />
+    <Content Include="scripts\icons\italian\btnParagraph.gif" />
+    <Content Include="scripts\icons\nl-NL\btnCustomObject.gif" />
+    <Content Include="scripts\icons\nl-NL\btnCustomTag.gif" />
+    <Content Include="scripts\icons\nl-NL\btnFlash.gif" />
+    <Content Include="scripts\icons\nl-NL\btnFontName.gif" />
+    <Content Include="scripts\icons\nl-NL\btnFontSize.gif" />
+    <Content Include="scripts\icons\nl-NL\btnInternalLink.gif" />
+    <Content Include="scripts\icons\nl-NL\btnMedia.gif" />
+    <Content Include="scripts\icons\nl-NL\btnParagraph.gif" />
+    <Content Include="scripts\icons\nn-NO\btnCustomObject.gif" />
+    <Content Include="scripts\icons\nn-NO\btnCustomTag.gif" />
+    <Content Include="scripts\icons\nn-NO\btnFlash.gif" />
+    <Content Include="scripts\icons\nn-NO\btnFontName.gif" />
+    <Content Include="scripts\icons\nn-NO\btnFontSize.gif" />
+    <Content Include="scripts\icons\nn-NO\btnInternalLink.gif" />
+    <Content Include="scripts\icons\nn-NO\btnMedia.gif" />
+    <Content Include="scripts\icons\nn-NO\btnParagraph.gif" />
+    <Content Include="scripts\icons\norwegian\btnCustomTag.gif" />
+    <Content Include="scripts\icons\norwegian\btnFontName.gif" />
+    <Content Include="scripts\icons\norwegian\btnFontSize.gif" />
+    <Content Include="scripts\icons\norwegian\btnParagraph.gif" />
+    <Content Include="scripts\icons\schi\btnCustomTag.gif" />
+    <Content Include="scripts\icons\schi\btnFontName.gif" />
+    <Content Include="scripts\icons\schi\btnFontSize.gif" />
+    <Content Include="scripts\icons\schi\btnParagraph.gif" />
+    <Content Include="scripts\icons\spanish\btnCustomTag.gif" />
+    <Content Include="scripts\icons\spanish\btnFontName.gif" />
+    <Content Include="scripts\icons\spanish\btnFontSize.gif" />
+    <Content Include="scripts\icons\spanish\btnParagraph.gif" />
+    <Content Include="scripts\icons\sv-SE\btnCustomObject.gif" />
+    <Content Include="scripts\icons\sv-SE\btnCustomTag.gif" />
+    <Content Include="scripts\icons\sv-SE\btnFlash.gif" />
+    <Content Include="scripts\icons\sv-SE\btnFontName.gif" />
+    <Content Include="scripts\icons\sv-SE\btnFontSize.gif" />
+    <Content Include="scripts\icons\sv-SE\btnInternalLink.gif" />
+    <Content Include="scripts\icons\sv-SE\btnMedia.gif" />
+    <Content Include="scripts\icons\sv-SE\btnParagraph.gif" />
+    <Content Include="scripts\icons\swedish\btnCustomTag.gif" />
+    <Content Include="scripts\icons\swedish\btnFontName.gif" />
+    <Content Include="scripts\icons\swedish\btnFontSize.gif" />
+    <Content Include="scripts\icons\swedish\btnParagraph.gif" />
+    <Content Include="scripts\icons\tchi\btnCustomTag.gif" />
+    <Content Include="scripts\icons\tchi\btnFontName.gif" />
+    <Content Include="scripts\icons\tchi\btnFontSize.gif" />
+    <Content Include="scripts\icons\tchi\btnParagraph.gif" />
+    <Content Include="scripts\icons\zh-CHS\btnCustomObject.gif" />
+    <Content Include="scripts\icons\zh-CHS\btnCustomTag.gif" />
+    <Content Include="scripts\icons\zh-CHS\btnFlash.gif" />
+    <Content Include="scripts\icons\zh-CHS\btnFontName.gif" />
+    <Content Include="scripts\icons\zh-CHS\btnFontSize.gif" />
+    <Content Include="scripts\icons\zh-CHS\btnInternalLink.gif" />
+    <Content Include="scripts\icons\zh-CHS\btnMedia.gif" />
+    <Content Include="scripts\icons\zh-CHS\btnParagraph.gif" />
+    <Content Include="scripts\icons\zh-CHT\btnCustomObject.gif" />
+    <Content Include="scripts\icons\zh-CHT\btnCustomTag.gif" />
+    <Content Include="scripts\icons\zh-CHT\btnFlash.gif" />
+    <Content Include="scripts\icons\zh-CHT\btnFontName.gif" />
+    <Content Include="scripts\icons\zh-CHT\btnFontSize.gif" />
+    <Content Include="scripts\icons\zh-CHT\btnInternalLink.gif" />
+    <Content Include="scripts\icons\zh-CHT\btnMedia.gif" />
+    <Content Include="scripts\icons\zh-CHT\btnParagraph.gif" />
+    <Content Include="scripts\IEprompt.js" />
+    <Content Include="scripts\image.htm" />
+    <Content Include="scripts\imageUpload.aspx" />
+    <Content Include="scripts\image_background.htm" />
+    <Content Include="scripts\img.gif" />
+    <Content Include="scripts\img_reset.gif" />
+    <Content Include="scripts\innovaeditor.js" />
+    <Content Include="scripts\istoolbar.js" />
+    <Content Include="scripts\language\da-DK\bookmark.js" />
+    <Content Include="scripts\language\da-DK\border.js" />
+    <Content Include="scripts\language\da-DK\box.js" />
+    <Content Include="scripts\language\da-DK\characters.js" />
+    <Content Include="scripts\language\da-DK\color.js" />
+    <Content Include="scripts\language\da-DK\editor_lang.js" />
+    <Content Include="scripts\language\da-DK\flash.js" />
+    <Content Include="scripts\language\da-DK\form_button.js" />
+    <Content Include="scripts\language\da-DK\form_check.js" />
+    <Content Include="scripts\language\da-DK\form_file.js" />
+    <Content Include="scripts\language\da-DK\form_form.js" />
+    <Content Include="scripts\language\da-DK\form_hidden.js" />
+    <Content Include="scripts\language\da-DK\form_list.js" />
+    <Content Include="scripts\language\da-DK\form_radio.js" />
+    <Content Include="scripts\language\da-DK\form_text.js" />
+    <Content Include="scripts\language\da-DK\hyperlink.js" />
+    <Content Include="scripts\language\da-DK\image.js" />
+    <Content Include="scripts\language\da-DK\image_background.js" />
+    <Content Include="scripts\language\da-DK\length.js" />
+    <Content Include="scripts\language\da-DK\list.js" />
+    <Content Include="scripts\language\da-DK\media.js" />
+    <Content Include="scripts\language\da-DK\paragraph.js" />
+    <Content Include="scripts\language\da-DK\paste_text.js" />
+    <Content Include="scripts\language\da-DK\paste_word.js" />
+    <Content Include="scripts\language\da-DK\percent.js" />
+    <Content Include="scripts\language\da-DK\preview.js" />
+    <Content Include="scripts\language\da-DK\search.js" />
+    <Content Include="scripts\language\da-DK\source_html.js" />
+    <Content Include="scripts\language\da-DK\spellcheck.js" />
+    <Content Include="scripts\language\da-DK\styles.js" />
+    <Content Include="scripts\language\da-DK\styles_cssText.js" />
+    <Content Include="scripts\language\da-DK\styles_cssText2.js" />
+    <Content Include="scripts\language\da-DK\table_edit.js" />
+    <Content Include="scripts\language\da-DK\table_editCell.js" />
+    <Content Include="scripts\language\da-DK\table_insert.js" />
+    <Content Include="scripts\language\da-DK\table_size.js" />
+    <Content Include="scripts\language\da-DK\text1.js" />
+    <Content Include="scripts\language\da-DK\text2.js" />
+    <Content Include="scripts\language\da-DK\url.js" />
+    <Content Include="scripts\language\danish\bookmark.js" />
+    <Content Include="scripts\language\danish\border.js" />
+    <Content Include="scripts\language\danish\box.js" />
+    <Content Include="scripts\language\danish\characters.js" />
+    <Content Include="scripts\language\danish\color.js" />
+    <Content Include="scripts\language\danish\editor_lang.js" />
+    <Content Include="scripts\language\danish\flash.js" />
+    <Content Include="scripts\language\danish\form_button.js" />
+    <Content Include="scripts\language\danish\form_check.js" />
+    <Content Include="scripts\language\danish\form_file.js" />
+    <Content Include="scripts\language\danish\form_form.js" />
+    <Content Include="scripts\language\danish\form_hidden.js" />
+    <Content Include="scripts\language\danish\form_list.js" />
+    <Content Include="scripts\language\danish\form_radio.js" />
+    <Content Include="scripts\language\danish\form_text.js" />
+    <Content Include="scripts\language\danish\hyperlink.js" />
+    <Content Include="scripts\language\danish\image.js" />
+    <Content Include="scripts\language\danish\image_background.js" />
+    <Content Include="scripts\language\danish\length.js" />
+    <Content Include="scripts\language\danish\list.js" />
+    <Content Include="scripts\language\danish\media.js" />
+    <Content Include="scripts\language\danish\paragraph.js" />
+    <Content Include="scripts\language\danish\paste_text.js" />
+    <Content Include="scripts\language\danish\paste_word.js" />
+    <Content Include="scripts\language\danish\percent.js" />
+    <Content Include="scripts\language\danish\preview.js" />
+    <Content Include="scripts\language\danish\search.js" />
+    <Content Include="scripts\language\danish\source_html.js" />
+    <Content Include="scripts\language\danish\spellcheck.js" />
+    <Content Include="scripts\language\danish\styles.js" />
+    <Content Include="scripts\language\danish\styles_cssText.js" />
+    <Content Include="scripts\language\danish\styles_cssText2.js" />
+    <Content Include="scripts\language\danish\table_edit.js" />
+    <Content Include="scripts\language\danish\table_editCell.js" />
+    <Content Include="scripts\language\danish\table_insert.js" />
+    <Content Include="scripts\language\danish\table_size.js" />
+    <Content Include="scripts\language\danish\text1.js" />
+    <Content Include="scripts\language\danish\text2.js" />
+    <Content Include="scripts\language\danish\url.js" />
+    <Content Include="scripts\language\de-DE\bookmark.js" />
+    <Content Include="scripts\language\de-DE\border.js" />
+    <Content Include="scripts\language\de-DE\box.js" />
+    <Content Include="scripts\language\de-DE\characters.js" />
+    <Content Include="scripts\language\de-DE\color.js" />
+    <Content Include="scripts\language\de-DE\editor_lang.js" />
+    <Content Include="scripts\language\de-DE\flash.js" />
+    <Content Include="scripts\language\de-DE\form_button.js" />
+    <Content Include="scripts\language\de-DE\form_check.js" />
+    <Content Include="scripts\language\de-DE\form_file.js" />
+    <Content Include="scripts\language\de-DE\form_form.js" />
+    <Content Include="scripts\language\de-DE\form_hidden.js" />
+    <Content Include="scripts\language\de-DE\form_list.js" />
+    <Content Include="scripts\language\de-DE\form_radio.js" />
+    <Content Include="scripts\language\de-DE\form_text.js" />
+    <Content Include="scripts\language\de-DE\hyperlink.js" />
+    <Content Include="scripts\language\de-DE\image.js" />
+    <Content Include="scripts\language\de-DE\image_background.js" />
+    <Content Include="scripts\language\de-DE\length.js" />
+    <Content Include="scripts\language\de-DE\list.js" />
+    <Content Include="scripts\language\de-DE\media.js" />
+    <Content Include="scripts\language\de-DE\paragraph.js" />
+    <Content Include="scripts\language\de-DE\paste_text.js" />
+    <Content Include="scripts\language\de-DE\paste_word.js" />
+    <Content Include="scripts\language\de-DE\percent.js" />
+    <Content Include="scripts\language\de-DE\preview.js" />
+    <Content Include="scripts\language\de-DE\search.js" />
+    <Content Include="scripts\language\de-DE\source_html.js" />
+    <Content Include="scripts\language\de-DE\spellcheck.js" />
+    <Content Include="scripts\language\de-DE\styles.js" />
+    <Content Include="scripts\language\de-DE\styles_cssText.js" />
+    <Content Include="scripts\language\de-DE\styles_cssText2.js" />
+    <Content Include="scripts\language\de-DE\table_edit.js" />
+    <Content Include="scripts\language\de-DE\table_editCell.js" />
+    <Content Include="scripts\language\de-DE\table_insert.js" />
+    <Content Include="scripts\language\de-DE\table_size.js" />
+    <Content Include="scripts\language\de-DE\text1.js" />
+    <Content Include="scripts\language\de-DE\text2.js" />
+    <Content Include="scripts\language\de-DE\url.js" />
+    <Content Include="scripts\language\dutch\bookmark.js" />
+    <Content Include="scripts\language\dutch\border.js" />
+    <Content Include="scripts\language\dutch\box.js" />
+    <Content Include="scripts\language\dutch\characters.js" />
+    <Content Include="scripts\language\dutch\color.js" />
+    <Content Include="scripts\language\dutch\editor_lang.js" />
+    <Content Include="scripts\language\dutch\flash.js" />
+    <Content Include="scripts\language\dutch\form_button.js" />
+    <Content Include="scripts\language\dutch\form_check.js" />
+    <Content Include="scripts\language\dutch\form_file.js" />
+    <Content Include="scripts\language\dutch\form_form.js" />
+    <Content Include="scripts\language\dutch\form_hidden.js" />
+    <Content Include="scripts\language\dutch\form_list.js" />
+    <Content Include="scripts\language\dutch\form_radio.js" />
+    <Content Include="scripts\language\dutch\form_text.js" />
+    <Content Include="scripts\language\dutch\hyperlink.js" />
+    <Content Include="scripts\language\dutch\image.js" />
+    <Content Include="scripts\language\dutch\image_background.js" />
+    <Content Include="scripts\language\dutch\length.js" />
+    <Content Include="scripts\language\dutch\list.js" />
+    <Content Include="scripts\language\dutch\media.js" />
+    <Content Include="scripts\language\dutch\paragraph.js" />
+    <Content Include="scripts\language\dutch\paste_text.js" />
+    <Content Include="scripts\language\dutch\paste_word.js" />
+    <Content Include="scripts\language\dutch\percent.js" />
+    <Content Include="scripts\language\dutch\preview.js" />
+    <Content Include="scripts\language\dutch\search.js" />
+    <Content Include="scripts\language\dutch\source_html.js" />
+    <Content Include="scripts\language\dutch\spellcheck.js" />
+    <Content Include="scripts\language\dutch\styles.js" />
+    <Content Include="scripts\language\dutch\styles_cssText.js" />
+    <Content Include="scripts\language\dutch\styles_cssText2.js" />
+    <Content Include="scripts\language\dutch\table_edit.js" />
+    <Content Include="scripts\language\dutch\table_editCell.js" />
+    <Content Include="scripts\language\dutch\table_insert.js" />
+    <Content Include="scripts\language\dutch\table_size.js" />
+    <Content Include="scripts\language\dutch\text1.js" />
+    <Content Include="scripts\language\dutch\text2.js" />
+    <Content Include="scripts\language\dutch\url.js" />
+    <Content Include="scripts\language\en-US\bookmark.js" />
+    <Content Include="scripts\language\en-US\border.js" />
+    <Content Include="scripts\language\en-US\box.js" />
+    <Content Include="scripts\language\en-US\characters.js" />
+    <Content Include="scripts\language\en-US\color.js" />
+    <Content Include="scripts\language\en-US\editor_lang.js" />
+    <Content Include="scripts\language\en-US\flash.js" />
+    <Content Include="scripts\language\en-US\form_button.js" />
+    <Content Include="scripts\language\en-US\form_check.js" />
+    <Content Include="scripts\language\en-US\form_file.js" />
+    <Content Include="scripts\language\en-US\form_form.js" />
+    <Content Include="scripts\language\en-US\form_hidden.js" />
+    <Content Include="scripts\language\en-US\form_list.js" />
+    <Content Include="scripts\language\en-US\form_radio.js" />
+    <Content Include="scripts\language\en-US\form_text.js" />
+    <Content Include="scripts\language\en-US\hyperlink.js" />
+    <Content Include="scripts\language\en-US\image.js" />
+    <Content Include="scripts\language\en-US\image_background.js" />
+    <Content Include="scripts\language\en-US\length.js" />
+    <Content Include="scripts\language\en-US\list.js" />
+    <Content Include="scripts\language\en-US\media.js" />
+    <Content Include="scripts\language\en-US\paragraph.js" />
+    <Content Include="scripts\language\en-US\paste_text.js" />
+    <Content Include="scripts\language\en-US\paste_word.js" />
+    <Content Include="scripts\language\en-US\percent.js" />
+    <Content Include="scripts\language\en-US\preview.js" />
+    <Content Include="scripts\language\en-US\search.js" />
+    <Content Include="scripts\language\en-US\source_html.js" />
+    <Content Include="scripts\language\en-US\spellcheck.js" />
+    <Content Include="scripts\language\en-US\styles.js" />
+    <Content Include="scripts\language\en-US\styles_cssText.js" />
+    <Content Include="scripts\language\en-US\styles_cssText2.js" />
+    <Content Include="scripts\language\en-US\table_edit.js" />
+    <Content Include="scripts\language\en-US\table_editCell.js" />
+    <Content Include="scripts\language\en-US\table_format.js" />
+    <Content Include="scripts\language\en-US\table_insert.js" />
+    <Content Include="scripts\language\en-US\table_size.js" />
+    <Content Include="scripts\language\en-US\text1.js" />
+    <Content Include="scripts\language\en-US\text2.js" />
+    <Content Include="scripts\language\en-US\url.js" />
+    <Content Include="scripts\language\en-US\youtube_video.js" />
+    <Content Include="scripts\language\english\bookmark.js" />
+    <Content Include="scripts\language\english\border.js" />
+    <Content Include="scripts\language\english\box.js" />
+    <Content Include="scripts\language\english\characters.js" />
+    <Content Include="scripts\language\english\color.js" />
+    <Content Include="scripts\language\english\editor_lang.js" />
+    <Content Include="scripts\language\english\flash.js" />
+    <Content Include="scripts\language\english\form_button.js" />
+    <Content Include="scripts\language\english\form_check.js" />
+    <Content Include="scripts\language\english\form_file.js" />
+    <Content Include="scripts\language\english\form_form.js" />
+    <Content Include="scripts\language\english\form_hidden.js" />
+    <Content Include="scripts\language\english\form_list.js" />
+    <Content Include="scripts\language\english\form_radio.js" />
+    <Content Include="scripts\language\english\form_text.js" />
+    <Content Include="scripts\language\english\hyperlink.js" />
+    <Content Include="scripts\language\english\image.js" />
+    <Content Include="scripts\language\english\image_background.js" />
+    <Content Include="scripts\language\english\length.js" />
+    <Content Include="scripts\language\english\list.js" />
+    <Content Include="scripts\language\english\media.js" />
+    <Content Include="scripts\language\english\paragraph.js" />
+    <Content Include="scripts\language\english\paste_text.js" />
+    <Content Include="scripts\language\english\paste_word.js" />
+    <Content Include="scripts\language\english\percent.js" />
+    <Content Include="scripts\language\english\preview.js" />
+    <Content Include="scripts\language\english\search.js" />
+    <Content Include="scripts\language\english\source_html.js" />
+    <Content Include="scripts\language\english\spellcheck.js" />
+    <Content Include="scripts\language\english\styles.js" />
+    <Content Include="scripts\language\english\styles_cssText.js" />
+    <Content Include="scripts\language\english\styles_cssText2.js" />
+    <Content Include="scripts\language\english\table_edit.js" />
+    <Content Include="scripts\language\english\table_editCell.js" />
+    <Content Include="scripts\language\english\table_insert.js" />
+    <Content Include="scripts\language\english\table_size.js" />
+    <Content Include="scripts\language\english\text1.js" />
+    <Content Include="scripts\language\english\text2.js" />
+    <Content Include="scripts\language\english\url.js" />
+    <Content Include="scripts\language\es-ES\bookmark.js" />
+    <Content Include="scripts\language\es-ES\border.js" />
+    <Content Include="scripts\language\es-ES\box.js" />
+    <Content Include="scripts\language\es-ES\characters.js" />
+    <Content Include="scripts\language\es-ES\color.js" />
+    <Content Include="scripts\language\es-ES\editor_lang.js" />
+    <Content Include="scripts\language\es-ES\flash.js" />
+    <Content Include="scripts\language\es-ES\form_button.js" />
+    <Content Include="scripts\language\es-ES\form_check.js" />
+    <Content Include="scripts\language\es-ES\form_file.js" />
+    <Content Include="scripts\language\es-ES\form_form.js" />
+    <Content Include="scripts\language\es-ES\form_hidden.js" />
+    <Content Include="scripts\language\es-ES\form_list.js" />
+    <Content Include="scripts\language\es-ES\form_radio.js" />
+    <Content Include="scripts\language\es-ES\form_text.js" />
+    <Content Include="scripts\language\es-ES\hyperlink.js" />
+    <Content Include="scripts\language\es-ES\image.js" />
+    <Content Include="scripts\language\es-ES\image_background.js" />
+    <Content Include="scripts\language\es-ES\length.js" />
+    <Content Include="scripts\language\es-ES\list.js" />
+    <Content Include="scripts\language\es-ES\media.js" />
+    <Content Include="scripts\language\es-ES\paragraph.js" />
+    <Content Include="scripts\language\es-ES\paste_text.js" />
+    <Content Include="scripts\language\es-ES\paste_word.js" />
+    <Content Include="scripts\language\es-ES\percent.js" />
+    <Content Include="scripts\language\es-ES\preview.js" />
+    <Content Include="scripts\language\es-ES\search.js" />
+    <Content Include="scripts\language\es-ES\source_html.js" />
+    <Content Include="scripts\language\es-ES\spellcheck.js" />
+    <Content Include="scripts\language\es-ES\styles.js" />
+    <Content Include="scripts\language\es-ES\styles_cssText.js" />
+    <Content Include="scripts\language\es-ES\styles_cssText2.js" />
+    <Content Include="scripts\language\es-ES\table_edit.js" />
+    <Content Include="scripts\language\es-ES\table_editCell.js" />
+    <Content Include="scripts\language\es-ES\table_insert.js" />
+    <Content Include="scripts\language\es-ES\table_size.js" />
+    <Content Include="scripts\language\es-ES\text1.js" />
+    <Content Include="scripts\language\es-ES\text2.js" />
+    <Content Include="scripts\language\es-ES\url.js" />
+    <Content Include="scripts\language\fi-FI\bookmark.js" />
+    <Content Include="scripts\language\fi-FI\border.js" />
+    <Content Include="scripts\language\fi-FI\box.js" />
+    <Content Include="scripts\language\fi-FI\characters.js" />
+    <Content Include="scripts\language\fi-FI\color.js" />
+    <Content Include="scripts\language\fi-FI\editor_lang.js" />
+    <Content Include="scripts\language\fi-FI\flash.js" />
+    <Content Include="scripts\language\fi-FI\form_button.js" />
+    <Content Include="scripts\language\fi-FI\form_check.js" />
+    <Content Include="scripts\language\fi-FI\form_file.js" />
+    <Content Include="scripts\language\fi-FI\form_form.js" />
+    <Content Include="scripts\language\fi-FI\form_hidden.js" />
+    <Content Include="scripts\language\fi-FI\form_list.js" />
+    <Content Include="scripts\language\fi-FI\form_radio.js" />
+    <Content Include="scripts\language\fi-FI\form_text.js" />
+    <Content Include="scripts\language\fi-FI\hyperlink.js" />
+    <Content Include="scripts\language\fi-FI\image.js" />
+    <Content Include="scripts\language\fi-FI\image_background.js" />
+    <Content Include="scripts\language\fi-FI\length.js" />
+    <Content Include="scripts\language\fi-FI\list.js" />
+    <Content Include="scripts\language\fi-FI\media.js" />
+    <Content Include="scripts\language\fi-FI\paragraph.js" />
+    <Content Include="scripts\language\fi-FI\paste_text.js" />
+    <Content Include="scripts\language\fi-FI\paste_word.js" />
+    <Content Include="scripts\language\fi-FI\percent.js" />
+    <Content Include="scripts\language\fi-FI\preview.js" />
+    <Content Include="scripts\language\fi-FI\search.js" />
+    <Content Include="scripts\language\fi-FI\source_html.js" />
+    <Content Include="scripts\language\fi-FI\spellcheck.js" />
+    <Content Include="scripts\language\fi-FI\styles.js" />
+    <Content Include="scripts\language\fi-FI\styles_cssText.js" />
+    <Content Include="scripts\language\fi-FI\styles_cssText2.js" />
+    <Content Include="scripts\language\fi-FI\table_edit.js" />
+    <Content Include="scripts\language\fi-FI\table_editCell.js" />
+    <Content Include="scripts\language\fi-FI\table_insert.js" />
+    <Content Include="scripts\language\fi-FI\table_size.js" />
+    <Content Include="scripts\language\fi-FI\text1.js" />
+    <Content Include="scripts\language\fi-FI\text2.js" />
+    <Content Include="scripts\language\fi-FI\url.js" />
+    <Content Include="scripts\language\finnish\bookmark.js" />
+    <Content Include="scripts\language\finnish\border.js" />
+    <Content Include="scripts\language\finnish\box.js" />
+    <Content Include="scripts\language\finnish\characters.js" />
+    <Content Include="scripts\language\finnish\color.js" />
+    <Content Include="scripts\language\finnish\editor_lang.js" />
+    <Content Include="scripts\language\finnish\flash.js" />
+    <Content Include="scripts\language\finnish\form_button.js" />
+    <Content Include="scripts\language\finnish\form_check.js" />
+    <Content Include="scripts\language\finnish\form_file.js" />
+    <Content Include="scripts\language\finnish\form_form.js" />
+    <Content Include="scripts\language\finnish\form_hidden.js" />
+    <Content Include="scripts\language\finnish\form_list.js" />
+    <Content Include="scripts\language\finnish\form_radio.js" />
+    <Content Include="scripts\language\finnish\form_text.js" />
+    <Content Include="scripts\language\finnish\hyperlink.js" />
+    <Content Include="scripts\language\finnish\image.js" />
+    <Content Include="scripts\language\finnish\image_background.js" />
+    <Content Include="scripts\language\finnish\length.js" />
+    <Content Include="scripts\language\finnish\list.js" />
+    <Content Include="scripts\language\finnish\media.js" />
+    <Content Include="scripts\language\finnish\paragraph.js" />
+    <Content Include="scripts\language\finnish\paste_text.js" />
+    <Content Include="scripts\language\finnish\paste_word.js" />
+    <Content Include="scripts\language\finnish\percent.js" />
+    <Content Include="scripts\language\finnish\preview.js" />
+    <Content Include="scripts\language\finnish\search.js" />
+    <Content Include="scripts\language\finnish\source_html.js" />
+    <Content Include="scripts\language\finnish\spellcheck.js" />
+    <Content Include="scripts\language\finnish\styles.js" />
+    <Content Include="scripts\language\finnish\styles_cssText.js" />
+    <Content Include="scripts\language\finnish\styles_cssText2.js" />
+    <Content Include="scripts\language\finnish\table_edit.js" />
+    <Content Include="scripts\language\finnish\table_editCell.js" />
+    <Content Include="scripts\language\finnish\table_insert.js" />
+    <Content Include="scripts\language\finnish\table_size.js" />
+    <Content Include="scripts\language\finnish\text1.js" />
+    <Content Include="scripts\language\finnish\text2.js" />
+    <Content Include="scripts\language\finnish\url.js" />
+    <Content Include="scripts\language\fr-FR\bookmark.js" />
+    <Content Include="scripts\language\fr-FR\border.js" />
+    <Content Include="scripts\language\fr-FR\box.js" />
+    <Content Include="scripts\language\fr-FR\characters.js" />
+    <Content Include="scripts\language\fr-FR\color.js" />
+    <Content Include="scripts\language\fr-FR\editor_lang.js" />
+    <Content Include="scripts\language\fr-FR\flash.js" />
+    <Content Include="scripts\language\fr-FR\form_button.js" />
+    <Content Include="scripts\language\fr-FR\form_check.js" />
+    <Content Include="scripts\language\fr-FR\form_file.js" />
+    <Content Include="scripts\language\fr-FR\form_form.js" />
+    <Content Include="scripts\language\fr-FR\form_hidden.js" />
+    <Content Include="scripts\language\fr-FR\form_list.js" />
+    <Content Include="scripts\language\fr-FR\form_radio.js" />
+    <Content Include="scripts\language\fr-FR\form_text.js" />
+    <Content Include="scripts\language\fr-FR\hyperlink.js" />
+    <Content Include="scripts\language\fr-FR\image.js" />
+    <Content Include="scripts\language\fr-FR\image_background.js" />
+    <Content Include="scripts\language\fr-FR\length.js" />
+    <Content Include="scripts\language\fr-FR\list.js" />
+    <Content Include="scripts\language\fr-FR\media.js" />
+    <Content Include="scripts\language\fr-FR\paragraph.js" />
+    <Content Include="scripts\language\fr-FR\paste_text.js" />
+    <Content Include="scripts\language\fr-FR\paste_word.js" />
+    <Content Include="scripts\language\fr-FR\percent.js" />
+    <Content Include="scripts\language\fr-FR\preview.js" />
+    <Content Include="scripts\language\fr-FR\search.js" />
+    <Content Include="scripts\language\fr-FR\source_html.js" />
+    <Content Include="scripts\language\fr-FR\spellcheck.js" />
+    <Content Include="scripts\language\fr-FR\styles.js" />
+    <Content Include="scripts\language\fr-FR\styles_cssText.js" />
+    <Content Include="scripts\language\fr-FR\styles_cssText2.js" />
+    <Content Include="scripts\language\fr-FR\table_edit.js" />
+    <Content Include="scripts\language\fr-FR\table_editCell.js" />
+    <Content Include="scripts\language\fr-FR\table_insert.js" />
+    <Content Include="scripts\language\fr-FR\table_size.js" />
+    <Content Include="scripts\language\fr-FR\text1.js" />
+    <Content Include="scripts\language\fr-FR\text2.js" />
+    <Content Include="scripts\language\fr-FR\url.js" />
+    <Content Include="scripts\language\french\bookmark.js" />
+    <Content Include="scripts\language\french\border.js" />
+    <Content Include="scripts\language\french\box.js" />
+    <Content Include="scripts\language\french\characters.js" />
+    <Content Include="scripts\language\french\color.js" />
+    <Content Include="scripts\language\french\editor_lang.js" />
+    <Content Include="scripts\language\french\flash.js" />
+    <Content Include="scripts\language\french\form_button.js" />
+    <Content Include="scripts\language\french\form_check.js" />
+    <Content Include="scripts\language\french\form_file.js" />
+    <Content Include="scripts\language\french\form_form.js" />
+    <Content Include="scripts\language\french\form_hidden.js" />
+    <Content Include="scripts\language\french\form_list.js" />
+    <Content Include="scripts\language\french\form_radio.js" />
+    <Content Include="scripts\language\french\form_text.js" />
+    <Content Include="scripts\language\french\hyperlink.js" />
+    <Content Include="scripts\language\french\image.js" />
+    <Content Include="scripts\language\french\image_background.js" />
+    <Content Include="scripts\language\french\length.js" />
+    <Content Include="scripts\language\french\list.js" />
+    <Content Include="scripts\language\french\media.js" />
+    <Content Include="scripts\language\french\paragraph.js" />
+    <Content Include="scripts\language\french\paste_text.js" />
+    <Content Include="scripts\language\french\paste_word.js" />
+    <Content Include="scripts\language\french\percent.js" />
+    <Content Include="scripts\language\french\preview.js" />
+    <Content Include="scripts\language\french\search.js" />
+    <Content Include="scripts\language\french\source_html.js" />
+    <Content Include="scripts\language\french\spellcheck.js" />
+    <Content Include="scripts\language\french\styles.js" />
+    <Content Include="scripts\language\french\styles_cssText.js" />
+    <Content Include="scripts\language\french\styles_cssText2.js" />
+    <Content Include="scripts\language\french\table_edit.js" />
+    <Content Include="scripts\language\french\table_editCell.js" />
+    <Content Include="scripts\language\french\table_insert.js" />
+    <Content Include="scripts\language\french\table_size.js" />
+    <Content Include="scripts\language\french\text1.js" />
+    <Content Include="scripts\language\french\text2.js" />
+    <Content Include="scripts\language\french\url.js" />
+    <Content Include="scripts\language\german\bookmark.js" />
+    <Content Include="scripts\language\german\border.js" />
+    <Content Include="scripts\language\german\box.js" />
+    <Content Include="scripts\language\german\characters.js" />
+    <Content Include="scripts\language\german\color.js" />
+    <Content Include="scripts\language\german\editor_lang.js" />
+    <Content Include="scripts\language\german\flash.js" />
+    <Content Include="scripts\language\german\form_button.js" />
+    <Content Include="scripts\language\german\form_check.js" />
+    <Content Include="scripts\language\german\form_file.js" />
+    <Content Include="scripts\language\german\form_form.js" />
+    <Content Include="scripts\language\german\form_hidden.js" />
+    <Content Include="scripts\language\german\form_list.js" />
+    <Content Include="scripts\language\german\form_radio.js" />
+    <Content Include="scripts\language\german\form_text.js" />
+    <Content Include="scripts\language\german\hyperlink.js" />
+    <Content Include="scripts\language\german\image.js" />
+    <Content Include="scripts\language\german\image_background.js" />
+    <Content Include="scripts\language\german\length.js" />
+    <Content Include="scripts\language\german\list.js" />
+    <Content Include="scripts\language\german\media.js" />
+    <Content Include="scripts\language\german\paragraph.js" />
+    <Content Include="scripts\language\german\paste_text.js" />
+    <Content Include="scripts\language\german\paste_word.js" />
+    <Content Include="scripts\language\german\percent.js" />
+    <Content Include="scripts\language\german\preview.js" />
+    <Content Include="scripts\language\german\search.js" />
+    <Content Include="scripts\language\german\source_html.js" />
+    <Content Include="scripts\language\german\spellcheck.js" />
+    <Content Include="scripts\language\german\styles.js" />
+    <Content Include="scripts\language\german\styles_cssText.js" />
+    <Content Include="scripts\language\german\styles_cssText2.js" />
+    <Content Include="scripts\language\german\table_edit.js" />
+    <Content Include="scripts\language\german\table_editCell.js" />
+    <Content Include="scripts\language\german\table_insert.js" />
+    <Content Include="scripts\language\german\table_size.js" />
+    <Content Include="scripts\language\german\text1.js" />
+    <Content Include="scripts\language\german\text2.js" />
+    <Content Include="scripts\language\german\url.js" />
+    <Content Include="scripts\language\it-IT\bookmark.js" />
+    <Content Include="scripts\language\it-IT\border.js" />
+    <Content Include="scripts\language\it-IT\box.js" />
+    <Content Include="scripts\language\it-IT\characters.js" />
+    <Content Include="scripts\language\it-IT\color.js" />
+    <Content Include="scripts\language\it-IT\editor_lang.js" />
+    <Content Include="scripts\language\it-IT\flash.js" />
+    <Content Include="scripts\language\it-IT\form_button.js" />
+    <Content Include="scripts\language\it-IT\form_check.js" />
+    <Content Include="scripts\language\it-IT\form_file.js" />
+    <Content Include="scripts\language\it-IT\form_form.js" />
+    <Content Include="scripts\language\it-IT\form_hidden.js" />
+    <Content Include="scripts\language\it-IT\form_list.js" />
+    <Content Include="scripts\language\it-IT\form_radio.js" />
+    <Content Include="scripts\language\it-IT\form_text.js" />
+    <Content Include="scripts\language\it-IT\hyperlink.js" />
+    <Content Include="scripts\language\it-IT\image.js" />
+    <Content Include="scripts\language\it-IT\image_background.js" />
+    <Content Include="scripts\language\it-IT\length.js" />
+    <Content Include="scripts\language\it-IT\list.js" />
+    <Content Include="scripts\language\it-IT\media.js" />
+    <Content Include="scripts\language\it-IT\paragraph.js" />
+    <Content Include="scripts\language\it-IT\paste_text.js" />
+    <Content Include="scripts\language\it-IT\paste_word.js" />
+    <Content Include="scripts\language\it-IT\percent.js" />
+    <Content Include="scripts\language\it-IT\preview.js" />
+    <Content Include="scripts\language\it-IT\search.js" />
+    <Content Include="scripts\language\it-IT\source_html.js" />
+    <Content Include="scripts\language\it-IT\spellcheck.js" />
+    <Content Include="scripts\language\it-IT\styles.js" />
+    <Content Include="scripts\language\it-IT\styles_cssText.js" />
+    <Content Include="scripts\language\it-IT\styles_cssText2.js" />
+    <Content Include="scripts\language\it-IT\table_edit.js" />
+    <Content Include="scripts\language\it-IT\table_editCell.js" />
+    <Content Include="scripts\language\it-IT\table_insert.js" />
+    <Content Include="scripts\language\it-IT\table_size.js" />
+    <Content Include="scripts\language\it-IT\text1.js" />
+    <Content Include="scripts\language\it-IT\text2.js" />
+    <Content Include="scripts\language\it-IT\url.js" />
+    <Content Include="scripts\language\italian\bookmark.js" />
+    <Content Include="scripts\language\italian\border.js" />
+    <Content Include="scripts\language\italian\box.js" />
+    <Content Include="scripts\language\italian\characters.js" />
+    <Content Include="scripts\language\italian\color.js" />
+    <Content Include="scripts\language\italian\editor_lang.js" />
+    <Content Include="scripts\language\italian\flash.js" />
+    <Content Include="scripts\language\italian\form_button.js" />
+    <Content Include="scripts\language\italian\form_check.js" />
+    <Content Include="scripts\language\italian\form_file.js" />
+    <Content Include="scripts\language\italian\form_form.js" />
+    <Content Include="scripts\language\italian\form_hidden.js" />
+    <Content Include="scripts\language\italian\form_list.js" />
+    <Content Include="scripts\language\italian\form_radio.js" />
+    <Content Include="scripts\language\italian\form_text.js" />
+    <Content Include="scripts\language\italian\hyperlink.js" />
+    <Content Include="scripts\language\italian\image.js" />
+    <Content Include="scripts\language\italian\image_background.js" />
+    <Content Include="scripts\language\italian\length.js" />
+    <Content Include="scripts\language\italian\list.js" />
+    <Content Include="scripts\language\italian\media.js" />
+    <Content Include="scripts\language\italian\paragraph.js" />
+    <Content Include="scripts\language\italian\paste_text.js" />
+    <Content Include="scripts\language\italian\paste_word.js" />
+    <Content Include="scripts\language\italian\percent.js" />
+    <Content Include="scripts\language\italian\preview.js" />
+    <Content Include="scripts\language\italian\search.js" />
+    <Content Include="scripts\language\italian\source_html.js" />
+    <Content Include="scripts\language\italian\spellcheck.js" />
+    <Content Include="scripts\language\italian\styles.js" />
+    <Content Include="scripts\language\italian\styles_cssText.js" />
+    <Content Include="scripts\language\italian\styles_cssText2.js" />
+    <Content Include="scripts\language\italian\table_edit.js" />
+    <Content Include="scripts\language\italian\table_editCell.js" />
+    <Content Include="scripts\language\italian\table_insert.js" />
+    <Content Include="scripts\language\italian\table_size.js" />
+    <Content Include="scripts\language\italian\text1.js" />
+    <Content Include="scripts\language\italian\text2.js" />
+    <Content Include="scripts\language\italian\url.js" />
+    <Content Include="scripts\language\nl-NL\bookmark.js" />
+    <Content Include="scripts\language\nl-NL\border.js" />
+    <Content Include="scripts\language\nl-NL\box.js" />
+    <Content Include="scripts\language\nl-NL\characters.js" />
+    <Content Include="scripts\language\nl-NL\color.js" />
+    <Content Include="scripts\language\nl-NL\editor_lang.js" />
+    <Content Include="scripts\language\nl-NL\flash.js" />
+    <Content Include="scripts\language\nl-NL\form_button.js" />
+    <Content Include="scripts\language\nl-NL\form_check.js" />
+    <Content Include="scripts\language\nl-NL\form_file.js" />
+    <Content Include="scripts\language\nl-NL\form_form.js" />
+    <Content Include="scripts\language\nl-NL\form_hidden.js" />
+    <Content Include="scripts\language\nl-NL\form_list.js" />
+    <Content Include="scripts\language\nl-NL\form_radio.js" />
+    <Content Include="scripts\language\nl-NL\form_text.js" />
+    <Content Include="scripts\language\nl-NL\hyperlink.js" />
+    <Content Include="scripts\language\nl-NL\image.js" />
+    <Content Include="scripts\language\nl-NL\image_background.js" />
+    <Content Include="scripts\language\nl-NL\length.js" />
+    <Content Include="scripts\language\nl-NL\list.js" />
+    <Content Include="scripts\language\nl-NL\media.js" />
+    <Content Include="scripts\language\nl-NL\paragraph.js" />
+    <Content Include="scripts\language\nl-NL\paste_text.js" />
+    <Content Include="scripts\language\nl-NL\paste_word.js" />
+    <Content Include="scripts\language\nl-NL\percent.js" />
+    <Content Include="scripts\language\nl-NL\preview.js" />
+    <Content Include="scripts\language\nl-NL\search.js" />
+    <Content Include="scripts\language\nl-NL\source_html.js" />
+    <Content Include="scripts\language\nl-NL\spellcheck.js" />
+    <Content Include="scripts\language\nl-NL\styles.js" />
+    <Content Include="scripts\language\nl-NL\styles_cssText.js" />
+    <Content Include="scripts\language\nl-NL\styles_cssText2.js" />
+    <Content Include="scripts\language\nl-NL\table_edit.js" />
+    <Content Include="scripts\language\nl-NL\table_editCell.js" />
+    <Content Include="scripts\language\nl-NL\table_insert.js" />
+    <Content Include="scripts\language\nl-NL\table_size.js" />
+    <Content Include="scripts\language\nl-NL\text1.js" />
+    <Content Include="scripts\language\nl-NL\text2.js" />
+    <Content Include="scripts\language\nl-NL\url.js" />
+    <Content Include="scripts\language\nn-NO\bookmark.js" />
+    <Content Include="scripts\language\nn-NO\border.js" />
+    <Content Include="scripts\language\nn-NO\box.js" />
+    <Content Include="scripts\language\nn-NO\characters.js" />
+    <Content Include="scripts\language\nn-NO\color.js" />
+    <Content Include="scripts\language\nn-NO\editor_lang.js" />
+    <Content Include="scripts\language\nn-NO\flash.js" />
+    <Content Include="scripts\language\nn-NO\form_button.js" />
+    <Content Include="scripts\language\nn-NO\form_check.js" />
+    <Content Include="scripts\language\nn-NO\form_file.js" />
+    <Content Include="scripts\language\nn-NO\form_form.js" />
+    <Content Include="scripts\language\nn-NO\form_hidden.js" />
+    <Content Include="scripts\language\nn-NO\form_list.js" />
+    <Content Include="scripts\language\nn-NO\form_radio.js" />
+    <Content Include="scripts\language\nn-NO\form_text.js" />
+    <Content Include="scripts\language\nn-NO\hyperlink.js" />
+    <Content Include="scripts\language\nn-NO\image.js" />
+    <Content Include="scripts\language\nn-NO\image_background.js" />
+    <Content Include="scripts\language\nn-NO\length.js" />
+    <Content Include="scripts\language\nn-NO\list.js" />
+    <Content Include="scripts\language\nn-NO\media.js" />
+    <Content Include="scripts\language\nn-NO\paragraph.js" />
+    <Content Include="scripts\language\nn-NO\paste_text.js" />
+    <Content Include="scripts\language\nn-NO\paste_word.js" />
+    <Content Include="scripts\language\nn-NO\percent.js" />
+    <Content Include="scripts\language\nn-NO\preview.js" />
+    <Content Include="scripts\language\nn-NO\search.js" />
+    <Content Include="scripts\language\nn-NO\source_html.js" />
+    <Content Include="scripts\language\nn-NO\spellcheck.js" />
+    <Content Include="scripts\language\nn-NO\styles.js" />
+    <Content Include="scripts\language\nn-NO\styles_cssText.js" />
+    <Content Include="scripts\language\nn-NO\styles_cssText2.js" />
+    <Content Include="scripts\language\nn-NO\table_edit.js" />
+    <Content Include="scripts\language\nn-NO\table_editCell.js" />
+    <Content Include="scripts\language\nn-NO\table_insert.js" />
+    <Content Include="scripts\language\nn-NO\table_size.js" />
+    <Content Include="scripts\language\nn-NO\text1.js" />
+    <Content Include="scripts\language\nn-NO\text2.js" />
+    <Content Include="scripts\language\nn-NO\url.js" />
+    <Content Include="scripts\language\norwegian\bookmark.js" />
+    <Content Include="scripts\language\norwegian\border.js" />
+    <Content Include="scripts\language\norwegian\box.js" />
+    <Content Include="scripts\language\norwegian\characters.js" />
+    <Content Include="scripts\language\norwegian\color.js" />
+    <Content Include="scripts\language\norwegian\editor_lang.js" />
+    <Content Include="scripts\language\norwegian\flash.js" />
+    <Content Include="scripts\language\norwegian\form_button.js" />
+    <Content Include="scripts\language\norwegian\form_check.js" />
+    <Content Include="scripts\language\norwegian\form_file.js" />
+    <Content Include="scripts\language\norwegian\form_form.js" />
+    <Content Include="scripts\language\norwegian\form_hidden.js" />
+    <Content Include="scripts\language\norwegian\form_list.js" />
+    <Content Include="scripts\language\norwegian\form_radio.js" />
+    <Content Include="scripts\language\norwegian\form_text.js" />
+    <Content Include="scripts\language\norwegian\hyperlink.js" />
+    <Content Include="scripts\language\norwegian\image.js" />
+    <Content Include="scripts\language\norwegian\image_background.js" />
+    <Content Include="scripts\language\norwegian\length.js" />
+    <Content Include="scripts\language\norwegian\list.js" />
+    <Content Include="scripts\language\norwegian\media.js" />
+    <Content Include="scripts\language\norwegian\paragraph.js" />
+    <Content Include="scripts\language\norwegian\paste_text.js" />
+    <Content Include="scripts\language\norwegian\paste_word.js" />
+    <Content Include="scripts\language\norwegian\percent.js" />
+    <Content Include="scripts\language\norwegian\preview.js" />
+    <Content Include="scripts\language\norwegian\search.js" />
+    <Content Include="scripts\language\norwegian\source_html.js" />
+    <Content Include="scripts\language\norwegian\spellcheck.js" />
+    <Content Include="scripts\language\norwegian\styles.js" />
+    <Content Include="scripts\language\norwegian\styles_cssText.js" />
+    <Content Include="scripts\language\norwegian\styles_cssText2.js" />
+    <Content Include="scripts\language\norwegian\table_edit.js" />
+    <Content Include="scripts\language\norwegian\table_editCell.js" />
+    <Content Include="scripts\language\norwegian\table_insert.js" />
+    <Content Include="scripts\language\norwegian\table_size.js" />
+    <Content Include="scripts\language\norwegian\text1.js" />
+    <Content Include="scripts\language\norwegian\text2.js" />
+    <Content Include="scripts\language\norwegian\url.js" />
+    <Content Include="scripts\language\schi\bookmark.js" />
+    <Content Include="scripts\language\schi\border.js" />
+    <Content Include="scripts\language\schi\box.js" />
+    <Content Include="scripts\language\schi\characters.js" />
+    <Content Include="scripts\language\schi\color.js" />
+    <Content Include="scripts\language\schi\editor_lang.js" />
+    <Content Include="scripts\language\schi\flash.js" />
+    <Content Include="scripts\language\schi\form_button.js" />
+    <Content Include="scripts\language\schi\form_check.js" />
+    <Content Include="scripts\language\schi\form_file.js" />
+    <Content Include="scripts\language\schi\form_form.js" />
+    <Content Include="scripts\language\schi\form_hidden.js" />
+    <Content Include="scripts\language\schi\form_list.js" />
+    <Content Include="scripts\language\schi\form_radio.js" />
+    <Content Include="scripts\language\schi\form_text.js" />
+    <Content Include="scripts\language\schi\hyperlink.js" />
+    <Content Include="scripts\language\schi\image.js" />
+    <Content Include="scripts\language\schi\image_background.js" />
+    <Content Include="scripts\language\schi\length.js" />
+    <Content Include="scripts\language\schi\list.js" />
+    <Content Include="scripts\language\schi\media.js" />
+    <Content Include="scripts\language\schi\paragraph.js" />
+    <Content Include="scripts\language\schi\paste_text.js" />
+    <Content Include="scripts\language\schi\paste_word.js" />
+    <Content Include="scripts\language\schi\percent.js" />
+    <Content Include="scripts\language\schi\preview.js" />
+    <Content Include="scripts\language\schi\search.js" />
+    <Content Include="scripts\language\schi\source_html.js" />
+    <Content Include="scripts\language\schi\spellcheck.js" />
+    <Content Include="scripts\language\schi\styles.js" />
+    <Content Include="scripts\language\schi\styles_cssText.js" />
+    <Content Include="scripts\language\schi\styles_cssText2.js" />
+    <Content Include="scripts\language\schi\table_edit.js" />
+    <Content Include="scripts\language\schi\table_editCell.js" />
+    <Content Include="scripts\language\schi\table_insert.js" />
+    <Content Include="scripts\language\schi\table_size.js" />
+    <Content Include="scripts\language\schi\text1.js" />
+    <Content Include="scripts\language\schi\text2.js" />
+    <Content Include="scripts\language\schi\url.js" />
+    <Content Include="scripts\language\spanish\backup\color.js" />
+    <Content Include="scripts\language\spanish\backup\search.js" />
+    <Content Include="scripts\language\spanish\bookmark.js" />
+    <Content Include="scripts\language\spanish\border.js" />
+    <Content Include="scripts\language\spanish\box.js" />
+    <Content Include="scripts\language\spanish\characters.js" />
+    <Content Include="scripts\language\spanish\color.js" />
+    <Content Include="scripts\language\spanish\editor_lang.js" />
+    <Content Include="scripts\language\spanish\flash.js" />
+    <Content Include="scripts\language\spanish\form_button.js" />
+    <Content Include="scripts\language\spanish\form_check.js" />
+    <Content Include="scripts\language\spanish\form_file.js" />
+    <Content Include="scripts\language\spanish\form_form.js" />
+    <Content Include="scripts\language\spanish\form_hidden.js" />
+    <Content Include="scripts\language\spanish\form_list.js" />
+    <Content Include="scripts\language\spanish\form_radio.js" />
+    <Content Include="scripts\language\spanish\form_text.js" />
+    <Content Include="scripts\language\spanish\hyperlink.js" />
+    <Content Include="scripts\language\spanish\image.js" />
+    <Content Include="scripts\language\spanish\image_background.js" />
+    <Content Include="scripts\language\spanish\length.js" />
+    <Content Include="scripts\language\spanish\list.js" />
+    <Content Include="scripts\language\spanish\media.js" />
+    <Content Include="scripts\language\spanish\paragraph.js" />
+    <Content Include="scripts\language\spanish\paste_text.js" />
+    <Content Include="scripts\language\spanish\paste_word.js" />
+    <Content Include="scripts\language\spanish\percent.js" />
+    <Content Include="scripts\language\spanish\preview.js" />
+    <Content Include="scripts\language\spanish\search.js" />
+    <Content Include="scripts\language\spanish\source_html.js" />
+    <Content Include="scripts\language\spanish\spellcheck.js" />
+    <Content Include="scripts\language\spanish\styles.js" />
+    <Content Include="scripts\language\spanish\styles_cssText.js" />
+    <Content Include="scripts\language\spanish\styles_cssText2.js" />
+    <Content Include="scripts\language\spanish\table_edit.js" />
+    <Content Include="scripts\language\spanish\table_editCell.js" />
+    <Content Include="scripts\language\spanish\table_insert.js" />
+    <Content Include="scripts\language\spanish\table_size.js" />
+    <Content Include="scripts\language\spanish\text1.js" />
+    <Content Include="scripts\language\spanish\text2.js" />
+    <Content Include="scripts\language\spanish\url.js" />
+    <Content Include="scripts\language\sv-SE\bookmark.js" />
+    <Content Include="scripts\language\sv-SE\border.js" />
+    <Content Include="scripts\language\sv-SE\box.js" />
+    <Content Include="scripts\language\sv-SE\characters.js" />
+    <Content Include="scripts\language\sv-SE\color.js" />
+    <Content Include="scripts\language\sv-SE\editor_lang.js" />
+    <Content Include="scripts\language\sv-SE\flash.js" />
+    <Content Include="scripts\language\sv-SE\form_button.js" />
+    <Content Include="scripts\language\sv-SE\form_check.js" />
+    <Content Include="scripts\language\sv-SE\form_file.js" />
+    <Content Include="scripts\language\sv-SE\form_form.js" />
+    <Content Include="scripts\language\sv-SE\form_hidden.js" />
+    <Content Include="scripts\language\sv-SE\form_list.js" />
+    <Content Include="scripts\language\sv-SE\form_radio.js" />
+    <Content Include="scripts\language\sv-SE\form_text.js" />
+    <Content Include="scripts\language\sv-SE\hyperlink.js" />
+    <Content Include="scripts\language\sv-SE\image.js" />
+    <Content Include="scripts\language\sv-SE\image_background.js" />
+    <Content Include="scripts\language\sv-SE\length.js" />
+    <Content Include="scripts\language\sv-SE\list.js" />
+    <Content Include="scripts\language\sv-SE\media.js" />
+    <Content Include="scripts\language\sv-SE\paragraph.js" />
+    <Content Include="scripts\language\sv-SE\paste_text.js" />
+    <Content Include="scripts\language\sv-SE\paste_word.js" />
+    <Content Include="scripts\language\sv-SE\percent.js" />
+    <Content Include="scripts\language\sv-SE\preview.js" />
+    <Content Include="scripts\language\sv-SE\search.js" />
+    <Content Include="scripts\language\sv-SE\source_html.js" />
+    <Content Include="scripts\language\sv-SE\spellcheck.js" />
+    <Content Include="scripts\language\sv-SE\styles.js" />
+    <Content Include="scripts\language\sv-SE\styles_cssText.js" />
+    <Content Include="scripts\language\sv-SE\styles_cssText2.js" />
+    <Content Include="scripts\language\sv-SE\table_edit.js" />
+    <Content Include="scripts\language\sv-SE\table_editCell.js" />
+    <Content Include="scripts\language\sv-SE\table_insert.js" />
+    <Content Include="scripts\language\sv-SE\table_size.js" />
+    <Content Include="scripts\language\sv-SE\text1.js" />
+    <Content Include="scripts\language\sv-SE\text2.js" />
+    <Content Include="scripts\language\sv-SE\url.js" />
+    <Content Include="scripts\language\swedish\bookmark.js" />
+    <Content Include="scripts\language\swedish\border.js" />
+    <Content Include="scripts\language\swedish\box.js" />
+    <Content Include="scripts\language\swedish\characters.js" />
+    <Content Include="scripts\language\swedish\color.js" />
+    <Content Include="scripts\language\swedish\editor_lang.js" />
+    <Content Include="scripts\language\swedish\flash.js" />
+    <Content Include="scripts\language\swedish\form_button.js" />
+    <Content Include="scripts\language\swedish\form_check.js" />
+    <Content Include="scripts\language\swedish\form_file.js" />
+    <Content Include="scripts\language\swedish\form_form.js" />
+    <Content Include="scripts\language\swedish\form_hidden.js" />
+    <Content Include="scripts\language\swedish\form_list.js" />
+    <Content Include="scripts\language\swedish\form_radio.js" />
+    <Content Include="scripts\language\swedish\form_text.js" />
+    <Content Include="scripts\language\swedish\hyperlink.js" />
+    <Content Include="scripts\language\swedish\image.js" />
+    <Content Include="scripts\language\swedish\image_background.js" />
+    <Content Include="scripts\language\swedish\length.js" />
+    <Content Include="scripts\language\swedish\list.js" />
+    <Content Include="scripts\language\swedish\media.js" />
+    <Content Include="scripts\language\swedish\paragraph.js" />
+    <Content Include="scripts\language\swedish\paste_text.js" />
+    <Content Include="scripts\language\swedish\paste_word.js" />
+    <Content Include="scripts\language\swedish\percent.js" />
+    <Content Include="scripts\language\swedish\preview.js" />
+    <Content Include="scripts\language\swedish\search.js" />
+    <Content Include="scripts\language\swedish\source_html.js" />
+    <Content Include="scripts\language\swedish\spellcheck.js" />
+    <Content Include="scripts\language\swedish\styles.js" />
+    <Content Include="scripts\language\swedish\styles_cssText.js" />
+    <Content Include="scripts\language\swedish\styles_cssText2.js" />
+    <Content Include="scripts\language\swedish\table_edit.js" />
+    <Content Include="scripts\language\swedish\table_editCell.js" />
+    <Content Include="scripts\language\swedish\table_insert.js" />
+    <Content Include="scripts\language\swedish\table_size.js" />
+    <Content Include="scripts\language\swedish\text1.js" />
+    <Content Include="scripts\language\swedish\text2.js" />
+    <Content Include="scripts\language\swedish\url.js" />
+    <Content Include="scripts\language\tchi\bookmark.js" />
+    <Content Include="scripts\language\tchi\border.js" />
+    <Content Include="scripts\language\tchi\box.js" />
+    <Content Include="scripts\language\tchi\characters.js" />
+    <Content Include="scripts\language\tchi\color.js" />
+    <Content Include="scripts\language\tchi\editor_lang.js" />
+    <Content Include="scripts\language\tchi\flash.js" />
+    <Content Include="scripts\language\tchi\form_button.js" />
+    <Content Include="scripts\language\tchi\form_check.js" />
+    <Content Include="scripts\language\tchi\form_file.js" />
+    <Content Include="scripts\language\tchi\form_form.js" />
+    <Content Include="scripts\language\tchi\form_hidden.js" />
+    <Content Include="scripts\language\tchi\form_list.js" />
+    <Content Include="scripts\language\tchi\form_radio.js" />
+    <Content Include="scripts\language\tchi\form_text.js" />
+    <Content Include="scripts\language\tchi\hyperlink.js" />
+    <Content Include="scripts\language\tchi\image.js" />
+    <Content Include="scripts\language\tchi\image_background.js" />
+    <Content Include="scripts\language\tchi\length.js" />
+    <Content Include="scripts\language\tchi\list.js" />
+    <Content Include="scripts\language\tchi\media.js" />
+    <Content Include="scripts\language\tchi\paragraph.js" />
+    <Content Include="scripts\language\tchi\paste_text.js" />
+    <Content Include="scripts\language\tchi\paste_word.js" />
+    <Content Include="scripts\language\tchi\percent.js" />
+    <Content Include="scripts\language\tchi\preview.js" />
+    <Content Include="scripts\language\tchi\search.js" />
+    <Content Include="scripts\language\tchi\source_html.js" />
+    <Content Include="scripts\language\tchi\spellcheck.js" />
+    <Content Include="scripts\language\tchi\styles.js" />
+    <Content Include="scripts\language\tchi\styles_cssText.js" />
+    <Content Include="scripts\language\tchi\styles_cssText2.js" />
+    <Content Include="scripts\language\tchi\table_edit.js" />
+    <Content Include="scripts\language\tchi\table_editCell.js" />
+    <Content Include="scripts\language\tchi\table_insert.js" />
+    <Content Include="scripts\language\tchi\table_size.js" />
+    <Content Include="scripts\language\tchi\text1.js" />
+    <Content Include="scripts\language\tchi\text2.js" />
+    <Content Include="scripts\language\tchi\url.js" />
+    <Content Include="scripts\language\zh-CHS\bookmark.js" />
+    <Content Include="scripts\language\zh-CHS\border.js" />
+    <Content Include="scripts\language\zh-CHS\box.js" />
+    <Content Include="scripts\language\zh-CHS\characters.js" />
+    <Content Include="scripts\language\zh-CHS\color.js" />
+    <Content Include="scripts\language\zh-CHS\editor_lang.js" />
+    <Content Include="scripts\language\zh-CHS\flash.js" />
+    <Content Include="scripts\language\zh-CHS\form_button.js" />
+    <Content Include="scripts\language\zh-CHS\form_check.js" />
+    <Content Include="scripts\language\zh-CHS\form_file.js" />
+    <Content Include="scripts\language\zh-CHS\form_form.js" />
+    <Content Include="scripts\language\zh-CHS\form_hidden.js" />
+    <Content Include="scripts\language\zh-CHS\form_list.js" />
+    <Content Include="scripts\language\zh-CHS\form_radio.js" />
+    <Content Include="scripts\language\zh-CHS\form_text.js" />
+    <Content Include="scripts\language\zh-CHS\hyperlink.js" />
+    <Content Include="scripts\language\zh-CHS\image.js" />
+    <Content Include="scripts\language\zh-CHS\image_background.js" />
+    <Content Include="scripts\language\zh-CHS\length.js" />
+    <Content Include="scripts\language\zh-CHS\list.js" />
+    <Content Include="scripts\language\zh-CHS\media.js" />
+    <Content Include="scripts\language\zh-CHS\paragraph.js" />
+    <Content Include="scripts\language\zh-CHS\paste_text.js" />
+    <Content Include="scripts\language\zh-CHS\paste_word.js" />
+    <Content Include="scripts\language\zh-CHS\percent.js" />
+    <Content Include="scripts\language\zh-CHS\preview.js" />
+    <Content Include="scripts\language\zh-CHS\search.js" />
+    <Content Include="scripts\language\zh-CHS\source_html.js" />
+    <Content Include="scripts\language\zh-CHS\spellcheck.js" />
+    <Content Include="scripts\language\zh-CHS\styles.js" />
+    <Content Include="scripts\language\zh-CHS\styles_cssText.js" />
+    <Content Include="scripts\language\zh-CHS\styles_cssText2.js" />
+    <Content Include="scripts\language\zh-CHS\table_edit.js" />
+    <Content Include="scripts\language\zh-CHS\table_editCell.js" />
+    <Content Include="scripts\language\zh-CHS\table_insert.js" />
+    <Content Include="scripts\language\zh-CHS\table_size.js" />
+    <Content Include="scripts\language\zh-CHS\text1.js" />
+    <Content Include="scripts\language\zh-CHS\text2.js" />
+    <Content Include="scripts\language\zh-CHS\url.js" />
+    <Content Include="scripts\language\zh-CHT\bookmark.js" />
+    <Content Include="scripts\language\zh-CHT\border.js" />
+    <Content Include="scripts\language\zh-CHT\box.js" />
+    <Content Include="scripts\language\zh-CHT\characters.js" />
+    <Content Include="scripts\language\zh-CHT\color.js" />
+    <Content Include="scripts\language\zh-CHT\editor_lang.js" />
+    <Content Include="scripts\language\zh-CHT\flash.js" />
+    <Content Include="scripts\language\zh-CHT\form_button.js" />
+    <Content Include="scripts\language\zh-CHT\form_check.js" />
+    <Content Include="scripts\language\zh-CHT\form_file.js" />
+    <Content Include="scripts\language\zh-CHT\form_form.js" />
+    <Content Include="scripts\language\zh-CHT\form_hidden.js" />
+    <Content Include="scripts\language\zh-CHT\form_list.js" />
+    <Content Include="scripts\language\zh-CHT\form_radio.js" />
+    <Content Include="scripts\language\zh-CHT\form_text.js" />
+    <Content Include="scripts\language\zh-CHT\hyperlink.js" />
+    <Content Include="scripts\language\zh-CHT\image.js" />
+    <Content Include="scripts\language\zh-CHT\image_background.js" />
+    <Content Include="scripts\language\zh-CHT\length.js" />
+    <Content Include="scripts\language\zh-CHT\list.js" />
+    <Content Include="scripts\language\zh-CHT\media.js" />
+    <Content Include="scripts\language\zh-CHT\paragraph.js" />
+    <Content Include="scripts\language\zh-CHT\paste_text.js" />
+    <Content Include="scripts\language\zh-CHT\paste_word.js" />
+    <Content Include="scripts\language\zh-CHT\percent.js" />
+    <Content Include="scripts\language\zh-CHT\preview.js" />
+    <Content Include="scripts\language\zh-CHT\search.js" />
+    <Content Include="scripts\language\zh-CHT\source_html.js" />
+    <Content Include="scripts\language\zh-CHT\spellcheck.js" />
+    <Content Include="scripts\language\zh-CHT\styles.js" />
+    <Content Include="scripts\language\zh-CHT\styles_cssText.js" />
+    <Content Include="scripts\language\zh-CHT\styles_cssText2.js" />
+    <Content Include="scripts\language\zh-CHT\table_edit.js" />
+    <Content Include="scripts\language\zh-CHT\table_editCell.js" />
+    <Content Include="scripts\language\zh-CHT\table_insert.js" />
+    <Content Include="scripts\language\zh-CHT\table_size.js" />
+    <Content Include="scripts\language\zh-CHT\text1.js" />
+    <Content Include="scripts\language\zh-CHT\text2.js" />
+    <Content Include="scripts\language\zh-CHT\url.js" />
+    <Content Include="scripts\length.htm" />
+    <Content Include="scripts\list.htm" />
+    <Content Include="scripts\list.js" />
+    <Content Include="scripts\media.htm" />
+    <Content Include="scripts\moz\blank.gif" />
+    <Content Include="scripts\moz\bookmark.htm" />
+    <Content Include="scripts\moz\border.htm" />
+    <Content Include="scripts\moz\box.htm" />
+    <Content Include="scripts\moz\characters.htm" />
+    <Content Include="scripts\moz\color_picker.htm" />
+    <Content Include="scripts\moz\color_picker.js" />
+    <Content Include="scripts\moz\color_picker_bg.htm" />
+    <Content Include="scripts\moz\color_picker_fg.htm" />
+    <Content Include="scripts\moz\default_edit.css" />
+    <Content Include="scripts\moz\dropbtn.gif" />
+    <Content Include="scripts\moz\editor.js" />
+    <Content Include="scripts\moz\editor_source.js" />
+    <Content Include="scripts\moz\FileUpload.aspx" />
+    <Content Include="scripts\moz\flash.htm" />
+    <Content Include="scripts\moz\FlashUpload.aspx" />
+    <Content Include="scripts\moz\form_button.htm" />
+    <Content Include="scripts\moz\form_check.htm" />
+    <Content Include="scripts\moz\form_file.htm" />
+    <Content Include="scripts\moz\form_form.htm" />
+    <Content Include="scripts\moz\form_hidden.htm" />
+    <Content Include="scripts\moz\form_list.htm" />
+    <Content Include="scripts\moz\form_radio.htm" />
+    <Content Include="scripts\moz\form_text.htm" />
+    <Content Include="scripts\moz\hyperlink.htm" />
+    <Content Include="scripts\moz\image.htm" />
+    <Content Include="scripts\moz\imageUpload.aspx" />
+    <Content Include="scripts\moz\image_background.htm" />
+    <Content Include="scripts\moz\img.gif" />
+    <Content Include="scripts\moz\img_reset.gif" />
+    <Content Include="scripts\moz\length.htm" />
+    <Content Include="scripts\moz\list.htm" />
+    <Content Include="scripts\moz\list.js" />
+    <Content Include="scripts\moz\media.htm" />
+    <Content Include="scripts\moz\MultimediaUpload.aspx" />
+    <Content Include="scripts\moz\openAsset.gif" />
+    <Content Include="scripts\moz\paragraph.htm" />
+    <Content Include="scripts\moz\paste_text.htm" />
+    <Content Include="scripts\moz\paste_word.htm" />
+    <Content Include="scripts\moz\percent.htm" />
+    <Content Include="scripts\moz\preview.htm" />
+    <Content Include="scripts\moz\search.htm" />
+    <Content Include="scripts\moz\search2.htm" />
+    <Content Include="scripts\moz\source_html.htm" />
+    <Content Include="scripts\moz\source_html_full.htm" />
+    <Content Include="scripts\moz\source_xhtml.htm" />
+    <Content Include="scripts\moz\source_xhtml_full.htm" />
+    <Content Include="scripts\moz\spellcheck2.htm" />
+    <Content Include="scripts\moz\styles.htm" />
+    <Content Include="scripts\moz\styles_cssText.htm" />
+    <Content Include="scripts\moz\table.js" />
+    <Content Include="scripts\moz\table_edit.htm" />
+    <Content Include="scripts\moz\table_editCell.htm" />
+    <Content Include="scripts\moz\table_format.htm" />
+    <Content Include="scripts\moz\table_insert.htm" />
+    <Content Include="scripts\moz\table_size.htm" />
+    <Content Include="scripts\moz\text1.htm" />
+    <Content Include="scripts\moz\text2.htm" />
+    <Content Include="scripts\moz\url.htm" />
+    <Content Include="scripts\moz\webdrop.js" />
+    <Content Include="scripts\moz\youtube_video.htm" />
+    <Content Include="scripts\mp3.htm" />
+    <Content Include="scripts\MultimediaUpload.aspx" />
+    <Content Include="scripts\openAsset.gif" />
+    <Content Include="scripts\paragraph.htm" />
+    <Content Include="scripts\paste_word.htm" />
+    <Content Include="scripts\percent.htm" />
+    <Content Include="scripts\PopCalendar.js" />
+    <Content Include="scripts\preview.htm" />
+    <Content Include="scripts\quick\ie\main.js" />
+    <Content Include="scripts\quick\ie\main_xhtml.js" />
+    <Content Include="scripts\quick\ie\xhtmleditor.js" />
+    <Content Include="scripts\quick\moz\main.js" />
+    <Content Include="scripts\quick\moz\main_xhtml.js" />
+    <Content Include="scripts\quick\moz\xhtmleditor.js" />
+    <Content Include="scripts\saf\blank.gif" />
+    <Content Include="scripts\saf\bookmark.htm" />
+    <Content Include="scripts\saf\border.htm" />
+    <Content Include="scripts\saf\box.htm" />
+    <Content Include="scripts\saf\characters.htm" />
+    <Content Include="scripts\saf\color_picker.htm" />
+    <Content Include="scripts\saf\color_picker.js" />
+    <Content Include="scripts\saf\color_picker_bg.htm" />
+    <Content Include="scripts\saf\color_picker_fg.htm" />
+    <Content Include="scripts\saf\default_edit.css" />
+    <Content Include="scripts\saf\dropbtn.gif" />
+    <Content Include="scripts\saf\editor.js" />
+    <Content Include="scripts\saf\editor_source.js" />
+    <Content Include="scripts\saf\flash.htm" />
+    <Content Include="scripts\saf\form_button.htm" />
+    <Content Include="scripts\saf\form_check.htm" />
+    <Content Include="scripts\saf\form_file.htm" />
+    <Content Include="scripts\saf\form_form.htm" />
+    <Content Include="scripts\saf\form_hidden.htm" />
+    <Content Include="scripts\saf\form_list.htm" />
+    <Content Include="scripts\saf\form_radio.htm" />
+    <Content Include="scripts\saf\form_text.htm" />
+    <Content Include="scripts\saf\hyperlink.htm" />
+    <Content Include="scripts\saf\image.htm" />
+    <Content Include="scripts\saf\image_background.htm" />
+    <Content Include="scripts\saf\img.gif" />
+    <Content Include="scripts\saf\img_reset.gif" />
+    <Content Include="scripts\saf\list.htm" />
+    <Content Include="scripts\saf\list.js" />
+    <Content Include="scripts\saf\media.htm" />
+    <Content Include="scripts\saf\openAsset.gif" />
+    <Content Include="scripts\saf\paragraph.htm" />
+    <Content Include="scripts\saf\paste_text.htm" />
+    <Content Include="scripts\saf\paste_word.htm" />
+    <Content Include="scripts\saf\preview.htm" />
+    <Content Include="scripts\saf\search.htm" />
+    <Content Include="scripts\saf\search2.htm" />
+    <Content Include="scripts\saf\source_html.htm" />
+    <Content Include="scripts\saf\source_html_full.htm" />
+    <Content Include="scripts\saf\source_xhtml.htm" />
+    <Content Include="scripts\saf\source_xhtml_full.htm" />
+    <Content Include="scripts\saf\spellcheck2.htm" />
+    <Content Include="scripts\saf\styles_cssText.htm" />
+    <Content Include="scripts\saf\table.js" />
+    <Content Include="scripts\saf\table_edit.htm" />
+    <Content Include="scripts\saf\table_editCell.htm" />
+    <Content Include="scripts\saf\table_format.htm" />
+    <Content Include="scripts\saf\table_insert.htm" />
+    <Content Include="scripts\saf\table_size.htm" />
+    <Content Include="scripts\saf\text1.htm" />
+    <Content Include="scripts\saf\text2.htm" />
+    <Content Include="scripts\saf\webdrop.js" />
+    <Content Include="scripts\saf\youtube_video.htm" />
+    <Content Include="scripts\search.htm" />
+    <Content Include="scripts\search2.htm" />
+    <Content Include="scripts\source_html.htm" />
+    <Content Include="scripts\source_html_full.htm" />
+    <Content Include="scripts\source_xhtml.htm" />
+    <Content Include="scripts\source_xhtml_full.htm" />
+    <Content Include="scripts\spellcheck.htm" />
+    <Content Include="scripts\spellcheck2.htm" />
+    <Content Include="scripts\styles.htm" />
+    <Content Include="scripts\styles_cssText.htm" />
+    <Content Include="scripts\style\button.png" />
+    <Content Include="scripts\style\editor.css" />
+    <Content Include="scripts\style\istoolbar.css" />
+    <Content Include="scripts\style\resize.png" />
+    <Content Include="scripts\style\silver\bottom.gif" />
+    <Content Include="scripts\style\silver\bottomleft.gif" />
+    <Content Include="scripts\style\silver\bottomright.gif" />
+    <Content Include="scripts\style\silver\left.gif" />
+    <Content Include="scripts\style\silver\right.gif" />
+    <Content Include="scripts\style\silver\tab_bottom.gif" />
+    <Content Include="scripts\style\silver\tab_bottomleft.gif" />
+    <Content Include="scripts\style\silver\tab_bottomright.gif" />
+    <Content Include="scripts\style\silver\tab_contentbg.gif" />
+    <Content Include="scripts\style\silver\tab_left.gif" />
+    <Content Include="scripts\style\silver\tab_right.gif" />
+    <Content Include="scripts\style\silver\tab_tabcenter.gif" />
+    <Content Include="scripts\style\silver\tab_tableft.gif" />
+    <Content Include="scripts\style\silver\tab_tabright.gif" />
+    <Content Include="scripts\style\silver\tab_top.gif" />
+    <Content Include="scripts\style\silver\tab_topleft.gif" />
+    <Content Include="scripts\style\silver\tab_topright.gif" />
+    <Content Include="scripts\style\silver\top.gif" />
+    <Content Include="scripts\style\silver\topleft.gif" />
+    <Content Include="scripts\style\silver\topright.gif" />
+    <Content Include="scripts\table.js" />
+    <Content Include="scripts\table\dec_colspan.gif" />
+    <Content Include="scripts\table\dec_rowspan.gif" />
+    <Content Include="scripts\table\del_column.gif" />
+    <Content Include="scripts\table\del_row.gif" />
+    <Content Include="scripts\table\inc_colspan.gif" />
+    <Content Include="scripts\table\inc_rowspan.gif" />
+    <Content Include="scripts\table\ins_column_left.gif" />
+    <Content Include="scripts\table\ins_column_right.gif" />
+    <Content Include="scripts\table\ins_row_above.gif" />
+    <Content Include="scripts\table\ins_row_below.gif" />
+    <Content Include="scripts\table_edit.htm" />
+    <Content Include="scripts\table_editCell.htm" />
+    <Content Include="scripts\table_format.htm" />
+    <Content Include="scripts\table_insert.htm" />
+    <Content Include="scripts\table_size.htm" />
+    <Content Include="scripts\text1.htm" />
+    <Content Include="scripts\text2.htm" />
+    <Content Include="scripts\url.htm" />
+    <Content Include="scripts\webdrop.js" />
+    <Content Include="scripts\youtube_video.htm" />
+    <Content Include="ServiceInfo.asmx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="wucConfigXml.ascx" />
+    <Content Include="wucHeaderAdmin.ascx" />
+    <Content Include="wucKhongDuQuyenTruyCap.ascx" />
+    <Content Include="wucManagerApp.ascx" />
+    <Content Include="wucManagerQuangCao.ascx" />
+    <Content Include="wucProfile.ascx" />
+    <Content Include="wucQuanLyComment.ascx" />
+    <Content Include="wucQuanLySanPham.ascx" />
+    <Content Include="wucQuanTriContentManager.ascx" />
+    <Content Include="wucQuanTriMenu.ascx" />
+    <Content Include="wucQuanTriModerator.ascx" />
+    <Content Include="wucSideBarAdmin.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateProduct.aspx.cs">
+      <DependentUpon>CreateProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateProduct.aspx.designer.cs">
+      <DependentUpon>CreateProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FetchData.aspx.cs">
+      <DependentUpon>FetchData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FetchData.aspx.designer.cs">
+      <DependentUpon>FetchData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetJson.aspx.cs">
+      <DependentUpon>GetJson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetJson.aspx.designer.cs">
+      <DependentUpon>GetJson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceInfo.asmx.cs">
+      <DependentUpon>ServiceInfo.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UploadAnh.ashx.cs">
+      <DependentUpon>UploadAnh.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadAvatar.ashx.cs">
+      <DependentUpon>UploadAvatar.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="wucConfigXml.ascx.cs">
+      <DependentUpon>wucConfigXml.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucConfigXml.ascx.designer.cs">
+      <DependentUpon>wucConfigXml.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="wucHeaderAdmin.ascx.cs">
+      <DependentUpon>wucHeaderAdmin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucHeaderAdmin.ascx.designer.cs">
+      <DependentUpon>wucHeaderAdmin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="wucKhongDuQuyenTruyCap.ascx.cs">
+      <DependentUpon>wucKhongDuQuyenTruyCap.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucKhongDuQuyenTruyCap.ascx.designer.cs">
+      <DependentUpon>wucKhongDuQuyenTruyCap.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="wucManagerApp.ascx.cs">
+      <DependentUpon>wucManagerApp.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucManagerApp.ascx.designer.cs">
+      <DependentUpon>wucManagerApp.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="wucManagerQuangCao.ascx.cs">
+      <DependentUpon>wucManagerQuangCao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucManagerQuangCao.ascx.designer.cs">
+      <DependentUpon>wucManagerQuangCao.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="wucProfile.ascx.cs">
+      <DependentUpon>wucProfile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucProfile.ascx.designer.cs">
+      <DependentUpon>wucProfile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="wucQuanLyComment.ascx.cs">
+      <DependentUpon>wucQuanLyComment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucQuanLyComment.ascx.designer.cs">
+      <DependentUpon>wucQuanLyComment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="wucQuanLySanPham.ascx.cs">
+      <DependentUpon>wucQuanLySanPham.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucQuanLySanPham.ascx.designer.cs">
+      <DependentUpon>wucQuanLySanPham.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="wucQuanTriContentManager.ascx.cs">
+      <DependentUpon>wucQuanTriContentManager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucQuanTriContentManager.ascx.designer.cs">
+      <DependentUpon>wucQuanTriContentManager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="wucQuanTriMenu.ascx.cs">
+      <DependentUpon>wucQuanTriMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucQuanTriMenu.ascx.designer.cs">
+      <DependentUpon>wucQuanTriMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="wucQuanTriModerator.ascx.cs">
+      <DependentUpon>wucQuanTriModerator.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucQuanTriModerator.ascx.designer.cs">
+      <DependentUpon>wucQuanTriModerator.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="wucSideBarAdmin.ascx.cs">
+      <DependentUpon>wucSideBarAdmin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucSideBarAdmin.ascx.designer.cs">
+      <DependentUpon>wucSideBarAdmin.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Pictures\GalleryTruyenHot\" />
+    <Folder Include="Pictures\LinhThu\" />
+    <Folder Include="Pictures\NhomDich\" />
+    <Folder Include="Pictures\PhapBao\" />
+    <Folder Include="Pictures\TacGia\" />
+    <Folder Include="Pictures\Truyen\Large\" />
+    <Folder Include="Pictures\Truyen\Small\" />
+    <Folder Include="Pictures\User\" />
+    <Folder Include="Upload\Temp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\bootstrap-tree\jsonexample.json" />
+    <Content Include="assets\font-awesome\css\Descr.WD3" />
+    <Content Include="assets\font-awesome\font\Descr.WD3" />
+    <Content Include="assets\font-awesome\font\fontawesome-webfont.eot%40" />
+    <Content Include="assets\font-awesome\font\fontawesome-webfont.eot%40v=3.2.1" />
+    <Content Include="assets\font-awesome\font\fontawesome-webfont.ttf%40v=3.2.1" />
+    <Content Include="assets\font-awesome\font\fontawesome-webfont.woff%40v=3.2.1" />
+    <Content Include="Css\Descr.WD3" />
+    <Content Include="font\Descr.WD3" />
+    <Content Include="font\myriadprobold.eot" />
+    <Content Include="font\myriadprobold.eot%40" />
+    <Content Include="font\myriadprobold.ttf" />
+    <Content Include="font\myriadprobold.woff" />
+    <Content Include="font\myriadproit.eot" />
+    <Content Include="font\myriadproit.eot%40" />
+    <Content Include="font\myriadproit.ttf" />
+    <Content Include="font\myriadproit.woff" />
+    <Content Include="font\myriadprolight.eot" />
+    <Content Include="font\myriadprolight.eot%40" />
+    <Content Include="font\myriadprolight.ttf" />
+    <Content Include="font\myriadprolight.woff" />
+    <Content Include="font\myriadproregular.eot" />
+    <Content Include="font\myriadproregular.eot%40" />
+    <Content Include="font\myriadproregular.ttf" />
+    <Content Include="font\myriadproregular.woff" />
+    <Content Include="img\about-us\Descr.WD3" />
+    <Content Include="img\blog\Descr.WD3" />
+    <Content Include="img\Descr.WD3" />
+    <Content Include="img\file-search\Descr.WD3" />
+    <Content Include="img\gallery\Descr.WD3" />
+    <Content Include="font\glyphicons-halflings-regular.woff" />
+    <Content Include="font\fontawesome-webfont.eot" />
+    <Content Include="font\fontawesome-webfont.ttf" />
+    <Content Include="font\fontawesome-webfont.woff" />
+    <Content Include="font\FontAwesome.otf" />
+    <Content Include="assets\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="assets\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="assets\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="assets\font-awesome\font\FontAwesome.otf" />
+    <Content Include="packages.config" />
+    <Content Include="Templates\tmp_linhthu_user_item.vdc" />
+    <Content Include="js\uploader.fla" />
+    <Content Include="UploadAnh.ashx" />
+    <Content Include="UploadAvatar.ashx" />
+    <Content Include="Templates\tmp_comment_item.vdc" />
+    <Content Include="Templates\tmp_cookie.vdc" />
+    <Content Include="scripts\border\Thumbs.db" />
+    <Content Include="scripts\icons\da-DK\Thumbs.db" />
+    <Content Include="scripts\icons\danish\Thumbs.db" />
+    <Content Include="scripts\icons\de-DE\Thumbs.db" />
+    <Content Include="scripts\icons\dutch\Thumbs.db" />
+    <Content Include="scripts\icons\en-US\Thumbs.db" />
+    <Content Include="scripts\icons\english\Thumbs.db" />
+    <Content Include="scripts\icons\es-ES\Thumbs.db" />
+    <Content Include="scripts\icons\fi-FI\Thumbs.db" />
+    <Content Include="scripts\icons\finnish\Thumbs.db" />
+    <Content Include="scripts\icons\fr-FR\Thumbs.db" />
+    <Content Include="scripts\icons\french\Thumbs.db" />
+    <Content Include="scripts\icons\german\Thumbs.db" />
+    <Content Include="scripts\icons\it-IT\Thumbs.db" />
+    <Content Include="scripts\icons\italian\Thumbs.db" />
+    <Content Include="scripts\icons\nl-NL\Thumbs.db" />
+    <Content Include="scripts\icons\nn-NO\Thumbs.db" />
+    <Content Include="scripts\icons\norwegian\Thumbs.db" />
+    <Content Include="scripts\icons\schi\Thumbs.db" />
+    <Content Include="scripts\icons\spanish\Thumbs.db" />
+    <Content Include="scripts\icons\sv-SE\Thumbs.db" />
+    <Content Include="scripts\icons\swedish\Thumbs.db" />
+    <Content Include="scripts\icons\tchi\Thumbs.db" />
+    <Content Include="scripts\icons\Thumbs.db" />
+    <Content Include="scripts\icons\zh-CHS\Thumbs.db" />
+    <Content Include="scripts\icons\zh-CHT\Thumbs.db" />
+    <Content Include="scripts\moz\Thumbs.db" />
+    <Content Include="scripts\table\Thumbs.db" />
+    <Content Include="scripts\Thumbs.db" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HamtruyenLibrary\HamtruyenLibrary.csproj">
+      <Project>{03226905-d665-454d-bd29-2296b0a3a370}</Project>
+      <Name>HamtruyenLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assetmanager\App_LocalResources\assetmanager.aspx.resx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62268</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60010/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

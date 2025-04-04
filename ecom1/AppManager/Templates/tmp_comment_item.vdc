@@ -1,0 +1,23 @@
+<div class="media clearfix comment_item" id="XX_COMMENT_ID_XX">
+	<div class="media-left media-middle user_avatar">
+		<img class="media-object" width="64" height="64" src="XX_AVATAR_XX" />
+		<label>XX_USER_TYPE_XX</label>
+	</div>
+	<div class="media-body comment_content" rel="div_content">
+		<h4 class="media-heading username">
+			XX_USER_COMMENT_XX <span class="danhhieu">
+				- <span class="text_orange">XX_DANGCAP_XX</span>
+			</span>
+			<a class="pull-right" href="XX_LINK_XX">đã comment tại XX_TRUYEN_XX</a>
+		</h4>
+		
+		<p>
+			XX_NOIDUNG_COMMENT_XX
+		</p>
+		<p class="reply_thongso">
+			<a onclick="deletecomment('XX_COMMENT_ID_XX')">Xóa comment</a> - <a onclick="banuser('XX_USER_COMMENT_XX')">Ban user này</a>
+			<span> XX_COMMENT_TIME_XX</span>
+		</p>
+		XX_LIST_COMMENT_CHILDREN_XX
+	</div>
+</div>

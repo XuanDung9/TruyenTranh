@@ -1,0 +1,10 @@
+<div class="metro-nav-block nav-block-XX_STYLE_XX" style="height:120px;">
+    <a href="#" class="text-center" data-original-title="">
+        <span class="value">
+            <i style="margin:0 0 0 -6px;">
+                <img src="/Pictures/Linhthu/XX_AVATAR_XX" width="112" alt="XX_NAME_XX"/>
+            </i>
+        </span>
+        <div class="status">XX_NAME_XX</div>
+    </a>
+</div>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<document>
+  <Page Name="feedback" des="">
+    <SMTPserver>localhost</SMTPserver>
+    <UserName>huyhoang</UserName>
+    <Pass>123456</Pass>
+    <mailTo>hoang@aa.com</mailTo>
+    <mailCc>
+    </mailCc>
+    <mailBcc>
+    </mailBcc>
+  </Page>
+  <Page Name="Language" Des="">
+    <Default>1</Default>
+    <URLRewrite>True</URLRewrite>
+  </Page>
+  <Page Name="TimeZone" Des="">
+    <AddMinute>0</AddMinute>
+  </Page>
+  <Page Name="UrlActive" Des="UrlActiveChapter">
+    <Url>http://localhost:57479/ActiveTruyen.aspx?chap=</Url>
+  </Page>
+  <Page Name="Picasa" Des="User và pass Picasa">
+    <userGmail>hamtruyenkhoso1@gmail.com</userGmail>
+    <userPass>truyenhay24h.com</userPass>
+  </Page>
+</document>
