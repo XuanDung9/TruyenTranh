@@ -25,11 +25,6 @@ namespace HamtruyenAdmin
 
             };
             repo.Save(color);
-            Response.Redirect("http://localhost:60010/CreateProduct.aspx");
-        }
-        protected void btnCancel_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("http://localhost:60010/CreateProduct.aspx");
         }
 
     }

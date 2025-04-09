@@ -33,8 +33,8 @@
                    </div>
                    <div class="form-actions">
                         <asp:Button ID="btnSave" runat="server" CssClass="btn blue" Text="Save"
-                            OnClick="btnSave_Click" />
-                        <asp:Button ID="btnCancel" runat="server" CssClass="btn" OnClick="btnCancel_Click" Text="Cancel" CausesValidation="false" />
+                            OnClick="btnSave_Click"     OnClientClick="history.back(); return false;"  />
+                        <asp:Button ID="btnCancel" runat="server" CssClass="btn" Text="Cancel" CausesValidation="false"     OnClientClick="history.back(); return false;"  />
 
                     </div>
                 </form>

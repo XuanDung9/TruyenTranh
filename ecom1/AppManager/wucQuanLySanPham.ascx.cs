@@ -52,9 +52,6 @@ namespace HamtruyenAdmin
             ddlMauSac.DataBind();
             ddlVersion.DataSource = lstVersion;
             ddlVersion.DataBind();
-
-            ddlMauSac.Items.Insert(0, new ListItem("-- Chọn màu --", ""));
-            ddlVersion.Items.Insert(0, new ListItem("-- Chọn phiên bản --", ""));
             gvSanPham.DataSource = lst;
             gvSanPham.DataBind();
         }
@@ -82,19 +79,34 @@ namespace HamtruyenAdmin
             if (pd != null)
             {
                 txtProductName.Text = pd.Name_Product;
-                imgHinhAnh.ImageUrl = pd.Image_Product;
-
-                if (ddlMauSac.Items.FindByValue(pd.Color) != null)
-                {
-                    ddlMauSac.SelectedValue = pd.Color;
-                }
-                if (ddlVersion.Items.FindByValue(pd.Version) != null)
-                {
-                    ddlVersion.SelectedValue = pd.Version;
-                }
-                txtSKU.Text = pd.SKU;
+                txtSKU.Text = pd.SKU; 
                 txtSoLuong.Text = pd.Quantity;
                 txtGia.Text = pd.Price;
+
+                if (!string.IsNullOrEmpty(pd.Color))
+                {
+                    ddlMauSac.ClearSelection();
+                    ddlMauSac.Items.FindByText(pd.Color).Selected = true;
+                }
+
+                if (!string.IsNullOrEmpty(pd.Color))
+                {
+                    ddlVersion.ClearSelection();
+                    ddlVersion.Items.FindByText(pd.Version).Selected = true;
+                }
+
+                if (!string.IsNullOrEmpty(pd.Image_Product))
+                {
+                    imgHinhAnh.ImageUrl = pd.Image_Product;
+                    imgHinhAnh.Visible = true;
+                    fuHinhAnh.Visible = false;
+                }
+                else
+                {
+                    imgHinhAnh.Visible = false;
+                    fuHinhAnh.Visible = true;
+                }
+          
             }
         }
 

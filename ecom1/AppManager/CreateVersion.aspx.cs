@@ -23,11 +23,6 @@ namespace HamtruyenAdmin
                 Name_Version = txtName.Text,
             };
             repo.Save(version);
-            Response.Redirect("http://localhost:60010/CreateProduct.aspx");
-        }
-        protected void btnCancel_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("http://localhost:60010/CreateProduct.aspx");
         }
     }
 }

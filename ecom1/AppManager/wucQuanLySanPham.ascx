@@ -87,6 +87,7 @@
         <div class="controls">
             <asp:FileUpload ID="fuHinhAnh" runat="server" CssClass="default" />
             <asp:Image ID="imgHinhAnh" runat="server" Width="150px" Height="150px" />
+
         </div>
     </div>
     <div class="form-group">
