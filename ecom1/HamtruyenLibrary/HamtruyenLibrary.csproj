@@ -186,14 +186,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\AnimalUserRepo.cs" />
     <Compile Include="Repo\ApplicationWCRepo.cs" />
+    <Compile Include="Repo\CategoryRepo.cs" />
     <Compile Include="Repo\CityRepo.cs" />
+    <Compile Include="Repo\ColorRepo.cs" />
+    <Compile Include="Repo\ConectRepo.cs" />
     <Compile Include="Repo\ContentManagerRepo.cs" />
     <Compile Include="Repo\AppMobileRepo.cs" />
+    <Compile Include="Repo\DesignRepo.cs" />
     <Compile Include="Repo\MenuRepo.cs" />
     <Compile Include="Repo\ModeratorRepo.cs" />
+    <Compile Include="Repo\PinRepo.cs" />
     <Compile Include="Repo\QuanRepo.cs" />
+    <Compile Include="Repo\RamRepo.cs" />
     <Compile Include="Repo\SanPhamRepo.cs" />
+    <Compile Include="Repo\ScreenRepo.cs" />
+    <Compile Include="Repo\StoreRepo.cs" />
+    <Compile Include="Repo\SystermRepo.cs" />
     <Compile Include="Repo\UserDeviceRepo.cs" />
+    <Compile Include="Repo\VersionRepo.cs" />
     <Compile Include="Repo\VideoBillboardRepo.cs" />
     <Compile Include="Repo\VideoRepo.cs" />
   </ItemGroup>

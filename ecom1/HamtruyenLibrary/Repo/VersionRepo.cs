@@ -15,7 +15,10 @@ namespace HamtruyenLibrary.Repo
         {
             throw new NotImplementedException();
         }
-
+        public void Save(Versions versions)
+        {
+            MainDb.Instant.Save(versions);
+        }
         public IEnumerable<Versions> List() // danh sách servison
         {
             return MainDb.Instant.All<Versions>();

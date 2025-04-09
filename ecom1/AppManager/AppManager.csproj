@@ -326,7 +326,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Crawlers\Complete.html" />
+    <Content Include="CreateColor.aspx" />
     <Content Include="CreateProduct.aspx" />
+    <Content Include="CreateVersion.aspx" />
     <Content Include="Css\style-default.css" />
     <Content Include="Css\style-gray.css" />
     <Content Include="Css\style-green.css" />
@@ -1868,12 +1870,26 @@
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CreateColor.aspx.cs">
+      <DependentUpon>CreateColor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateColor.aspx.designer.cs">
+      <DependentUpon>CreateColor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateProduct.aspx.cs">
       <DependentUpon>CreateProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CreateProduct.aspx.designer.cs">
       <DependentUpon>CreateProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateVersion.aspx.cs">
+      <DependentUpon>CreateVersion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateVersion.aspx.designer.cs">
+      <DependentUpon>CreateVersion.aspx</DependentUpon>
     </Compile>
     <Compile Include="FetchData.aspx.cs">
       <DependentUpon>FetchData.aspx</DependentUpon>
