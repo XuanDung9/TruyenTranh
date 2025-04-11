@@ -15,6 +15,7 @@
    <meta content="" name="description" />
    <meta content="" name="author" />
    <link href="<%=ResolveUrl("~/assets/bootstrap/css/bootstrap.min.css") %>" rel="stylesheet" />
+
    <link href="<%=ResolveUrl("~/assets/bootstrap/css/bootstrap-responsive.min.css") %>" rel="stylesheet" />
    <link href="/assets/bootstrap/css/bootstrap-fileupload.css" rel="stylesheet" />
    <link href="/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />

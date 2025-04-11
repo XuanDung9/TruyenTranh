@@ -7,13 +7,13 @@ using System.Text;
 namespace HamtruyenLibrary.Models
 {
     [CollectionName("Color")]
-    public class Color: IObject
+    public class Color:IObject
     {
         public Color()
         {
-            string Name_Color = "Xanh mã";
-            string Hex_Code_Color = "55ff33";
-            int Price = 10000000;
+            Name_Color = "Xanh mã";
+            Hex_Code_Color = "55ff33";
+            Img_Color = "path";
 
         }
         [BsonElement("Name_Color")]
@@ -28,8 +28,8 @@ namespace HamtruyenLibrary.Models
             get;
             set;
         }
-        [BsonElement("Price")]
-        public string Price
+        [BsonElement("Img_Color")]
+        public string Img_Color
         {
             get;
             set;

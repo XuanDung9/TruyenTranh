@@ -326,7 +326,8 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Crawlers\Complete.html" />
-    <Content Include="CreateColor.aspx" />
+    <Content Include="wucBrand.ascx" />
+    <Content Include="wucColor.ascx" />
     <Content Include="CreateProduct.aspx" />
     <Content Include="CreateVersion.aspx" />
     <Content Include="Css\style-default.css" />
@@ -1861,6 +1862,7 @@
     <Content Include="wucQuanTriMenu.ascx" />
     <Content Include="wucQuanTriModerator.ascx" />
     <Content Include="wucSideBarAdmin.ascx" />
+    <Content Include="wucVersion.ascx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.aspx.cs">
@@ -1870,12 +1872,19 @@
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CreateColor.aspx.cs">
-      <DependentUpon>CreateColor.aspx</DependentUpon>
+    <Compile Include="wucBrand.ascx.cs">
+      <DependentUpon>wucBrand.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CreateColor.aspx.designer.cs">
-      <DependentUpon>CreateColor.aspx</DependentUpon>
+    <Compile Include="wucBrand.ascx.designer.cs">
+      <DependentUpon>wucBrand.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="wucColor.ascx.cs">
+      <DependentUpon>wucColor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucColor.ascx.designer.cs">
+      <DependentUpon>wucColor.ascx</DependentUpon>
     </Compile>
     <Compile Include="CreateProduct.aspx.cs">
       <DependentUpon>CreateProduct.aspx</DependentUpon>
@@ -2006,6 +2015,13 @@
     </Compile>
     <Compile Include="wucSideBarAdmin.ascx.designer.cs">
       <DependentUpon>wucSideBarAdmin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="wucVersion.ascx.cs">
+      <DependentUpon>wucVersion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucVersion.ascx.designer.cs">
+      <DependentUpon>wucVersion.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

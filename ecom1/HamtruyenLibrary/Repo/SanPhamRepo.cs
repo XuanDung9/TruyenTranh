@@ -46,13 +46,10 @@ namespace HamtruyenLibrary.Repo
             IMongoQuery query = Query<Products>.EQ(c => c.Id, ObjectId.Parse(ID));
             IMongoUpdate update = Update<Products>.Set(c => c.Name_Product, updatedProduct.Name_Product)
                                                     .Set(c => c.Image_Product, updatedProduct.Image_Product)
-                                                    .Set(c => c.SKU, updatedProduct.SKU)
-                                                    .Set(c => c.Quantity, updatedProduct.Quantity)
                                                     .Set(c => c.Color, updatedProduct.Color)
-                                                    .Set(c => c.Version, updatedProduct.Version)
-                                                    .Set(c => c.Price, updatedProduct.Price)
-                                                    .Set(c => c.Description, updatedProduct.Description)
-                                                    .Set(c => c.Category, updatedProduct.Category);
+                                                    .Set(c => c.ThuongHieu, updatedProduct.ThuongHieu)
+                                                    .Set(c => c.Version, updatedProduct.Version);
+                        
             MainDb.Instant.Update<Products>(query, update);
         }
         public Products SelectByID(string ID)

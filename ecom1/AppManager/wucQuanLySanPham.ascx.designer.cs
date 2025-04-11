@@ -87,67 +87,31 @@ namespace HamtruyenAdmin
         protected global::System.Web.UI.WebControls.Image imgHinhAnh;
 
         /// <summary>
-        /// txtSKU control.
+        /// cblPhienBan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSKU;
+        protected global::System.Web.UI.WebControls.CheckBoxList cblPhienBan;
 
         /// <summary>
-        /// txtSoLuong control.
+        /// cblMauSac control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSoLuong;
+        protected global::System.Web.UI.WebControls.CheckBoxList cblMauSac;
 
         /// <summary>
-        /// ddlVersion control.
+        /// cblThuongHieu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlVersion;
-
-        /// <summary>
-        /// HyperLink1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
-
-        /// <summary>
-        /// ddlMauSac control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMauSac;
-
-        /// <summary>
-        /// lnkThemMau control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkThemMau;
-
-        /// <summary>
-        /// txtGia control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGia;
+        protected global::System.Web.UI.WebControls.CheckBoxList cblThuongHieu;
 
         /// <summary>
         /// btnSave control.

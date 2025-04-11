@@ -160,12 +160,11 @@
     <Compile Include="Models\Application.cs" />
     <Compile Include="Models\AppMobile.cs" />
     <Compile Include="Models\Battery.cs" />
+    <Compile Include="Models\BoNho.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Color.cs" />
-    <Compile Include="Models\Connect.cs" />
     <Compile Include="Models\ContentManager.cs" />
-    <Compile Include="Models\Design.cs" />
-    <Compile Include="Models\FontCamera.cs" />
+    <Compile Include="Models\DanhMuc.cs" />
     <Compile Include="Models\InfoApp.cs" />
     <Compile Include="Models\MassageStore.cs" />
     <Compile Include="Models\Menu.cs" />
@@ -174,12 +173,8 @@
     <Compile Include="Models\Playlist.cs" />
     <Compile Include="Models\Privilege.cs" />
     <Compile Include="Models\Products.cs" />
-    <Compile Include="Models\RAM.cs" />
-    <Compile Include="Models\RearCamera.cs" />
-    <Compile Include="Models\Screen.cs" />
     <Compile Include="Models\Store.cs" />
-    <Compile Include="Models\SystemAndCPU.cs" />
-    <Compile Include="Models\Utilities.cs" />
+    <Compile Include="Models\ThuongHieu.cs" />
     <Compile Include="Models\Versions.cs" />
     <Compile Include="Models\Video.cs" />
     <Compile Include="Models\VideoBillboard.cs" />
@@ -202,6 +197,7 @@
     <Compile Include="Repo\ScreenRepo.cs" />
     <Compile Include="Repo\StoreRepo.cs" />
     <Compile Include="Repo\SystermRepo.cs" />
+    <Compile Include="Repo\ThuongHieuRepo.cs" />
     <Compile Include="Repo\UserDeviceRepo.cs" />
     <Compile Include="Repo\VersionRepo.cs" />
     <Compile Include="Repo\VideoBillboardRepo.cs" />

@@ -11,17 +11,10 @@ namespace HamtruyenLibrary.Models
     {
         public Versions()
         {
-            string Name_Version = "256GB";
-            int Price = 10000000;
+            Name_Version = "256GB";
         }
         [BsonElement("Name_Version")]
         public string Name_Version
-        {
-            get;
-            set;
-        }
-        [BsonElement("Price")]
-        public int Price
         {
             get;
             set;

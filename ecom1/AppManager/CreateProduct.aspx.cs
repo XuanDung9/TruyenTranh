@@ -83,11 +83,9 @@ namespace HamtruyenAdmin
             {
                 Name_Product = txtTenSP.Text,
                 Image_Product = imagePath,
-                SKU = txtSKU.Text,
-                Version = selectedVersion,
-                Color = selectedColor,
-                Description = txtMieuTa.Text,   
-                Category = txtCategory.Text,
+                //SKU = txtSKU.Text,
+                //Version = selectedVersion,
+                //Color = selectedColor,
             };
             spRepo.Save(product);
             Response.Redirect("http://localhost:60010/Admin.aspx?mod=2");

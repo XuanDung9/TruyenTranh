@@ -68,18 +68,25 @@ namespace HamtruyenAdmin
                     case "6":
                         {
                             // Quan tri NoiDung
-                            UserControl wucQTNoiDUng = (UserControl)LoadControl("wucQuanLyTours.ascx");
+                            UserControl wucQTNoiDUng = (UserControl)LoadControl("wucColor.ascx");
                             main_content.Controls.Add(wucQTNoiDUng);
                             break;
                         }
-                    case "14":
+                    case "7":
                         {
                             // Quan tri Chapter
-                            UserControl wucQTTheLoai = (UserControl)LoadControl("wucConfigXml.ascx");
+                            UserControl wucQTTheLoai = (UserControl)LoadControl("wucVersion.ascx");
                             main_content.Controls.Add(wucQTTheLoai);
                             break;
                         }
-                 
+                    case "8":
+                        {
+                            // Quan tri Chapter
+                            UserControl wucQTTheLoai = (UserControl)LoadControl("wucBrand.ascx");
+                            main_content.Controls.Add(wucQTTheLoai);
+                            break;
+                        }
+
                     case "16":
                         {
                             // Quan tri Content Manager

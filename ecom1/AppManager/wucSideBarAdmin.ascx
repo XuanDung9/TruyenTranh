@@ -16,13 +16,11 @@
                           <span>Quản Lý Nội Dung</span>
                           <span class="arrow"></span>
                       </a>
-                      <ul class="sub">
-                          
-                          <li><a class="" href="/Admin.aspx?mod=1">Thành Phố</a></li>
+                      <ul class="sub">                        
                           <li><a class="" href="/Admin.aspx?mod=2">Sản Phẩm</a></li>
-                          <li><a class="" href="/Admin.aspx?mod=3">Thành Viên</a></li>
-                          <li><a class="" href="/Admin.aspx?mod=4">Bình Luận</a></li>
-                          <li><a class="" href="/Admin.aspx?mod=6">Tours</a></li>
+                          <li><a class="" href="/Admin.aspx?mod=6">Màu sắc</a></li>
+                          <li><a class="" href="/Admin.aspx?mod=7">Phiên bản</a></li>
+                          <li><a class="" href="/Admin.aspx?mod=8">Thương hiệu</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">

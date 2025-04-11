@@ -342,7 +342,6 @@ namespace HamtruyenLibrary
         }
 
 
-
         /// <summary>
         /// Returns the list of T where it matches the criteria.
         /// </summary>
