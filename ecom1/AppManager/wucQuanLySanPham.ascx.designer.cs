@@ -87,31 +87,67 @@ namespace HamtruyenAdmin
         protected global::System.Web.UI.WebControls.Image imgHinhAnh;
 
         /// <summary>
-        /// cblPhienBan control.
+        /// txtTenPhienBan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList cblPhienBan;
+        protected global::System.Web.UI.WebControls.TextBox txtTenPhienBan;
 
         /// <summary>
-        /// cblMauSac control.
+        /// txtGiaPhienBan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList cblMauSac;
+        protected global::System.Web.UI.WebControls.TextBox txtGiaPhienBan;
 
         /// <summary>
-        /// cblThuongHieu control.
+        /// rptColorImages control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList cblThuongHieu;
+        protected global::System.Web.UI.WebControls.Repeater rptColorImages;
+
+        /// <summary>
+        /// txtTenMauSac control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTenMauSac;
+
+        /// <summary>
+        /// txtMaMau control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMaMau;
+
+        /// <summary>
+        /// txtImgColor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtImgColor;
+
+        /// <summary>
+        /// txtTenThuongHieu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTenThuongHieu;
 
         /// <summary>
         /// btnSave control.

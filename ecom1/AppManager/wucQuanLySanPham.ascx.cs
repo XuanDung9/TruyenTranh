@@ -39,34 +39,10 @@ namespace HamtruyenAdmin
         public void bindData()
         {
             SanPhamRepo repo = new SanPhamRepo();
-            ColorRepo colorRepo = new ColorRepo();
-            VersionRepo versionRepo = new VersionRepo();
             long totalrow = 0;
             var lst = repo.List(ipage, ipagesize, out totalrow);
             gvSanPham.DataSource = lst;
             gvSanPham.DataBind();
-            var dsMau = colorRepo.List().ToList();
-            cblMauSac.DataSource = dsMau;
-            cblMauSac.DataTextField = "Name_Color";
-            cblMauSac.DataValueField = "Id";
-            cblMauSac.DataBind();
-
-            for (int i = 0; i < dsMau.Count; i++)
-            {
-                string colorHex = dsMau[i].Hex_Code_Color;
-                cblMauSac.Items[i].Attributes.Add("style", $"background-color: #{colorHex};");
-            }
-            var dsPhienBan = versionRepo.List().ToList();
-            cblPhienBan.DataSource = dsPhienBan;
-            cblPhienBan.DataTextField = "Name_Version";
-            cblPhienBan.DataValueField = "Id";
-            cblPhienBan.DataBind();
-
-            for (int i = 0; i < dsPhienBan.Count; i++)
-            {
-                string name = dsPhienBan[i].Name_Version;
-                cblMauSac.Items[i].Attributes.Add("style", $"background-color: #{name}");
-            }
         }
 
         public void LoadData()
@@ -88,6 +64,7 @@ namespace HamtruyenAdmin
         public void showDetailItem(string sID)
         {
             SanPhamRepo repo = new SanPhamRepo();
+            ColorRepo coloRep = new ColorRepo();
             Products pd = repo.SelectByID(sID);
             if (pd != null)
             {
@@ -96,34 +73,12 @@ namespace HamtruyenAdmin
                 {
                     imgHinhAnh.ImageUrl = pd.Image_Product;
                 }
-
-                // Check các màu đã chọn
-                var selectedColors = pd.Color?.Select(c => c.Id.ToString()).ToList();
-                if (selectedColors != null)
-                {
-                    foreach (ListItem item in cblMauSac.Items)
-                    {
-                        if (selectedColors.Contains(item.Value))
-                        {
-                            item.Selected = true;
-                        }
-                    }
-                }
-
-                // Check các phiên bản đã chọn
-                var selectedVersions = pd.Version?.Select(v => v.Id.ToString()).ToList();
-                if (selectedVersions != null)
-                {
-                    foreach (ListItem item in cblPhienBan.Items)
-                    {
-                        if (selectedVersions.Contains(item.Value))
-                        {
-                            item.Selected = true;
-                        }
-                    }
-                }
-
-            }
+            } 
+            if(pd.Color!= null && pd.Color.Count>0)
+            {
+                rptColorImages.DataSource = pd.Color;
+                rptColorImages.DataBind();
+            }    
         }
 
         protected void btn_Them(object sender, EventArgs e)
@@ -146,8 +101,7 @@ namespace HamtruyenAdmin
         protected void btn_Save(object sender, EventArgs e)
         {
             string imagePath = "";
-            //string selectedColor = ddlMauSac.SelectedItem.Text;
-            //string selectedVersion = ddlVersion.SelectedItem.Text;
+            string imgColor = "";
             if (fuHinhAnh.HasFile)
             {
                 try
@@ -159,6 +113,7 @@ namespace HamtruyenAdmin
                     fuHinhAnh.SaveAs(savePath);
 
                     imagePath = "~/img/" + fileName;
+
                 }
                 catch (Exception ex)
                 {
@@ -166,7 +121,29 @@ namespace HamtruyenAdmin
                     return;
                 }
             }
+            foreach (RepeaterItem item in rptColorImages.Items)
+            {
+                FileUpload fu = (FileUpload)item.FindControl("fuColor");
+                if (fu.HasFile)
+                {
+                    try
+                    {
+                        string fileName = Path.GetFileName(fu.FileName);
+                        string folderPath = Server.MapPath("~/img/");
 
+                        string savePath = Path.Combine(folderPath, fileName);
+                        fu.SaveAs(savePath);
+
+                        imgColor = "~/img/" + fileName;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write("Lỗi upload ảnh: " + ex.Message + "");
+                        return;
+                    }
+                }
+            }
 
 
             SanPhamRepo repo = new SanPhamRepo();
@@ -175,48 +152,31 @@ namespace HamtruyenAdmin
             {
                 itemUpdate.Image_Product = imagePath;
             }
-
-            List<Color> selectedColor = new List<Color>();
-            foreach (ListItem item in cblMauSac.Items)
+            itemUpdate.Color = new List<Color>
             {
-                if (item.Selected)
+                new Color
                 {
-                    selectedColor.Add(new Color
-                    {
-                        Id = new ObjectId(item.Value),
-                        Name_Color = item.Text,                         
-                    });
+                    Name_Color = txtTenMauSac.Text,
+                    Hex_Code_Color=txtMaMau.Text,
+                    Img_Color=imgColor
                 }
-            }
-
-            List<Versions> selectedVersion = new List<Versions>();
-            foreach(ListItem item in cblPhienBan.Items)
+            };     
+            itemUpdate.ThuongHieu = new List<ThuongHieu>
             {
-                if(item.Selected)
+                new ThuongHieu
                 {
-                    selectedVersion.Add(new Versions
-                    {
-                        Id = new ObjectId(item.Value),
-                        Name_Version = item.Text,
-                    });
-                }    
-            }
-
-            List<ThuongHieu> selectedThuongHieu = new List<ThuongHieu>();
-            foreach(ListItem item in cblThuongHieu.Items)
+                    TenThuongHieu = txtTenThuongHieu.Text
+                }
+            };
+            itemUpdate.Version = new List<Versions>
             {
-                if(item.Selected)
+                new Versions
                 {
-                    selectedThuongHieu.Add(new ThuongHieu
-                    {
-                        TenThuongHieu = item.Text,
-                    });
-                }    
-            }    
+                     Name_Version = txtTenPhienBan.Text,
+                     
+                }
+            };
 
-            itemUpdate.Color = selectedColor;
-            itemUpdate.Version = selectedVersion;
-            itemUpdate.ThuongHieu = selectedThuongHieu;
             itemUpdate.Name_Product = txtProductName.Text;
             repo.UpdateProduct(itemUpdate, PID);
             LoadData();

@@ -11,8 +11,8 @@ namespace HamtruyenLibrary.Models
     {
         public Store()
         {
-            string Address = "Thái hà";
-            string Phone = "0987654321";
+             Address = "Thái hà";
+             Phone = "0987654321";
 
         }
         [BsonElement("Address")]

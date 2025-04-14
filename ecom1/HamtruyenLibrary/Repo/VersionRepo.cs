@@ -28,13 +28,13 @@ namespace HamtruyenLibrary.Repo
             IMongoQuery query = Query<Versions>.Where(c => c.Name_Version.ToLower().Contains(sKey.ToLower()));
             return MainDb.Instant.Find<Versions>(query);
         }
-        public void UpdateVersion(string newName, int newPrice,string ID)
-        {
-            IMongoQuery query = Query<Versions>.EQ(c => c.Id, ObjectId.Parse(ID));
-            IMongoUpdate update = Update<Versions>.Set(c => c.Name_Version, newName);
-            MainDb.Instant.Update<Versions>(query, update);
+        //public void UpdateVersion(string newName, int newPrice,string ID)
+        //{
+        //    IMongoQuery query = Query<Versions>.EQ(c => c.Id, ObjectId.Parse(ID));
+        //    IMongoUpdate update = Update<Versions>.Set(c => c.Name_Version, newName);
+        //    MainDb.Instant.Update<Versions>(query, update);
                 
-        }
+        //}
         public Versions SelectByID(string ID)
         {
             if(string.IsNullOrEmpty(ID))

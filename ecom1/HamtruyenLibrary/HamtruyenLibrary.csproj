@@ -159,12 +159,8 @@
     <Compile Include="Models\AnimalUser.cs" />
     <Compile Include="Models\Application.cs" />
     <Compile Include="Models\AppMobile.cs" />
-    <Compile Include="Models\Battery.cs" />
-    <Compile Include="Models\BoNho.cs" />
-    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Color.cs" />
     <Compile Include="Models\ContentManager.cs" />
-    <Compile Include="Models\DanhMuc.cs" />
     <Compile Include="Models\InfoApp.cs" />
     <Compile Include="Models\MassageStore.cs" />
     <Compile Include="Models\Menu.cs" />

@@ -7,7 +7,7 @@ using System.Text;
 namespace HamtruyenLibrary.Models
 {
     [CollectionName("Color")]
-    public class Color:IObject
+    public class Color
     {
         public Color()
         {

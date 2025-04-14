@@ -47,10 +47,5 @@ namespace HamtruyenLibrary.Models
             get;
             set;
         }
-
-
-
-
-
     }
 }

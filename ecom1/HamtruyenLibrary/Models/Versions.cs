@@ -7,7 +7,7 @@ using System.Text;
 namespace HamtruyenLibrary.Models
 {
     [CollectionName("Versions")]
-    public class Versions : IObject
+    public class Versions 
     {
         public Versions()
         {

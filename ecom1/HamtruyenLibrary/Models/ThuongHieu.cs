@@ -12,9 +12,12 @@ namespace HamtruyenLibrary.Models
         public ThuongHieu()
         {
             TenThuongHieu = "SamSung";
+            MoTa = "SamSung";
 
         }
         [BsonElement("TenThuongHieu")]
         public string TenThuongHieu { get; set; }
+        [BsonElement("MoTa")]
+        public string MoTa { get; set; }
     }
 }

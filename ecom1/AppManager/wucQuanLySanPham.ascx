@@ -111,6 +111,7 @@
                     </ul>
                 </div>
             </div>
+
             <div class="row-fluid">
                 <div class="form-group">
                     <label for="txtProductName">Tên Sản Phẩm:</label>
@@ -122,33 +123,41 @@
                         <asp:FileUpload ID="fuHinhAnh" runat="server" CssClass="default" />
                         <br />
                         <asp:Image ID="imgHinhAnh" runat="server" Width="150px" Height="150px" />
-
                     </div>
                 </div>
+
                 <div class="control-group">
                     <label class="control-label">Phiên bản</label>
                     <div class="controls">
-                        <asp:CheckBoxList ID="cblPhienBan" runat="server" CssClass="color-checkbox-list"
-                            DataTextField="Name_Version" DataValueField="Id" RepeatDirection="Horizontal" RepeatColumns="5">
-                        </asp:CheckBoxList>
+                        <asp:TextBox ID="txtTenPhienBan" runat="server" CssClass="form-control" placeholder="Tên Phiên bản"></asp:TextBox>
+                        <asp:TextBox ID="txtGiaPhienBan" runat="server" CssClass="form-control" placeholder="Gía tiền"></asp:TextBox>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label">  sắc</label>
+                    <label class="control-label">Màu sắc</label>
                     <div class="controls">
-                        <asp:CheckBoxList ID="cblMauSac" runat="server" CssClass="color-checkbox-list"
-                            DataTextField="Name_Color" DataValueField="Id" RepeatDirection="Horizontal" RepeatColumns="5">
-                        </asp:CheckBoxList>
+                        <asp:Repeater ID="rptColorImages" runat="server">
+                            <ItemTemplate>
+                                <div style="display: inline-block; margin: 10px; text-align: center;">
+                                    <asp:Image ID="imgColorItem" runat="server" Width="100px" Height="100px" ImageUrl='<%# Eval("Img_Color") %>' />
+                                    <br />
+                                    <asp:Label ID="lblColorName" runat="server" Text='<%# Eval("Name_Color") %>'></asp:Label>
+                                </div>
+                                <br />
+                                <asp:FileUpload ID="fuColor" runat="server" CssClass="default" />
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        <asp:TextBox ID="txtTenMauSac" runat="server" CssClass="form-control" placeholder="Tên màu sắc"></asp:TextBox>
+                        <asp:TextBox ID="txtMaMau" runat="server" CssClass="form-control" placeholder="Mã màu"></asp:TextBox>
+                        <asp:TextBox ID="txtImgColor" runat="server" CssClass="form-control" placeholder="Gía tiền"></asp:TextBox>
 
+                        <br />
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">Thương hiệu </label>
                     <div class="controls">
-                        <asp:CheckBoxList ID="cblThuongHieu" runat="server" CssClass="color-checkbox-list"
-                            DataTextField="TenThuongHieu" DataValueField="Id" RepeatDirection="Horizontal" RepeatColumns="5">
-                        </asp:CheckBoxList>
-
+                        <asp:TextBox ID="txtTenThuongHieu" runat="server" CssClass="form-control" placeholder="Tên Thương hiệu"></asp:TextBox>
                     </div>
                 </div>
                 <asp:Button ID="btnSave" runat="server" Text="Lưu" CommandName="Update" CssClass="btn btn-success" OnClick="btn_Save" OnClientClick="return confirm('Xác nhận cập nhật?');" />
