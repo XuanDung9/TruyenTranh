@@ -39,10 +39,16 @@ namespace HamtruyenAdmin
         public void bindData()
         {
             SanPhamRepo repo = new SanPhamRepo();
+            DanhMucRepo danhMucRepo = new DanhMucRepo();
+            var lstDanhMuc = danhMucRepo.GetAll();
             long totalrow = 0;
             var lst = repo.List(ipage, ipagesize, out totalrow);
             gvSanPham.DataSource = lst;
             gvSanPham.DataBind();
+            ddlDanhMuc.DataSource = lstDanhMuc;
+            ddlDanhMuc.DataTextField = "TenDanhMuc";
+            ddlDanhMuc.DataValueField = "Id";
+            ddlDanhMuc.DataBind();
         }
 
         public void LoadData()
@@ -64,21 +70,27 @@ namespace HamtruyenAdmin
         public void showDetailItem(string sID)
         {
             SanPhamRepo repo = new SanPhamRepo();
-            ColorRepo coloRep = new ColorRepo();
-            Products pd = repo.SelectByID(sID);
+            Products pd = repo.GetById(sID);
             if (pd != null)
             {
-                txtProductName.Text = pd.Name_Product;
-                if (!string.IsNullOrEmpty(pd.Image_Product))
+                txtTenSP.Text = pd.TenSP;
+                if (!string.IsNullOrEmpty(pd.HinhAnh))
                 {
-                    imgHinhAnh.ImageUrl = pd.Image_Product;
+                    imgAnhSP.ImageUrl = pd.HinhAnh;
                 }
-            } 
-            if(pd.Color!= null && pd.Color.Count>0)
-            {
-                rptColorImages.DataSource = pd.Color;
-                rptColorImages.DataBind();
-            }    
+                txtChieuDai.Text = pd.ChieuDai.ToString();
+                txtCanNang.Text = pd.CanNang.ToString();
+                txtMauSac.Text = pd.MauSac;
+                txtMoTa.Text = pd.MoTa;
+                txtSoLuong.Text = pd.SoLuong.ToString();
+                if(pd.DanhMuc!= null && !string.IsNullOrEmpty(pd.DanhMuc.Id.ToString()))
+                {
+                    ddlDanhMuc.ClearSelection();
+                    ddlDanhMuc.Items.FindByValue(pd.DanhMuc.Id.ToString()).Selected = true;
+                }    
+      
+            }
+            ShowEdit();
         }
 
         protected void btn_Them(object sender, EventArgs e)
@@ -86,9 +98,6 @@ namespace HamtruyenAdmin
             SanPhamRepo repo = new SanPhamRepo();
             Products product = new Products
             {
-                Name_Product = "New Product",
-                Image_Product = null,
-
             };
             repo.Save(product);
             bindData();
@@ -98,19 +107,29 @@ namespace HamtruyenAdmin
             ShowList();
         }
 
+        protected void cbTrue_CheckedChanged(object sender, EventArgs e)
+        {
+            cbFalse.Checked = !cbTrue.Checked;
+        }
+
+        protected void cbFalse_CheckedChanged(object sender, EventArgs e)
+        {
+            cbTrue.Checked = !cbFalse.Checked;
+        }
+
+
         protected void btn_Save(object sender, EventArgs e)
         {
             string imagePath = "";
-            string imgColor = "";
-            if (fuHinhAnh.HasFile)
+            if (fuAnhSP.HasFile)
             {
                 try
                 {
-                    string fileName = Path.GetFileName(fuHinhAnh.FileName);
+                    string fileName = Path.GetFileName(fuAnhSP.FileName);
                     string folderPath = Server.MapPath("~/img/");
 
                     string savePath = Path.Combine(folderPath, fileName);
-                    fuHinhAnh.SaveAs(savePath);
+                    fuAnhSP.SaveAs(savePath);
 
                     imagePath = "~/img/" + fileName;
 
@@ -121,65 +140,43 @@ namespace HamtruyenAdmin
                     return;
                 }
             }
-            foreach (RepeaterItem item in rptColorImages.Items)
-            {
-                FileUpload fu = (FileUpload)item.FindControl("fuColor");
-                if (fu.HasFile)
-                {
-                    try
-                    {
-                        string fileName = Path.GetFileName(fu.FileName);
-                        string folderPath = Server.MapPath("~/img/");
-
-                        string savePath = Path.Combine(folderPath, fileName);
-                        fu.SaveAs(savePath);
-
-                        imgColor = "~/img/" + fileName;
-
-                    }
-                    catch (Exception ex)
-                    {
-                        Response.Write("Lỗi upload ảnh: " + ex.Message + "");
-                        return;
-                    }
-                }
-            }
-
 
             SanPhamRepo repo = new SanPhamRepo();
-            var itemUpdate = repo.SelectByID(PID);
-            if (!string.IsNullOrEmpty(imagePath))
+            var itemUpdate = repo.GetById(PID);
+            try
             {
-                itemUpdate.Image_Product = imagePath;
-            }
-            itemUpdate.Color = new List<Color>
-            {
-                new Color
+                itemUpdate.TenSP = txtTenSP.Text;
+                if (!string.IsNullOrEmpty(imagePath))
+                {   
+                    itemUpdate.HinhAnh = imagePath;
+                }    
+                itemUpdate.ChieuDai = double.Parse(txtChieuDai.Text);
+                itemUpdate.CanNang = double.Parse(txtCanNang.Text);
+                itemUpdate.MauSac = txtMauSac.Text;
+                itemUpdate.GiaTien =int.Parse(txtGiaTien.Text);
+                itemUpdate.MoTa = txtMoTa.Text;
+                itemUpdate.SoLuong = int.Parse(txtSoLuong.Text);
+                itemUpdate.DanhMuc = new DanhMuc
                 {
-                    Name_Color = txtTenMauSac.Text,
-                    Hex_Code_Color=txtMaMau.Text,
-                    Img_Color=imgColor
-                }
-            };     
-            itemUpdate.ThuongHieu = new List<ThuongHieu>
-            {
-                new ThuongHieu
-                {
-                    TenThuongHieu = txtTenThuongHieu.Text
-                }
-            };
-            itemUpdate.Version = new List<Versions>
-            {
-                new Versions
-                {
-                     Name_Version = txtTenPhienBan.Text,
-                     
-                }
-            };
+                    Id = ObjectId.Parse(ddlDanhMuc.SelectedValue),
+                    TenDanhMuc = ddlDanhMuc.SelectedItem.Text
+                };
 
-            itemUpdate.Name_Product = txtProductName.Text;
-            repo.UpdateProduct(itemUpdate, PID);
-            LoadData();
+                if (cbFalse.Checked)
+                {
+                    itemUpdate.HoatDong = false;
+                }
+                else if (cbTrue.Checked)
+                {
+                    itemUpdate.HoatDong = true;
+                }
+                repo.UpdateProduct(itemUpdate, PID);
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR : ", ex.Message);
+            }
 
         }
 

@@ -11,41 +11,66 @@ namespace HamtruyenLibrary.Models
     {
         public Products()
         {
-            Name_Product = "iPhone 16 Pro Max (256GB)";
-            Image_Product = "path";
-            Version = new List<Versions>(); // bộ nhớ 
-            Color = new List<Color>();
-            ThuongHieu = new List<ThuongHieu>();
+            TenSP = "";
+            HinhAnhs = new List<string>();
+            MauSac = "Màu";
+            MoTa = "Mô tả sp";
+            Options = new List<Option>();
+            DanhMuc = null; // truy vấn theo id danh mục 
+            HoatDong = false; 
+
+            
         }
-        [BsonElement("Name_Product")]
-        public string Name_Product
+        [BsonElement("TenSP")]
+        public string TenSP
         {
             get;
             set;
         }
-        [BsonElement("Image_Product")]
-        public string Image_Product
+        [BsonElement("HinhAnhs")]
+        public List<string> HinhAnhs
         {
             get;
             set;
         }
-        [BsonElement("Version")]
-        public List<Versions> Version
+        [BsonElement("MauSac")]
+        public string MauSac
         {
             get;
             set;
         }
-        [BsonElement("Color")]
-        public List< Color> Color
+        [BsonElement("MoTa")]
+        public string MoTa
         {
             get;
             set;
         }
-        [BsonElement("ThuongHieu")]
-        public List<ThuongHieu> ThuongHieu
+        [BsonElement("DanhMuc")]
+        public DanhMuc DanhMuc { get; set; }
+
+        [BsonElement("HoatDong")]
+        public bool HoatDong { get; set; }
+        [BsonElement("Options")]
+        public List<Option> Options { get; set; } // option giống như biến thể sp
+
+
+        public class Option
         {
-            get;
-            set;
+            public Option()
+            {
+
+            }
+            [BsonElement("ChieuDai")]
+            public double ChieuDai { get; set; }
+
+            [BsonElement("CanNang")]
+            public double CanNang { get; set; }
+
+            [BsonElement("GiaTien")]
+            public int GiaTien { get; set; }
+
+            [BsonElement("SoLuong")]
+            public int SoLuong { get; set; }
         }
     }
 }

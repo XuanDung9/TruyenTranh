@@ -29,12 +29,12 @@ namespace HamtruyenLibrary.Repo
             return MainDb.Instant.Find<Color>(query);
         }
 
-        public void UpdateColor(string IdStory,List<Color> lstColor)
-        {
-            IMongoQuery query = Query<Products>.EQ(c => c.Id, ObjectId.Parse(IdStory));
-            IMongoUpdate update = Update<Products>.Set(c => c.Color, lstColor);
-            MainDb.Instant.Update<Products>(query, update);
-        }
+        //public void UpdateColor(string IdStory,List<Color> lstColor)
+        //{
+        //    IMongoQuery query = Query<Products>.EQ(c => c.Id, ObjectId.Parse(IdStory));
+        //    IMongoUpdate update = Update<Products>.Set(c => c.Color, lstColor);
+        //    MainDb.Instant.Update<Products>(query, update);
+        //}
 
 
         //public void UpdateColor(string newName, string newHexCode,int newPrice,string ID)

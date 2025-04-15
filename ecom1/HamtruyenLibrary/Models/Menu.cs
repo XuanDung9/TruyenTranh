@@ -15,7 +15,7 @@ namespace HamtruyenLibrary.Models
         }
 
         //tên menu
-        [BsonRequired]
+        [BsonRequired]      
         [BsonElement("MenuName")]// text 
         public string MenuName { get; set; }
 
@@ -26,11 +26,11 @@ namespace HamtruyenLibrary.Models
         public string ImageUrl { get; set; }
 
         [BsonElement("MenuParentID")] // menu cha
-        public string MenuParent { get; set; }
+        public ObjectId? MenuParentID { get; set; }
 
 
         [BsonElement("IsHorizontal")] // xác định menu được thể hiện theo ngang hoặc dọc 
-        public string IsHorizontal { get; set; }
+        public bool IsHorizontal { get; set; } // true dọc / false ngang 
 
 
     }

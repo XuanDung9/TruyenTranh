@@ -49,7 +49,7 @@ namespace HamtruyenAdmin
         public void showDetailItem(string sID)
         {
             SanPhamRepo repo = new SanPhamRepo();
-            Products pd = repo.SelectByID(sID);
+            Products pd = repo.GetById(sID);
             if (pd != null)
             {
 
@@ -81,8 +81,8 @@ namespace HamtruyenAdmin
             string selectedVersion = ddlVersion.SelectedItem.Text;
             Products product = new Products
             {
-                Name_Product = txtTenSP.Text,
-                Image_Product = imagePath,
+                TenSP = txtTenSP.Text,
+                HinhAnh = imagePath,
                 //SKU = txtSKU.Text,
                 //Version = selectedVersion,
                 //Color = selectedColor,

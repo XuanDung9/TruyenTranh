@@ -1851,6 +1851,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="wucConfigXml.ascx" />
+    <Content Include="wucDanhMuc.ascx" />
     <Content Include="wucHeaderAdmin.ascx" />
     <Content Include="wucKhongDuQuyenTruyCap.ascx" />
     <Content Include="wucManagerApp.ascx" />
@@ -1862,7 +1863,7 @@
     <Content Include="wucQuanTriMenu.ascx" />
     <Content Include="wucQuanTriModerator.ascx" />
     <Content Include="wucSideBarAdmin.ascx" />
-    <Content Include="wucVersion.ascx" />
+    <Content Include="wucDonHang.ascx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.aspx.cs">
@@ -1938,6 +1939,13 @@
     </Compile>
     <Compile Include="wucConfigXml.ascx.designer.cs">
       <DependentUpon>wucConfigXml.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="wucDanhMuc.ascx.cs">
+      <DependentUpon>wucDanhMuc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucDanhMuc.ascx.designer.cs">
+      <DependentUpon>wucDanhMuc.ascx</DependentUpon>
     </Compile>
     <Compile Include="wucHeaderAdmin.ascx.cs">
       <DependentUpon>wucHeaderAdmin.ascx</DependentUpon>
@@ -2016,12 +2024,12 @@
     <Compile Include="wucSideBarAdmin.ascx.designer.cs">
       <DependentUpon>wucSideBarAdmin.ascx</DependentUpon>
     </Compile>
-    <Compile Include="wucVersion.ascx.cs">
-      <DependentUpon>wucVersion.ascx</DependentUpon>
+    <Compile Include="wucDonHang.ascx.cs">
+      <DependentUpon>wucDonHang.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="wucVersion.ascx.designer.cs">
-      <DependentUpon>wucVersion.ascx</DependentUpon>
+    <Compile Include="wucDonHang.ascx.designer.cs">
+      <DependentUpon>wucDonHang.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

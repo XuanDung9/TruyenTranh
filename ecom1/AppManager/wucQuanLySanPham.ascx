@@ -51,34 +51,31 @@
                 <asp:GridView ID="gvSanPham" runat="server" AutoGenerateColumns="False"
                     CssClass="table table-striped" DataKeyNames="Id" OnRowCommand="gvSanPham_RowCommand">
                     <Columns>
-                        <asp:BoundField DataField="Name_Product" HeaderText="Tên Sản Phẩm" />
+                        <asp:BoundField DataField="TenSP" HeaderText="Tên Sản Phẩm" />
                         <asp:TemplateField HeaderText="Hình ảnh">
                             <ItemTemplate>
-                                <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("Image_Product") %>' Width="100px" Height="80px" />
+                                <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("HinhAnh") %>' Width="100px" Height="80px" />
                             </ItemTemplate>
                         </asp:TemplateField>
-
-                        <asp:TemplateField HeaderText="Màu">
+                        <asp:BoundField DataField="ChieuDai" HeaderText="Chiều dài" />
+                        <asp:BoundField DataField="CanNang" HeaderText="Cân nặng" />
+                        <asp:BoundField DataField="MauSac" HeaderText="Màu sắc" />
+                        <asp:BoundField DataField="GiaTien" HeaderText="Gía tiền" />
+                        <asp:BoundField DataField="MoTa" HeaderText="Mô tả" />
+                        <asp:BoundField DataField="SoLuong" HeaderText="Số lượng" />
+                        <asp:TemplateField HeaderText="Danh mục">
                             <ItemTemplate>
-                                <%# string.Join(", ", ((List<HamtruyenLibrary.Models.Color>)Eval("Color")).Select(c => c.Name_Color)) %>
+                                <%# Eval("DanhMuc.TenDanhMuc") %>
                             </ItemTemplate>
                         </asp:TemplateField>
-
-                        <asp:TemplateField HeaderText="Phiên bản">
+                        <asp:TemplateField HeaderText="Hoạt động">
                             <ItemTemplate>
-                                <%# string.Join(", ", ((List<HamtruyenLibrary.Models.Versions>)Eval("Version")).Select(c => c.Name_Version)) %>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-
-                        <asp:TemplateField HeaderText="Thương hiệu">
-                            <ItemTemplate>
-                                <%# string.Join(", ", ((List<HamtruyenLibrary.Models.ThuongHieu>)Eval("ThuongHieu")).Select(c => c.TenThuongHieu)) %>
+                                <%# (bool)Eval("HoatDong") ? "Đang hoạt động" : "Không hoạt động" %>
                             </ItemTemplate>
                         </asp:TemplateField>
 
                         <asp:TemplateField HeaderText="Thao tác">
                             <ItemTemplate>
-                                <%-- <asp:Button ID="btnChiTiet" runat="server" CssClass="btn btn-success" CommandName="ChiTiet" Text="✔" ToolTip="Chi tiết" />--%>
                                 <asp:Button ID="btnSua" runat="server" CssClass="btn btn-primary" CommandName="Sua" Text="✎" ToolTip="Sửa" CommandArgument='<%# Eval("Id") %>' />
                                 <asp:Button ID="btnXoa" runat="server" CssClass="btn btn-danger" CommandName="Xoa" Text="🗑" ToolTip="Xoá" OnClientClick="return confirm('Bạn có chắc muốn xoá?');" CommandArgument='<%# Eval("Id") %>' />
                             </ItemTemplate>
@@ -97,7 +94,7 @@
                 <span class="tools">
                     <a href="javascript:;" class="icon-chevron-down"></a>
                     <a href="javascript:;" class="icon-remove"></a>
-                </span>f
+                </span>
             </div>
             <div class="widget-body">
                 <div class="btn-group pull-right">
@@ -114,52 +111,50 @@
 
             <div class="row-fluid">
                 <div class="form-group">
-                    <label for="txtProductName">Tên Sản Phẩm:</label>
-                    <asp:TextBox ID="txtProductName" runat="server" CssClass="form-control" placeholder="Tên Sản Phẩm"></asp:TextBox>
+                    <label for="txtTenSP">Tên Sản Phẩm:</label>
+                    <asp:TextBox ID="txtTenSP" runat="server" CssClass="form-control" placeholder="Tên Sản Phẩm"></asp:TextBox>
                 </div>
                 <div class="control-group">
                     <label class="control-label">Hình ảnh</label>
                     <div class="controls">
-                        <asp:FileUpload ID="fuHinhAnh" runat="server" CssClass="default" />
+                        <asp:FileUpload ID="fuAnhSP" runat="server" CssClass="default" />
                         <br />
-                        <asp:Image ID="imgHinhAnh" runat="server" Width="150px" Height="150px" />
+                        <asp:Image ID="imgAnhSP" runat="server" Width="100px" Height="80px" />
                     </div>
                 </div>
+                <div class="form-group">
+                    <label>Chiều dài:</label>
+                    <asp:TextBox ID="txtChieuDai" runat="server" CssClass="form-control" placeholder="Nhập chiều dài "></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <label>Cân nặng:</label>
+                    <asp:TextBox ID="txtCanNang" runat="server" CssClass="form-control" placeholder="Nhập cân nặng"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <label>Màu sắc:</label>
+                    <asp:TextBox ID="txtMauSac" runat="server" CssClass="form-control" placeholder="Nhập màu sắc"></asp:TextBox>
+                </div>
+                           <div class="form-group">
+                    <label for="txtGiaTien">Gía tiền</label>
+                    <asp:TextBox ID="txtGiaTien" runat="server" CssClass="form-control" placeholder="Nhập mô tả"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <label for="txtProductName">Mô tả:</label>
+                    <asp:TextBox ID="txtMoTa" runat="server" CssClass="form-control" placeholder="Nhập mô tả"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <label for="txtProductName">Số lượng:</label>
+                    <asp:TextBox ID="txtSoLuong" runat="server" CssClass="form-control" placeholder="Nhập số lượng"></asp:TextBox>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Chọn danh mục sản phẩm </label>
+                    <div class="controls">
+                        <asp:DropDownList ID="ddlDanhMuc" runat="server" CssClass="input-large m-wrap" />
+                    </div>
+                </div>
+                <asp:CheckBox ID="cbTrue" runat="server" AutoPostBack="true"  Text="Đang hoạt động" />
+                <asp:CheckBox ID="cbFalse" runat="server" AutoPostBack="true"  Text="Không hoạt động" />
 
-                <div class="control-group">
-                    <label class="control-label">Phiên bản</label>
-                    <div class="controls">
-                        <asp:TextBox ID="txtTenPhienBan" runat="server" CssClass="form-control" placeholder="Tên Phiên bản"></asp:TextBox>
-                        <asp:TextBox ID="txtGiaPhienBan" runat="server" CssClass="form-control" placeholder="Gía tiền"></asp:TextBox>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">Màu sắc</label>
-                    <div class="controls">
-                        <asp:Repeater ID="rptColorImages" runat="server">
-                            <ItemTemplate>
-                                <div style="display: inline-block; margin: 10px; text-align: center;">
-                                    <asp:Image ID="imgColorItem" runat="server" Width="100px" Height="100px" ImageUrl='<%# Eval("Img_Color") %>' />
-                                    <br />
-                                    <asp:Label ID="lblColorName" runat="server" Text='<%# Eval("Name_Color") %>'></asp:Label>
-                                </div>
-                                <br />
-                                <asp:FileUpload ID="fuColor" runat="server" CssClass="default" />
-                            </ItemTemplate>
-                        </asp:Repeater>
-                        <asp:TextBox ID="txtTenMauSac" runat="server" CssClass="form-control" placeholder="Tên màu sắc"></asp:TextBox>
-                        <asp:TextBox ID="txtMaMau" runat="server" CssClass="form-control" placeholder="Mã màu"></asp:TextBox>
-                        <asp:TextBox ID="txtImgColor" runat="server" CssClass="form-control" placeholder="Gía tiền"></asp:TextBox>
-
-                        <br />
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">Thương hiệu </label>
-                    <div class="controls">
-                        <asp:TextBox ID="txtTenThuongHieu" runat="server" CssClass="form-control" placeholder="Tên Thương hiệu"></asp:TextBox>
-                    </div>
-                </div>
                 <asp:Button ID="btnSave" runat="server" Text="Lưu" CommandName="Update" CssClass="btn btn-success" OnClick="btn_Save" OnClientClick="return confirm('Xác nhận cập nhật?');" />
                 <asp:Button ID="btnCancel" runat="server" Text="Hủy" CssClass="btn btn-danger" OnClick="btn_Cancel" />
             </div>

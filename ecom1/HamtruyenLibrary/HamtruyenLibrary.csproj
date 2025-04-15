@@ -161,6 +161,7 @@
     <Compile Include="Models\AppMobile.cs" />
     <Compile Include="Models\Color.cs" />
     <Compile Include="Models\ContentManager.cs" />
+    <Compile Include="Models\DanhMuc.cs" />
     <Compile Include="Models\InfoApp.cs" />
     <Compile Include="Models\MassageStore.cs" />
     <Compile Include="Models\Menu.cs" />
@@ -183,6 +184,7 @@
     <Compile Include="Repo\ConectRepo.cs" />
     <Compile Include="Repo\ContentManagerRepo.cs" />
     <Compile Include="Repo\AppMobileRepo.cs" />
+    <Compile Include="Repo\DanhMucRepo.cs" />
     <Compile Include="Repo\DesignRepo.cs" />
     <Compile Include="Repo\MenuRepo.cs" />
     <Compile Include="Repo\ModeratorRepo.cs" />

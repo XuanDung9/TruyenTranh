@@ -94,15 +94,15 @@ namespace HamtruyenAdmin
         }
         public void loadData()
         {
-            var query = menuRepo.List();
-            if (Session["AppID"] != null)
-            {
-                query = menuRepo.ListByApp(Session["AppID"].ToString());
-            }
-            query = menuRepo.OrderListMenu(query);
-            gvListMenu.DataSource = query;
-            gvListMenu.DataBind();
-            CreateCombo("--Chọn Menu--", query, ddlListMenuParent, "MenuName", "MongoId");
+            //var query = menuRepo.List();
+            //if (Session["AppID"] != null)
+            //{
+            //    query = menuRepo.ListByApp(Session["AppID"].ToString());
+            //}
+            //query = menuRepo.OrderListMenu(query);
+            //gvListMenu.DataSource = query;
+            //gvListMenu.DataBind();
+            //CreateCombo("--Chọn Menu--", query, ddlListMenuParent, "MenuName", "MongoId");
             
         }
         
@@ -141,76 +141,76 @@ namespace HamtruyenAdmin
        
         protected void gvListMenu_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName.Trim() == "Sua")
-            {
-                showEditGroup();
-                sMID = e.CommandArgument.ToString();
-                showDetailMenu(sMID);
-            }
-            else if (e.CommandName.Trim() == "Xoa")
-            {
-                sMID = e.CommandArgument.ToString();
-                menuRepo.Remove(sMID);
-                loadData();
-            }
+            //if (e.CommandName.Trim() == "Sua")
+            //{
+            //    showEditGroup();
+            //    sMID = e.CommandArgument.ToString();
+            //    showDetailMenu(sMID);
+            //}
+            //else if (e.CommandName.Trim() == "Xoa")
+            //{
+            //    sMID = e.CommandArgument.ToString();
+            //    menuRepo.Remove(sMID);
+            //    loadData();
+            //}
         }
         public void showDetailMenu(string sMenuID)
         {
-            ddlMenuType.ClearSelection();
-            HamtruyenLibrary.Models.Menu mb = menuRepo.SelectByID(sMenuID);
-            txtMenuName.Value = mb.MenuName;
-            txtMenuIDOld.Value = mb.MenuLevel.ToString();
+            //ddlMenuType.ClearSelection();
+            //HamtruyenLibrary.Models.Menu mb = menuRepo.SelectByID(sMenuID);
+            //txtMenuName.Value = mb.MenuName;
+            //txtMenuIDOld.Value = mb.MenuLevel.ToString();
 
-            ddlListMenuParent.ClearSelection();
-            if (mb.MenuParent != "0")
-            {
-                ddlListMenuParent.Items.FindByValue(mb.MenuParent).Selected = true;
-            }
-            ddlMenuType.Items.FindByValue(mb.MenuTypeID.ToString()).Selected = true;
+            //ddlListMenuParent.ClearSelection();
+            //if (mb.MenuParent != "0")
+            //{
+            //    ddlListMenuParent.Items.FindByValue(mb.MenuParent).Selected = true;
+            //}
+            //ddlMenuType.Items.FindByValue(mb.MenuTypeID.ToString()).Selected = true;
           
-            txtMenuLink.Value = mb.MenuLink;
+            //txtMenuLink.Value = mb.MenuLink;
            
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            HamtruyenLibrary.Models.Menu mb = new HamtruyenLibrary.Models.Menu();
-            if (sMID != "-1")
-            {
-               mb = menuRepo.SelectByID(sMID);
-            }
-            string smnuParent = "0";int mnuLevel = 0;
-            string sMenuPathText = "";
-            if (ddlListMenuParent.SelectedValue != "0")
-            {
-                HamtruyenLibrary.Models.Menu mnu_parent = menuRepo.SelectByID(ddlListMenuParent.SelectedValue);
-                smnuParent = mnu_parent.MongoId;
-                sMenuPathText = mnu_parent.MenuPathText + "  " + mnu_parent.MongoId;
-                mnuLevel= mnu_parent.MenuLevel+1;
-            }
-            ContentManager currentAd = (ContentManager)Session["admin"];
-            Privilege roleApp = AdministratorBusiness.checkQuyen(currentAd, 23);
-            if (roleApp.Mod != "-1")
-            {
-                mb.MenuAppID = ddlListApp.SelectedValue;
-            }
-            else
-            {
-                mb.MenuAppID = Session["AppID"].ToString();
-            }
-            mb.MenuTypeID = int.Parse(ddlMenuType.SelectedValue);
-            mb.MenuTypeName = (ddlMenuType.SelectedItem.Text);
-            mb.MenuName = txtMenuName.Value;
-            mb.MenuLink = txtMenuLink.Value;
-            mb.MenuLevel = mnuLevel ;
+            //HamtruyenLibrary.Models.Menu mb = new HamtruyenLibrary.Models.Menu();
+            //if (sMID != "-1")
+            //{
+            //   mb = menuRepo.SelectByID(sMID);
+            //}
+            //string smnuParent = "0";int mnuLevel = 0;
+            //string sMenuPathText = "";
+            //if (ddlListMenuParent.SelectedValue != "0")
+            //{
+            //    HamtruyenLibrary.Models.Menu mnu_parent = menuRepo.SelectByID(ddlListMenuParent.SelectedValue);
+            //    smnuParent = mnu_parent.MongoId;
+            //    sMenuPathText = mnu_parent.MenuPathText + "  " + mnu_parent.MongoId;
+            //    mnuLevel= mnu_parent.MenuLevel+1;
+            //}
+            //ContentManager currentAd = (ContentManager)Session["admin"];
+            //Privilege roleApp = AdministratorBusiness.checkQuyen(currentAd, 23);
+            //if (roleApp.Mod != "-1")
+            //{
+            //    mb.MenuAppID = ddlListApp.SelectedValue;
+            //}
+            //else
+            //{
+            //    mb.MenuAppID = Session["AppID"].ToString();
+            //}
+            //mb.MenuTypeID = int.Parse(ddlMenuType.SelectedValue);
+            //mb.MenuTypeName = (ddlMenuType.SelectedItem.Text);
+            //mb.MenuName = txtMenuName.Value;
+            //mb.MenuLink = txtMenuLink.Value;
+            //mb.MenuLevel = mnuLevel ;
             
-            mb.MenuParent = smnuParent;
-            mb.MenuPathText = sMenuPathText;
+            //mb.MenuParent = smnuParent;
+            //mb.MenuPathText = sMenuPathText;
             
-            menuRepo.Save(mb);
+            //menuRepo.Save(mb);
 
-            loadData();
-            showListMenu();
+            //loadData();
+            //showListMenu();
         }
 
         
