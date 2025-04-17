@@ -82,12 +82,15 @@ namespace HamtruyenLibrary.Repo
 
         public IEnumerable<Products> TimKiemTheoDanhMuc(string sKey)
         {
-            var danhMucId = ObjectId.Parse(sKey); //ép kiểu cho nó trước
+            var danhMucId = ObjectId.Parse(sKey); 
             IMongoQuery query = Query<Products>.EQ(c => c.DanhMuc.Id, danhMucId);
             return MainDb.Instant.Find<Products>(query);
         }
 
-
+        public IEnumerable<Products> TimKiem(string searchKey)
+        {
+            return MainDb.Instant.All<Products>().Where(P => P.TenSP != null && P.TenSP.ToLower().Contains(searchKey.ToLower()));
+        }
         public Products GetById(string ID)
         {
             return MainDb.Instant.GetById<Products>(ID);

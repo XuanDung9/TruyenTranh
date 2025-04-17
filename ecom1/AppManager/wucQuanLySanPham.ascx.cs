@@ -299,5 +299,13 @@ namespace HamtruyenAdmin
             }
 
         }
+        protected void btn_TimKiem(object sender, EventArgs e)
+        {
+            SanPhamRepo repo = new SanPhamRepo();
+            string kSearch = txtTimKiem.Text;
+            var lstProduct = repo.TimKiem(kSearch);
+            gvSanPham.DataSource = lstProduct;
+            gvSanPham.DataBind();
+        }
     }
 }

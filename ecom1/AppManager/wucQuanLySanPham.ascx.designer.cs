@@ -33,6 +33,24 @@ namespace HamtruyenAdmin
         protected global::System.Web.UI.WebControls.Button btnThemSP;
 
         /// <summary>
+        /// txtTimKiem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTimKiem;
+
+        /// <summary>
+        /// btnTimKiem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTimKiem;
+
+        /// <summary>
         /// pnlQuanLySanPham control.
         /// </summary>
         /// <remarks>

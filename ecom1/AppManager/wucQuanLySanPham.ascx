@@ -33,18 +33,12 @@
                 </span>
             </div>
             <div class="widget-body">
-                <asp:Button ID="btnThemSP" runat="server" CssClass="btn btn-primary" CommandName="ThemSanPham" Text="Thêm Sản Phẩm" ToolTip="Thêm SP" OnClick="btn_Them" />
-                <div class="clearfix">
-                </div>
-                <div class="btn-group pull-right">
-                    <button class="btn dropdown-toggle" data-toggle="dropdown">
-                        Tools <i class="icon-angle-down"></i>
-                    </button>
-                    <ul class="dropdown-menu pull-right">
-                        <li><a href="#">Print</a></li>
-                        <li><a href="#">Save as PDF</a></li>
-                        <li><a href="#">Export to Excel</a></li>
-                    </ul>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <asp:Button ID="btnThemSP" runat="server" CssClass="btn btn-primary" CommandName="ThemSanPham" Text="Thêm Sản Phẩm" ToolTip="Thêm SP" OnClick="btn_Them" />
+                    <asp:Panel runat="server" DefaultButton="btnTimKiem">
+                        <asp:TextBox ID="txtTimKiem" runat="server" />
+                        <asp:Button ID="btnTimKiem" runat="server" Text="Tìm kiếm" OnClick="btn_TimKiem" />
+                    </asp:Panel>
                 </div>
             </div>
             <asp:Panel ID="pnlQuanLySanPham" runat="server" CssClass="table table-striped" Style="table-layout: fixed; width: 100%;">
@@ -157,7 +151,7 @@
                 <div class="control-group">
                     <label class="control-label">xLarge Textarea</label>
                     <div class="controls">
-                        <textarea id="txtMoTa" runat="server" class="input-xlarge" rows="3"></textarea>
+                        <textarea id="txtMoTa" runat="server" class="input-xxlarge" rows="3"></textarea>
                     </div>
                 </div>
 
