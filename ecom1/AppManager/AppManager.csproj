@@ -326,6 +326,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Crawlers\Complete.html" />
+    <Content Include="wucBaiViet.ascx" />
     <Content Include="wucBrand.ascx" />
     <Content Include="wucColor.ascx" />
     <Content Include="CreateProduct.aspx" />
@@ -1872,6 +1873,13 @@
     </Compile>
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wucBaiViet.ascx.cs">
+      <DependentUpon>wucBaiViet.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wucBaiViet.ascx.designer.cs">
+      <DependentUpon>wucBaiViet.ascx</DependentUpon>
     </Compile>
     <Compile Include="wucBrand.ascx.cs">
       <DependentUpon>wucBrand.ascx</DependentUpon>

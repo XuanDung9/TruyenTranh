@@ -2,7 +2,7 @@
 <div class="row-fluid" id="notification">
     <div class="span12">
         <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-        <h3 class="page-title">Quản lý phiên bản 
+        <h3 class="page-title">Quản Lý Đơn Hàng
         </h3>
         <ul class="breadcrumb">
             <li>

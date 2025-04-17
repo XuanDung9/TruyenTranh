@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using static HamtruyenLibrary.Models.Products;
 
 namespace HamtruyenLibrary.Repo
 {
@@ -21,10 +22,17 @@ namespace HamtruyenLibrary.Repo
             MainDb.Instant.Save(product);
         }
 
-        public IEnumerable<Products> List(int iPage, int iPageSize, out long totalrows)
+        public IEnumerable<Products> GetAll(int iPage, int iPageSize, out long totalrows)
         {
             return MainDb.Instant.All<Products>(SortBy<Products>.Descending(c => c.Id), iPage,
                 iPageSize, out totalrows);
+        }
+
+        public IEnumerable<Products> GetByType () // danh sách các sản phẩm đang hoạt động 
+        {
+            IMongoQuery query = Query<Products>.EQ(p => p.TrangThai, true);
+            List<Products> products = MainDb.Instant.Find<Products>(query).ToList();
+            return products;
         }
 
 
@@ -34,10 +42,10 @@ namespace HamtruyenLibrary.Repo
             return MainDb.Instant.Find<Products>(query, iPage, iPageSize, out totalrows);
         }
 
-        public void SetActiveProduct(Products product , string id , bool active)
+        public void SetActiveProduct(Products product, string id, bool active)
         {
             IMongoQuery query = Query<Products>.EQ(C => C.Id, ObjectId.Parse(id));
-            IMongoUpdate update = Update<Products>.Set(c => c.HoatDong, active);
+            IMongoUpdate update = Update<Products>.Set(c => c.TrangThai, active);
             MainDb.Instant.Update<Products>(query, update);
         }
         public void UpdateProduct(Products updatedProduct, string ID)
@@ -45,16 +53,29 @@ namespace HamtruyenLibrary.Repo
             IMongoQuery query = Query<Products>.EQ(c => c.Id, ObjectId.Parse(ID));
             IMongoUpdate update = Update<Products>
                 .Set(c => c.TenSP, updatedProduct.TenSP)
-                .Set(c => c.HinhAnh, updatedProduct.HinhAnh)
-                .Set(c => c.ChieuDai, updatedProduct.ChieuDai)
-                .Set(c => c.CanNang, updatedProduct.CanNang)
-                .Set(c => c.GiaTien, updatedProduct.GiaTien)
+                .Set(c => c.HinhAnhs, updatedProduct.HinhAnhs)
                 .Set(c => c.MauSac, updatedProduct.MauSac)
                 .Set(c => c.MoTa, updatedProduct.MoTa)
-                .Set(c => c.SoLuong, updatedProduct.SoLuong)
                 .Set(c => c.DanhMuc, updatedProduct.DanhMuc)
-                .Set(c => c.HoatDong, updatedProduct.HoatDong);
+                .Set(c => c.TrangThai, updatedProduct.TrangThai)
+                .Set(c => c.AnhDaiDien, updatedProduct.AnhDaiDien)
+                .Set(c => c.Options, updatedProduct.Options);
 
+            MainDb.Instant.Update<Products>(query, update);
+        }
+
+        public void UpdateOption(string idProduct, List<Option> lstOption) // cập nhật các option
+        {
+            IMongoQuery query = Query<Products>.EQ(c => c.Id, ObjectId.Parse(idProduct));
+            IMongoUpdate update = Update<Products>.Set(c => c.Options, lstOption);
+
+            MainDb.Instant.Update<Products>(query, update);
+        }
+
+        public void UpdateImage(string idProduct, List<string> newImage)
+        {
+            IMongoQuery query = Query<Products>.EQ(c => c.Id, ObjectId.Parse(idProduct));
+            IMongoUpdate update = Update<Products>.Set(c => c.HinhAnhs, newImage);
 
             MainDb.Instant.Update<Products>(query, update);
         }

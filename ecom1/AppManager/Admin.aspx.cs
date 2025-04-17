@@ -87,10 +87,10 @@ namespace HamtruyenAdmin
                             break;
                         }
 
-                    case "16":
+                    case "9":
                         {
                             // Quan tri Content Manager
-                            UserControl wucQTTheLoai = (UserControl)LoadControl("wucQuanTriContentManager.ascx");
+                            UserControl wucQTTheLoai = (UserControl)LoadControl("wucBaiViet.ascx");
                             main_content.Controls.Add(wucQTTheLoai);
                             break;
                         }

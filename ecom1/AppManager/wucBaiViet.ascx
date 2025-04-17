@@ -1,9 +1,8 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="wucQuanTriMenu.ascx.cs" Inherits="HamtruyenAdmin.wucQuanTriMenu" %>
-<!-- BEGIN PAGE HEADER-->
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="wucBaiViet.ascx.cs" Inherits="HamtruyenAdmin.wucBaiViet" %>
 <div class="row-fluid" id="notification">
     <div class="span12">
         <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-        <h3 class="page-title">Quản Lý Danh Sách Menu
+        <h3 class="page-title">Quản Lý Bài Viết
         </h3>
         <ul class="breadcrumb">
             <li>
@@ -14,7 +13,7 @@
                 <a href="/Admin.aspx">Quản Lý Nội Dung</a>
                 <span class="divider">/</span>
             </li>
-            <li class="active">Tạo Cây Menu
+            <li class="active">Tạo Bài Viết
             </li>
             <li class="pull-right search-wrap"></li>
         </ul>
@@ -23,11 +22,11 @@
 </div>
 <!-- END PAGE HEADER-->
 <!--START LIST MENU-->
-<div class="row-fluid" id="list_menu" runat="server">
+<div class="row-fluid" id="list_post" runat="server">
     <div class="span12">
         <div class="widget orange">
             <div class="widget-title">
-                <h4><i class="icon-reorder"></i>Danh sách các Menu</h4>
+                <h4><i class="icon-reorder"></i>Danh sách Bìa Viết</h4>
                 <span class="tools">
                     <a href="javascript:;" class="icon-chevron-down"></a>
                     <a href="javascript:;" class="icon-remove"></a>
@@ -35,9 +34,9 @@
             </div>
             <div class="widget-body">
                 <div class="control-group">
-                    <asp:Button ID="btnAddMenu" CssClass="btn btn-info" runat="server" Text="Thêm Menu Mới" OnClick="btnAddMenu_Click" />
+                    <asp:Button ID="btnAddPost" CssClass="btn btn-info" runat="server" Text="Thêm Bài Viết Mới" OnClick="btnAddPost_Click" />
                 </div>
-                <asp:GridView ID="gvListMenu" CssClass="table table-striped table-bordered table-advance table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" OnRowCommand="gvListMenu_RowCommand">
+                <asp:GridView ID="gvListPost" CssClass="table table-striped table-bordered table-advance table-hover" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" OnRowCommand="gvListPost_RowCommand">
                     <Columns>
                         <asp:TemplateField>
                             <ItemTemplate>
@@ -45,13 +44,10 @@
                                 <asp:LinkButton runat="server" ID="btnXoa" CommandName="Xoa" CommandArgument='<%# Eval("Id") %>' CssClass="btn btn btn-danger"><i class="icon-trash "></i></asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField HeaderText="Tên Menu" DataField="MenuName" />
-                        <asp:TemplateField HeaderText="Kiểu Menu">
-                            <ItemTemplate>
-                                <%# (bool)Eval("IsHorizontal") ? "Menu ngang" : "Menu dọc" %>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:BoundField HeaderText="Loại Menu" DataField="Type" />
+                        <asp:BoundField HeaderText="Tiêu đề" DataField="TieuDe" />
+                        <asp:BoundField HeaderText="Nội dung " DataField="NoiDung" />
+                        <asp:BoundField HeaderText="Ngày đăng" DataField="NgayDang" />
+                        <asp:BoundField HeaderText="Trạng thái" DataField="TrangThai" />
                     </Columns>
                     <EmptyDataTemplate>
                         <div class="green">
@@ -67,10 +63,10 @@
 </div>
 <!--END LIST MENU-->
 <!--START EDIT MENUFORM-->
-<div class="row-fluid" id="edit_menu" visible="false" runat="server">
+<div class="row-fluid" id="edit_post" visible="false" runat="server">
     <div class="widget orange">
         <div class="widget-title">
-            <h4><i class="icon-reorder"></i>Thêm/Sửa Menu</h4>
+            <h4><i class="icon-reorder"></i>Chỉnh sửa bài viết</h4>
             <span class="tools">
                 <a href="javascript:;" class="icon-chevron-down"></a>
                 <a href="javascript:;" class="icon-remove"></a>
@@ -79,39 +75,22 @@
         <div class="widget-body">
             <div class="form-horizontal">
                 <div class="control-group">
-                    <label class="control-label">Tên Menu : </label>
+                    <label class="control-label">Tiêu đề : </label>
                     <div class="controls">
-                        <asp:TextBox type="text" ID="txtMenuName" runat="server" placeholder="Nhập tên menu" class="input-xlarge" />
+                        <asp:TextBox type="text" ID="txtTieuDe" runat="server" placeholder="Nhập tiêu đề" class="input-xlarge" />
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Nội dung : </label>
+                    <div class="controls">
+                        <textarea type="text" id="txtNoiDung" runat="server" placeholder="Nhập nội dung bài viết" class="input-xxlarge" rows="4" />
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label">Kiểu Menu : </label>
+                    <label class="control-label">Hiển thị</label>
                     <div class="controls">
-                        <asp:DropDownList ID="ddlMenuType" runat="server">
-                            <asp:ListItem Value="Link">Link</asp:ListItem>
-                            <asp:ListItem Value="Bài viết">Bài viết</asp:ListItem>
-                            <asp:ListItem Value="Sản phẩm">Sản phẩm</asp:ListItem>
-                        </asp:DropDownList>
-                    </div>
-                </div>
-                <div class="control-group" id="div_input_link" runat="server">
-                    <label class="control-label">Link : </label>
-                    <div class="controls">
-                        <asp:TextBox type="text" ID="txtMenuLink" runat="server" class="input-xlarge" />
-                        <span class="help-inline">Nhập link cho menu nếu kiểu là Link</span>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="AnhDaiDien">Ảnh đại diện:</label>
-                    <div class="controls">
-                        <asp:Image ID="Image" runat="server" Width="150px" Height="100px" />
-                        <asp:FileUpload ID="fuAnhMenu" runat="server" CssClass="default" />
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="AnhDaiDien">Hiển thị (Ngang / Dọc)</label>
-                    <div class="controls">
-                        <asp:CheckBox ID="cbAction" runat="server" />
+                        <asp:CheckBox ID="cbView" runat="server" />
                     </div>
                 </div>
 
@@ -123,13 +102,3 @@
         </div>
     </div>
 </div>
-<!--END EDIT MENUFORM-->
-<script type="text/javascript">
-    function checkMenuLink() {
-        if ($("#<%=ddlMenuType.ClientID%>").val() == "5") {
-            $("#div_input_link").show();
-        } else {
-            $("#div_input_link").hide();
-        }
-    }
-</script>

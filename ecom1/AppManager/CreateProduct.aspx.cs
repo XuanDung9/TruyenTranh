@@ -82,7 +82,7 @@ namespace HamtruyenAdmin
             Products product = new Products
             {
                 TenSP = txtTenSP.Text,
-                HinhAnh = imagePath,
+                //HinhAnhS = imagePath,
                 //SKU = txtSKU.Text,
                 //Version = selectedVersion,
                 //Color = selectedColor,

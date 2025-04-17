@@ -17,8 +17,8 @@ namespace HamtruyenLibrary.Models
             MoTa = "Mô tả sp";
             Options = new List<Option>();
             DanhMuc = null; // truy vấn theo id danh mục 
-            HoatDong = false; 
-
+            TrangThai = false;
+            AnhDaiDien = "";
             
         }
         [BsonElement("TenSP")]
@@ -48,8 +48,11 @@ namespace HamtruyenLibrary.Models
         [BsonElement("DanhMuc")]
         public DanhMuc DanhMuc { get; set; }
 
-        [BsonElement("HoatDong")]
-        public bool HoatDong { get; set; }
+        [BsonElement("TrangThai")]
+        public bool TrangThai { get; set; }
+
+        [BsonElement("AnhDaiDien")]
+        public string AnhDaiDien { get; set; }
         [BsonElement("Options")]
         public List<Option> Options { get; set; } // option giống như biến thể sp
 

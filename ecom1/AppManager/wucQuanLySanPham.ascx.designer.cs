@@ -69,6 +69,15 @@ namespace HamtruyenAdmin
         protected global::System.Web.UI.WebControls.TextBox txtTenSP;
 
         /// <summary>
+        /// Image1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
+
+        /// <summary>
         /// fuAnhSP control.
         /// </summary>
         /// <remarks>
@@ -78,13 +87,58 @@ namespace HamtruyenAdmin
         protected global::System.Web.UI.WebControls.FileUpload fuAnhSP;
 
         /// <summary>
-        /// imgAnhSP control.
+        /// txtMauSac control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgAnhSP;
+        protected global::System.Web.UI.WebControls.TextBox txtMauSac;
+
+        /// <summary>
+        /// fuAnhSanPham control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fuAnhSanPham;
+
+        /// <summary>
+        /// btnThemHinhAnh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnThemHinhAnh;
+
+        /// <summary>
+        /// gvAnhSP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvAnhSP;
+
+        /// <summary>
+        /// txtMoTa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtMoTa;
+
+        /// <summary>
+        /// ddlDanhMuc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDanhMuc;
 
         /// <summary>
         /// txtChieuDai control.
@@ -105,15 +159,6 @@ namespace HamtruyenAdmin
         protected global::System.Web.UI.WebControls.TextBox txtCanNang;
 
         /// <summary>
-        /// txtMauSac control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMauSac;
-
-        /// <summary>
         /// txtGiaTien control.
         /// </summary>
         /// <remarks>
@@ -121,15 +166,6 @@ namespace HamtruyenAdmin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtGiaTien;
-
-        /// <summary>
-        /// txtMoTa control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMoTa;
 
         /// <summary>
         /// txtSoLuong control.
@@ -141,31 +177,31 @@ namespace HamtruyenAdmin
         protected global::System.Web.UI.WebControls.TextBox txtSoLuong;
 
         /// <summary>
-        /// ddlDanhMuc control.
+        /// btnThemTuyChon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDanhMuc;
+        protected global::System.Web.UI.WebControls.Button btnThemTuyChon;
 
         /// <summary>
-        /// cbTrue control.
+        /// gvTuyChon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbTrue;
+        protected global::System.Web.UI.WebControls.GridView gvTuyChon;
 
         /// <summary>
-        /// cbFalse control.
+        /// cbAction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbFalse;
+        protected global::System.Web.UI.WebControls.CheckBox cbAction;
 
         /// <summary>
         /// btnSave control.

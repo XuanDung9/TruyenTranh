@@ -37,6 +37,9 @@ namespace HamtruyenLibrary.Repo
             IMongoQuery query = Query<Menu>.EQ(m => m.Id, ObjectId.Parse(idMenu));
             IMongoUpdate update = Update<Menu>
                 .Set(m => m.MenuName, menu.MenuName)
+                .Set(m => m.Type, menu.Type)
+                .Set(m => m.MenuParentID, menu.MenuParentID)
+                .Set(m => m.IsHorizontal, menu.IsHorizontal)
                 .Set(m => m.ImageUrl, menu.ImageUrl);
             MainDb.Instant.Update<Menu>(query, update);
         }

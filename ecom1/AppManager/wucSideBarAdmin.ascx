@@ -18,9 +18,10 @@
                       </a>
                       <ul class="sub">                        
                           <li><a class="" href="/Admin.aspx?mod=2">Sản Phẩm</a></li>
-                          <li><a class="" href="/Admin.aspx?mod=6">Danh mục</a></li>
-                          <li><a class="" href="/Admin.aspx?mod=7">Đơn hàng</a></li>
+                          <li><a class="" href="/Admin.aspx?mod=6">Danh Mục</a></li>
+                          <li><a class="" href="/Admin.aspx?mod=7">Đơn Hàng</a></li>
                           <li><a class="" href="/Admin.aspx?mod=8">Menu</a></li>
+                          <li><a class="" href="/Admin.aspx?mod=9">Bài Viết</a></li>
 
                       </ul>
                   </li>

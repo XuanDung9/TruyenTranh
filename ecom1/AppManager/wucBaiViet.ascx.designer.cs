@@ -11,107 +11,71 @@ namespace HamtruyenAdmin
 {
 
 
-    public partial class wucQuanTriMenu
+    public partial class wucBaiViet
     {
 
         /// <summary>
-        /// list_menu control.
+        /// list_post control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl list_menu;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl list_post;
 
         /// <summary>
-        /// btnAddMenu control.
+        /// btnAddPost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddMenu;
+        protected global::System.Web.UI.WebControls.Button btnAddPost;
 
         /// <summary>
-        /// gvListMenu control.
+        /// gvListPost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvListMenu;
+        protected global::System.Web.UI.WebControls.GridView gvListPost;
 
         /// <summary>
-        /// edit_menu control.
+        /// edit_post control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl edit_menu;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl edit_post;
 
         /// <summary>
-        /// txtMenuName control.
+        /// txtTieuDe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMenuName;
+        protected global::System.Web.UI.WebControls.TextBox txtTieuDe;
 
         /// <summary>
-        /// ddlMenuType control.
+        /// txtNoiDung control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMenuType;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtNoiDung;
 
         /// <summary>
-        /// div_input_link control.
+        /// cbView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_input_link;
-
-        /// <summary>
-        /// txtMenuLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMenuLink;
-
-        /// <summary>
-        /// Image control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image;
-
-        /// <summary>
-        /// fuAnhMenu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuAnhMenu;
-
-        /// <summary>
-        /// cbAction control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbAction;
+        protected global::System.Web.UI.WebControls.CheckBox cbView;
 
         /// <summary>
         /// btnUpdate control.
