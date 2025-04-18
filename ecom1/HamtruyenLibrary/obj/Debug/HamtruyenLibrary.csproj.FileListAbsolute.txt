@@ -534,7 +534,6 @@ E:\demodotnet\ecom1\HamtruyenLibrary\bin\Debug\System.Runtime.xml
 E:\demodotnet\ecom1\HamtruyenLibrary\bin\Debug\System.Threading.Tasks.xml
 E:\demodotnet\ecom1\HamtruyenLibrary\bin\Debug\Zlib.Portable.xml
 E:\demodotnet\ecom1\HamtruyenLibrary\obj\Debug\HamtruyenLibrary.csproj.App.config
-E:\demodotnet\ecom1\HamtruyenLibrary\obj\Debug\HamtruyenLibrary.csproj.AssemblyReference.cache
 E:\demodotnet\ecom1\HamtruyenLibrary\obj\Debug\HamtruyenLibrary.csproj.CoreCompileInputs.cache
 E:\demodotnet\ecom1\HamtruyenLibrary\obj\Debug\HamtruyenLibrary.csproj.CopyComplete
 E:\demodotnet\ecom1\HamtruyenLibrary\obj\Debug\HamtruyenLibrary.dll

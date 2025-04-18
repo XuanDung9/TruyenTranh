@@ -67,14 +67,121 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\ajax-loader.gif" />
+    <Content Include="css\normalize.css" />
+    <Content Include="css\swiper-bundle.min.css" />
+    <Content Include="css\vendor.css" />
+    <None Include="Footer.master" />
     <Content Include="Global.asax" />
+    <None Include="Header.master" />
+    <Content Include="images\arct-icon.png" />
+    <Content Include="images\banner-image-1.jpg" />
+    <Content Include="images\banner-image-2.jpg" />
+    <Content Include="images\banner-image-3.jpg" />
+    <Content Include="images\banner-image-4.jpg" />
+    <Content Include="images\banner-image-5.jpg" />
+    <Content Include="images\banner-image-6.jpg" />
+    <Content Include="images\bg-newsletter.jpg" />
+    <Content Include="images\cat-item1.jpg" />
+    <Content Include="images\cat-item2.jpg" />
+    <Content Include="images\cat-item3.jpg" />
+    <Content Include="images\cat-large-item1.jpg" />
+    <Content Include="images\cat-large-item2.jpg" />
+    <Content Include="images\cat-large-item3.jpg" />
+    <Content Include="images\cat-sm-item.jpg" />
+    <Content Include="images\cat-sm-item2.jpg" />
+    <Content Include="images\cat-sm-item3.jpg" />
+    <Content Include="images\collection-banner.jpg" />
+    <Content Include="images\dhl-logo.png" />
+    <Content Include="images\insta-item1.jpg" />
+    <Content Include="images\insta-item2.jpg" />
+    <Content Include="images\insta-item3.jpg" />
+    <Content Include="images\insta-item4.jpg" />
+    <Content Include="images\insta-item5.jpg" />
+    <Content Include="images\insta-item6.jpg" />
+    <Content Include="images\light-logo.png" />
+    <Content Include="images\logo.svg" />
+    <Content Include="images\logo1.png" />
+    <Content Include="images\logo2.png" />
+    <Content Include="images\logo3.png" />
+    <Content Include="images\logo4.png" />
+    <Content Include="images\logo5.png" />
+    <Content Include="images\main-logo.png" />
+    <Content Include="images\master-card.png" />
+    <Content Include="images\newsletter-image.jpg" />
+    <Content Include="images\pattern-bg.png" />
+    <Content Include="images\paypal-card.png" />
+    <Content Include="images\post-image1.jpg" />
+    <Content Include="images\post-image2.jpg" />
+    <Content Include="images\post-image3.jpg" />
+    <Content Include="images\post-image4.jpg" />
+    <Content Include="images\post-image5.jpg" />
+    <Content Include="images\post-image6.jpg" />
+    <Content Include="images\post-image7.jpg" />
+    <Content Include="images\post-image8.jpg" />
+    <Content Include="images\post-image9.jpg" />
+    <Content Include="images\post-large-image1.jpg" />
+    <Content Include="images\post-large-image2.jpg" />
+    <Content Include="images\post-large-image3.jpg" />
+    <Content Include="images\post-large-image4.jpg" />
+    <Content Include="images\post-small-image1.jpg" />
+    <Content Include="images\post-small-image2.jpg" />
+    <Content Include="images\post-small-image3.jpg" />
+    <Content Include="images\product-item-1.jpg" />
+    <Content Include="images\product-item-10.jpg" />
+    <Content Include="images\product-item-2.jpg" />
+    <Content Include="images\product-item-3.jpg" />
+    <Content Include="images\product-item-4.jpg" />
+    <Content Include="images\product-item-5.jpg" />
+    <Content Include="images\product-item-6.jpg" />
+    <Content Include="images\product-item-7.jpg" />
+    <Content Include="images\product-item-8.jpg" />
+    <Content Include="images\product-item-9.jpg" />
+    <Content Include="images\single-image-2.jpg" />
+    <Content Include="images\text-pattern.png" />
+    <Content Include="images\video-image-2.jpg" />
+    <Content Include="images\video-image.jpg" />
+    <Content Include="images\visa-card.png" />
+    <Content Include="images\wishlist-item1.jpg" />
+    <Content Include="images\wishlist-item2.jpg" />
+    <Content Include="images\wishlist-item3.jpg" />
+    <Content Include="index.html" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\modernizr.js" />
+    <Content Include="js\plugins.js" />
+    <Content Include="js\script.min.js" />
+    <Content Include="js\SmoothScroll.js" />
+    <Content Include="ok123.html" />
+    <Content Include="style.css" />
+    <Content Include="TestPage.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Footer.master.cs">
+      <DependentUpon>Footer.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Footer.master.designer.cs">
+      <DependentUpon>Footer.master</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Header.master.cs">
+      <DependentUpon>Header.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Header.master.designer.cs">
+      <DependentUpon>Header.master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestPage.ascx.cs">
+      <DependentUpon>TestPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPage.ascx.designer.cs">
+      <DependentUpon>TestPage.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -88,11 +195,13 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Shared\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
+  <PropertyGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
