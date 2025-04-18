@@ -25,8 +25,8 @@ namespace HamtruyenLibrary.Models
         [BsonElement("ImageUrl")] // hình ảnh của menu 
         public string ImageUrl { get; set; }
 
-        [BsonElement("MenuParentID")] // menu cha
-        public ObjectId? MenuParentID { get; set; }
+        [BsonElement("MenuChild")] // menu cha
+        public List<Menu> MenuChild { get; set; }
 
 
         [BsonElement("IsHorizontal")] // xác định menu được thể hiện theo ngang hoặc dọc 
@@ -34,4 +34,4 @@ namespace HamtruyenLibrary.Models
 
 
     }
-}
+} 

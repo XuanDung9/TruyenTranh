@@ -181,11 +181,6 @@ D:\Web\Massage\AppManager\bin\System.Net.Http.WebRequest.xml
 D:\Web\Massage\AppManager\bin\System.Runtime.xml
 D:\Web\Massage\AppManager\bin\System.Threading.Tasks.xml
 D:\Web\Massage\AppManager\bin\Zlib.Portable.xml
-E:\demodotnet\ecom1\AppManager\obj\Debug\AppManager.csproj.AssemblyReference.cache
-E:\demodotnet\ecom1\AppManager\obj\Debug\AppManager.csproj.CoreCompileInputs.cache
-E:\demodotnet\ecom1\AppManager\obj\Debug\HamtruyenAdmin.dll
-E:\demodotnet\ecom1\AppManager\obj\Debug\HamtruyenAdmin.pdb
-E:\demodotnet\ecom1\AppManager\obj\Debug\AppManager.csproj.App.config
 E:\demodotnet\ecom1\AppManager\bin\HamtruyenAdmin.dll.config
 E:\demodotnet\ecom1\AppManager\bin\HamtruyenAdmin.dll
 E:\demodotnet\ecom1\AppManager\bin\HamtruyenAdmin.pdb
@@ -243,4 +238,9 @@ E:\demodotnet\ecom1\AppManager\bin\System.Net.Http.WebRequest.xml
 E:\demodotnet\ecom1\AppManager\bin\System.Runtime.xml
 E:\demodotnet\ecom1\AppManager\bin\System.Threading.Tasks.xml
 E:\demodotnet\ecom1\AppManager\bin\Zlib.Portable.xml
+E:\demodotnet\ecom1\AppManager\obj\Debug\AppManager.csproj.App.config
+E:\demodotnet\ecom1\AppManager\obj\Debug\AppManager.csproj.AssemblyReference.cache
+E:\demodotnet\ecom1\AppManager\obj\Debug\AppManager.csproj.CoreCompileInputs.cache
 E:\demodotnet\ecom1\AppManager\obj\Debug\AppManager.csproj.CopyComplete
+E:\demodotnet\ecom1\AppManager\obj\Debug\HamtruyenAdmin.dll
+E:\demodotnet\ecom1\AppManager\obj\Debug\HamtruyenAdmin.pdb

@@ -109,6 +109,43 @@
                     </div>
                 </div>
                 <div class="control-group">
+                    <label class="control-label">Menu con :</label>
+                    <div class="controls">
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+                                <asp:TextBox ID="txtTenMenuCon" runat="server" CssClass="form-control" Placeholder="Tên Menu" Width="100px" />
+                                <asp:Button ID="btnThemMenu" runat="server" Text="+ Thêm Menu"
+                                    CssClass="btn btn-primary" OnClick="btnThemMenuCon_Click" />
+                            </div>
+                        </div>
+                        <br />
+                        <div style="width: 50%">
+                            <asp:GridView ID="gvMenuCon" runat="server" AutoGenerateColumns="False"
+                                EmptyDataText="Chưa menu con nào"
+                                OnRowCommand="gvMenuCon_RowCommand"
+                                CssClass="table table-bordered table-hover"
+                                Style="width: 300;">
+                                <Columns>
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="btnXoa" runat="server"
+                                                CommandName="Xoa"
+                                                CommandArgument='<%# Container.DataItemIndex %>'
+                                                CssClass="btn btn-danger">Xóa
+                            <i class="fa fa-times"></i>
+                                            </asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:BoundField DataField="MenuName" HeaderText="Tên Menu " />
+                                    <asp:BoundField DataField="Type" HeaderText="Loại Menu" />
+                                </Columns>
+                            </asp:GridView>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="control-group">
                     <label class="control-label" for="AnhDaiDien">Hiển thị (Ngang / Dọc)</label>
                     <div class="controls">
                         <asp:CheckBox ID="cbAction" runat="server" />

@@ -105,6 +105,33 @@ namespace HamtruyenAdmin
         protected global::System.Web.UI.WebControls.FileUpload fuAnhMenu;
 
         /// <summary>
+        /// txtTenMenuCon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTenMenuCon;
+
+        /// <summary>
+        /// btnThemMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnThemMenu;
+
+        /// <summary>
+        /// gvMenuCon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvMenuCon;
+
+        /// <summary>
         /// cbAction control.
         /// </summary>
         /// <remarks>

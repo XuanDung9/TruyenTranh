@@ -12,13 +12,14 @@ using HamtruyenLibrary.Repo;
 using HamtruyenLibrary.Classes;
 using Menu = HamtruyenLibrary.Models.Menu;
 using System.IO;
+using MongoDB.Bson;
 
 namespace HamtruyenAdmin
 {
     public partial class wucQuanTriMenu : System.Web.UI.UserControl
     {
         HamtruyenLibrary.Repo.MenuRepo menuRepo = new HamtruyenLibrary.Repo.MenuRepo();
-        public string sMID
+        public string MID
         {
             get
             {
@@ -29,6 +30,22 @@ namespace HamtruyenAdmin
             }
             set { ViewState["MenuID"] = value; }
         }
+
+        public List<Menu> lst_ChildMenu
+        {
+            get
+            {
+                if (Session["ChildMenuList"] == null)
+                {
+                    Session["ChildMenuList"] = new List<Menu>();
+                }
+                return (List<Menu>)Session["ChildMenuList"];
+            }
+            set
+            {
+                Session["ChildMenuList"] = value;
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -38,7 +55,11 @@ namespace HamtruyenAdmin
             }
 
         }
-
+        public void LoadChildMenu()
+        {
+            gvMenuCon.DataSource = lst_ChildMenu;
+            gvMenuCon.DataBind();
+        }
         public void loadData()
         {
             MenuRepo repo = new MenuRepo();
@@ -63,28 +84,67 @@ namespace HamtruyenAdmin
             if (e.CommandName.Trim() == "Sua")
             {
                 showEditGroup();
-                sMID = e.CommandArgument.ToString();
-                showDetailMenu(sMID);
+                MID = e.CommandArgument.ToString();
+                showDetailMenu(MID);
             }
             else if (e.CommandName.Trim() == "Xoa")
             {
-                sMID = e.CommandArgument.ToString();
-                menuRepo.DeleteMenu(sMID);
+                MID = e.CommandArgument.ToString();
+                menuRepo.DeleteMenu(MID);
                 loadData();
             }
         }
+
+        protected void gvMenuCon_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName.Trim() == "Xoa")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                if (index >= 0 && index < lst_ChildMenu.Count)
+                {
+                    lst_ChildMenu.RemoveAt(index);
+                }
+                LoadChildMenu();
+            }
+        }
+            
+        public void btnThemMenuCon_Click(object sender, EventArgs e)
+        {
+            MenuRepo repo = new MenuRepo();
+            var menuParent = repo.GetById(MID);
+            var menuCon = new Menu
+            {
+                MenuName = txtTenMenuCon.Text,
+                MenuChild = new List<Menu>() 
+            };
+
+            if (menuParent.MenuChild == null)
+                menuParent.MenuChild = new List<Menu>();
+
+            menuParent.MenuChild.Add(menuCon);
+            lst_ChildMenu.Add(menuCon);
+            LoadChildMenu();
+            txtTenMenuCon.Text = "";
+        }
+
         public void showDetailMenu(string sMenuID)
         {
             ddlMenuType.ClearSelection();
             HamtruyenLibrary.Models.Menu mb = menuRepo.GetById(sMenuID);
             txtMenuName.Text = mb.MenuName;
-
-            ddlMenuType.ClearSelection();
-            ddlMenuType.Items.FindByText(mb.Type);
+            if (mb.Type != null && !string.IsNullOrEmpty(mb.Type))
+            {
+                ddlMenuType.ClearSelection();
+                ddlMenuType.Items.FindByText(mb.Type).Selected = true;
+            }
+            lst_ChildMenu = mb.MenuChild;
             Image.ImageUrl = mb.ImageUrl;
             cbAction.Checked = mb.IsHorizontal;
-
+            LoadChildMenu();
         }
+
+
+
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -109,7 +169,7 @@ namespace HamtruyenAdmin
                 }
             }
             MenuRepo repo = new MenuRepo();
-            var menu = repo.GetById(sMID);
+            var menu = repo.GetById(MID);
             try
             {
                 menu.MenuName = txtMenuName.Text;
@@ -120,7 +180,8 @@ namespace HamtruyenAdmin
                 }
                 //menu.MenuParentID =;
                 menu.IsHorizontal = cbAction.Checked;
-                repo.UpdateMenu(menu, sMID);
+                menu.MenuChild = lst_ChildMenu;
+                repo.UpdateMenu(menu, MID);
             }
             catch
             {
