@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestPage
+namespace ecom1
 {
 
 
-    public partial class Product
+    public partial class WebForm1
     {
     }
 }

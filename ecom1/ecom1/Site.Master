@@ -1,3 +1,5 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ecom1.Site" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +14,7 @@
     <meta name="keywords" content="ecommerce,fashion,store">
     <meta name="description" content="Bootstrap 5 Fashion Store HTML CSS Template">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/vendor.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -20,38 +22,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Marcellus&display=swap"
-          rel="stylesheet">
+        rel="stylesheet">
 </head>
 
 <body class="homepage">
-
-    <div class="preloader text-white fs-6 text-uppercase overflow-hidden"></div>
-
     <div class="search-popup">
         <div class="search-popup-container">
-
-            <form role="search" method="get" class="form-group" action="">
-                <input type="search" id="search-form" class="form-control border-0 border-bottom"
-                       placeholder="Type and press enter" value="" name="s" />
-                <button type="submit" class="search-submit border-0 position-absolute bg-white"
-                        style="top: 15px;right: 15px;">
-                    <svg class="search" width="24" height="24">
-                        <use xlink:href="#search"></use>
-                    </svg>
-                </button>
-            </form>
-
             <h5 class="cat-list-title">Browse Categories</h5>
-
             <ul class="cat-list">
                 <li class="cat-list-item">
                     <a href="#" title="Jackets">Jackets</a>
                 </li>
             </ul>
-
         </div>
     </div>
-
     <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasCart" aria-labelledby="My Cart">
         <div class="offcanvas-header justify-content-center">
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -59,21 +43,19 @@
         <div class="offcanvas-body">
             <div class="order-md-last">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-primary">Your cart</span>
+                    <span class="text-primary">Giỏ hàng của bạn</span>
                     <span class="badge bg-primary rounded-pill">3</span>
                 </h4>
                 <ul class="list-group mb-3">
                     <li class="list-group-item d-flex justify-content-between">
-                        <span>Total (USD)</span>
-                        <strong>$20</strong>
+                        <span>Tổng tiền (VND)</span>
+                        <strong>1000000</strong>
                     </li>
                 </ul>
-
                 <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to Checkout</button>
             </div>
         </div>
     </div>
-
     <nav class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center">
         <div class="container-fluid">
             <div class="row justify-content-between align-items-center w-100">
@@ -85,31 +67,18 @@
                     </a>
                 </div>
                 <div class="col-auto">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                            aria-controls="offcanvasNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                         aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                    aria-label="Close"></button>
-                        </div>
+                        aria-labelledby="offcanvasNavbarLabel">
+
                         <div class="offcanvas-body">
                             <ul class="navbar-nav justify-content-end flex-grow-1 gap-1 gap-md-5 pe-3">
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="dropdownPages" data-bs-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false">Pages</a>
+                                        aria-haspopup="true" aria-expanded="false">Pages</a>
                                     <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownPages">
                                         <li>
-                                            <a href="About.aspx" class="dropdown-item item-anchor">About</a>
-
-                                            <a href="TestPage.html" class="dropdown-item item-anchor">ok </a>
-                                        </li>
-                                        <li>
-                                            <a href="index.html" class="dropdown-item item-anchor">Cart </a>
+                                            <a href="Product.aspx" class="dropdown-item item-anchor">Sản Phẩm</a>
+                                            <a href="TrangChu.aspx" class="dropdown-item item-anchor">Trang Chủ </a>
                                         </li>
                                     </ul>
                                 </li>
@@ -123,122 +92,21 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-3 col-lg-auto">
                     <ul class="list-unstyled d-flex m-0">
                         <li class="d-none d-lg-block">
-                            <a href="index.html" class="text-uppercase mx-3">
-                                Wishlist <span class="wishlist-count">(0)</span>
+                            <a href="index.html" class="text-uppercase mx-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">Cart <span class="cart-count">(0)</span>
                             </a>
                         </li>
                     </ul>
                 </div>
-
             </div>
-
         </div>
     </nav>
-
-    <section id="related-products" class="related-products product-carousel py-5 position-relative overflow-hidden">
-        <div class="container">
-            <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 mb-3">
-                <h4 class="text-uppercase">You May Also Like</h4>
-                <a href="index.html" class="btn-link">View All Products</a>
-            </div>
-            <div class="swiper product-swiper open-up" data-aos="zoom-out">
-                <div class="swiper-wrapper d-flex">
-                    <div class="swiper-slide">
-                        <div class="product-item image-zoom-effect link-effect">
-                            <div class="image-holder">
-                                <a href="index.html">
-                                    <img src="images/product-item-5.jpg" alt="product" class="product-image img-fluid">
-                                </a>
-                                <a href="index.html" class="btn-icon btn-wishlist">
-                                    <svg width="24" height="24" viewBox="0 0 24 24">
-                                        <use xlink:href="#heart"></use>
-                                    </svg>
-                                </a>
-                                <div class="product-content">
-                                    <h5 class="text-uppercase fs-5 mt-3">
-                                        <a href="index.html">Dark florish onepiece</a>
-                                    </h5>
-                                    <a href="index.html" class="text-decoration-none" data-after="Add to cart"><span>$95.00</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>  
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-            <div class="icon-arrow icon-arrow-left">
-                <svg width="50" height="50" viewBox="0 0 24 24">
-                    <use xlink:href="#arrow-left"></use>
-                </svg>
-            </div>
-            <div class="icon-arrow icon-arrow-right">
-                <svg width="50" height="50" viewBox="0 0 24 24">
-                    <use xlink:href="#arrow-right"></use>
-                </svg>
-            </div>
-        </div>
-    </section>
-
-   
-
-    
-
-    <section class="instagram position-relative">
-        <div class="d-flex justify-content-center w-100 position-absolute bottom-0 z-1">
-            <a href="https://www.instagram.com/templatesjungle/" class="btn btn-dark px-5">Follow us on Instagram</a>
-        </div>
-        <div class="row g-0">
-            <div class="col-6 col-sm-4 col-md-2">
-                <div class="insta-item">
-                    <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-                        <img src="images/insta-item1.jpg" alt="instagram" class="insta-image img-fluid">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <main>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </main>
     <footer id="footer" class="mt-5">
-        <div class="container">
-            <div class="row d-flex flex-wrap justify-content-between py-5">
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu footer-menu-001">
-                        <div class="footer-intro mb-4">
-                            <a href="index.html">
-                                <img src="images/main-logo.png" alt="logo">
-                            </a>
-                        </div>
-            
-                        <div class="social-links">
-                            <ul class="list-unstyled d-flex flex-wrap gap-3">
-                                <li>
-                                    <a href="#" class="text-secondary">
-                                        <svg width="24" height="24" viewBox="0 0 24 24">
-                                            <use xlink:href="#instagram"></use>
-                                        </svg>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu footer-menu-002">
-                        <h5 class="widget-title text-uppercase mb-4">Quick Links</h5>
-                        <ul class="menu-list list-unstyled text-uppercase border-animation-left fs-6">
-                            <li class="menu-item">
-                                <a href="TestPage.ascx" class="item-anchor">Home</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-               
-            </div>
-        </div>
         <div class="border-top py-4">
             <div class="container">
                 <div class="row">
@@ -251,8 +119,8 @@
                     <div class="col-md-6 text-end">
                         <p>
                             © Copyright 2022 Kaira. All rights reserved. Design by <a href="https://templatesjungle.com"
-                                                                                      target="_blank">TemplatesJungle</a> Distribution By <a href="https://themewagon.com"
-                                                                                                                                             target="blank">ThemeWagon</a>
+                                target="_blank">TemplatesJungle</a> Distribution By <a href="https://themewagon.com"
+                                    target="blank">ThemeWagon</a>
                         </p>
                     </div>
                 </div>
@@ -263,8 +131,8 @@
     <script src="js/plugins.js"></script>
     <script src="js/SmoothScroll.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-            crossorigin="anonymous"></script>
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="js/script.min.js"></script>
 </body>

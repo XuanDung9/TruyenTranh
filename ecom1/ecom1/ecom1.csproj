@@ -71,9 +71,6 @@
     <Content Include="css\normalize.css" />
     <Content Include="css\swiper-bundle.min.css" />
     <Content Include="css\vendor.css" />
-    <None Include="Footer.master" />
-    <Content Include="Global.asax" />
-    <None Include="Header.master" />
     <Content Include="images\arct-icon.png" />
     <Content Include="images\banner-image-1.jpg" />
     <Content Include="images\banner-image-2.jpg" />
@@ -145,46 +142,51 @@
     <Content Include="images\wishlist-item1.jpg" />
     <Content Include="images\wishlist-item2.jpg" />
     <Content Include="images\wishlist-item3.jpg" />
-    <Content Include="index.html" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\modernizr.js" />
     <Content Include="js\plugins.js" />
     <Content Include="js\script.min.js" />
     <Content Include="js\SmoothScroll.js" />
-    <Content Include="ok123.html" />
+    <Content Include="Product.aspx" />
     <Content Include="style.css" />
-    <Content Include="TestPage.ascx" />
+    <Content Include="TrangChu.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Index.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Footer.master.cs">
-      <DependentUpon>Footer.master</DependentUpon>
+    <Compile Include="Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Footer.master.designer.cs">
-      <DependentUpon>Footer.master</DependentUpon>
-    </Compile>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Header.master.cs">
-      <DependentUpon>Header.master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Header.master.designer.cs">
-      <DependentUpon>Header.master</DependentUpon>
+    <Compile Include="Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestPage.ascx.cs">
-      <DependentUpon>TestPage.ascx</DependentUpon>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TestPage.ascx.designer.cs">
-      <DependentUpon>TestPage.ascx</DependentUpon>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrangChu.aspx.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrangChu.aspx.designer.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -194,8 +196,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="img\" />
     <Folder Include="Models\" />
     <Folder Include="Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HamtruyenLibrary\HamtruyenLibrary.csproj">
+      <Project>{03226905-d665-454d-bd29-2296b0a3a370}</Project>
+      <Name>HamtruyenLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -538,3 +538,4 @@ E:\demodotnet\ecom1\HamtruyenLibrary\obj\Debug\HamtruyenLibrary.csproj.CoreCompi
 E:\demodotnet\ecom1\HamtruyenLibrary\obj\Debug\HamtruyenLibrary.csproj.CopyComplete
 E:\demodotnet\ecom1\HamtruyenLibrary\obj\Debug\HamtruyenLibrary.dll
 E:\demodotnet\ecom1\HamtruyenLibrary\obj\Debug\HamtruyenLibrary.pdb
+E:\demodotnet\ecom1\HamtruyenLibrary\obj\Debug\HamtruyenLibrary.csproj.AssemblyReference.cache

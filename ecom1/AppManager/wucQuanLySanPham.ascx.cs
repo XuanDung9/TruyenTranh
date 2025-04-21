@@ -141,6 +141,7 @@ namespace HamtruyenAdmin
             var lstDanhMuc = danhMucRepo.GetAll();
             long totalrow = 0;
             var lst = repo.GetAll(ipage, ipagesize, out totalrow);
+            var number = lst.Count();
             gvSanPham.DataSource = lst;
             gvSanPham.DataBind();
             ddlDanhMuc.DataSource = lstDanhMuc;

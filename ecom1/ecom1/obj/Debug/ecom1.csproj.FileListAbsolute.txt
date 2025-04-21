@@ -57,3 +57,14 @@ E:\demodotnet\ecom1\ecom1\obj\Debug\ecom1.csproj.CoreCompileInputs.cache
 E:\demodotnet\ecom1\ecom1\obj\Debug\ecom1.csproj.CopyComplete
 E:\demodotnet\ecom1\ecom1\obj\Debug\ecom1.dll
 E:\demodotnet\ecom1\ecom1\obj\Debug\ecom1.pdb
+E:\demodotnet\ecom1\ecom1\bin\HamtruyenLibrary.dll
+E:\demodotnet\ecom1\ecom1\bin\MongoDB.Bson.dll
+E:\demodotnet\ecom1\ecom1\bin\MongoDB.Driver.dll
+E:\demodotnet\ecom1\ecom1\bin\WYSIWYGEditor.dll
+E:\demodotnet\ecom1\ecom1\bin\Google.GData.Photos.dll
+E:\demodotnet\ecom1\ecom1\bin\Google.GData.Client.dll
+E:\demodotnet\ecom1\ecom1\bin\Google.GData.Extensions.dll
+E:\demodotnet\ecom1\ecom1\bin\HamtruyenLibrary.pdb
+E:\demodotnet\ecom1\ecom1\bin\HamtruyenLibrary.dll.config
+E:\demodotnet\ecom1\ecom1\bin\MongoDB.Bson.xml
+E:\demodotnet\ecom1\ecom1\bin\MongoDB.Driver.xml

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace ecom1
 {
-    public partial class TestPage : System.Web.UI.UserControl
+    public partial class TrangChu : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

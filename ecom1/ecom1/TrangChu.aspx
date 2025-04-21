@@ -1,10 +1,10 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TestPage.ascx.cs" Inherits="ecom1.TestPage" %>
-<%@ Page Title="Product" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="TestPage.aspx.cs" Inherits="TestPage.Product" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master"  AutoEventWireup="true" CodeBehind="TrangChu.aspx.cs" Inherits="ecom1.Product" %>
 
+<asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
     <section id="related-products" class="related-products product-carousel py-5 position-relative overflow-hidden">
         <div class="container">
             <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 mb-3">
-                <h4 class="text-uppercase">You May Also Like</h4>
+                <h4 class="text-uppercase">ĐAy là trang chủ </h4>
                 <a href="index.html" class="btn-link">View All Products</a>
             </div>
             <div class="swiper product-swiper open-up" data-aos="zoom-out">
@@ -28,7 +28,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>  
+                    </div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -44,3 +44,4 @@
             </div>
         </div>
     </section>
+</asp:Content>

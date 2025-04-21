@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace YourProject
+namespace ecom1
 {
 
 
-    public partial class Header
+    public partial class Product
     {
     }
 }

@@ -34,14 +34,10 @@
 <body class="fixed-top">
     <form id="form_1" runat="server">
         <uc1:wucHeaderAdmin runat="server" ID="wucHeaderAdmin" />
-        <!-- BEGIN CONTAINER -->
         <div id="container" class="row-fluid">
             <uc2:wucSideBarAdmin runat="server" ID="wucSideBarAdmin" />
-            <!-- BEGIN PAGE -->
             <div id="main-content">
-                <!-- BEGIN PAGE CONTAINER-->
                 <div class="container-fluid">
-                    <!-- BEGIN THEME CUSTOMIZER-->
                     <div id="theme-change" class="hidden-phone">
                         <i class="icon-cogs"></i>
                         <span class="settings">
@@ -55,46 +51,18 @@
                             </span>
                         </span>
                     </div>
-                    <!-- END THEME CUSTOMIZER-->
-                    <!-- BEGIN PAGE CONTENT-->
-
                     <div class="row-fluid" id="main_content" runat="server">
                     </div>
-
-                    <!-- END PAGE CONTENT-->
                 </div>
-                <!-- END PAGE CONTAINER-->
             </div>
-            <!-- END PAGE -->
         </div>
-        <!-- END CONTAINER -->
-
-        <!-- BEGIN FOOTER -->
         <div id="footer">
             2013 &copy; Admin Hamtruyen.com
         </div>
-        <!-- END FOOTER -->
-
-        <!-- BEGIN JAVASCRIPTS -->
-        <!-- Load javascripts at bottom, this will reduce page load time -->
-
-
-        <!-- ie8 fixes -->
-        <!--[if lt IE 9]>
-   <script src="js/excanvas.js"></script>
-   <script src="js/respond.js"></script>
-   <![endif]-->
 
         <script type="text/javascript" src="assets/gritter/js/jquery.gritter.js"></script>
         <script type="text/javascript" src="js/jquery.pulsate.min.js"></script>
-
-
-        <!--common script for all pages-->
         <script src="js/common-scripts.js"></script>
-
-
-
-        <!-- END JAVASCRIPTS -->
     </form>
 </body>
 
