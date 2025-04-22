@@ -26,13 +26,13 @@ namespace HamtruyenLibrary.Models
     {
         public CartItems()
         {
-            ProductId = 0;
+            ProductId = "";
             OptionIndex = 0;
             SoLuong = 0;
         }
         [BsonElement("ProductId")]
-        public long ProductId { get; set; } // chỉ số danh mục của sản phẩm , mỗi danh mục ứng với 1 biến thể của sản phẩm 
-        [BsonElement("OptionIndex")]
+        public string ProductId { get; set; } 
+        [BsonElement("OptionIndex")] // chỉ số danh mục của sản phẩm , mỗi danh mục ứng với 1 biến thể của sản phẩm 
         public int OptionIndex { get; set; }
         [BsonElement("SoLuong")]
         public int SoLuong { get; set; }

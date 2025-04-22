@@ -13,6 +13,7 @@ namespace HamtruyenLibrary.Models
             FirstName = "";
             LastName = "";
             Email = "";
+            Password = "";
             Phone = "";
             Address = "";
             Cart = new Cart();
@@ -21,9 +22,11 @@ namespace HamtruyenLibrary.Models
         public string FirstName { get; set; }
         [BsonElement("LastName")]
         public string LastName { get; set; }
-        [BsonElement("LastName")]
-        public string Email { get; set; }
         [BsonElement("Email")]
+        public string Email { get; set; }
+        [BsonElement("Password")]
+        public string Password { get; set; }
+        [BsonElement("Phone")]
         public string Phone { get; set; }
         [BsonElement("Address")]
         public string Address { get; set; }

@@ -7,16 +7,19 @@
                 <h4 class="text-uppercase">Danh sách sản phẩm</h4>
                 <a href="index.html" class="btn-link">Tất cả sản phẩm</a>
             </div>
+
             <div class="swiper product-swiper open-up" data-aos="zoom-out">
                 <div class="swiper-wrapper d-flex">
                     <asp:Repeater ID="rptProducts" runat="server">
                         <ItemTemplate>
                             <div class="swiper-slide">
                                 <div class="product-item image-zoom-effect link-effect">
+                                    <%-- Lưu Id sản phẩm (thường là ObjectId hoặc string từ MongoDB _id) --%>
+                                    <asp:HiddenField ID="hfProductId" runat="server" Value='<%# Eval("Id") %>' />
+                                    <%--                                                    ^^^^^^^^^^^ THAY ĐỔI Ở ĐÂY --%>
+
                                     <div class="image-holder">
-                                        <itemtemplate>
-                                            <asp:Image ID="AnhDaiDien" runat="server" ImageUrl='<%# Eval("AnhDaiDien") %>' />
-                                        </itemtemplate>
+                                        <asp:Image ID="AnhDaiDien" runat="server" ImageUrl='<%# Eval("AnhDaiDien") %>' />
                                         <div class="product-content">
                                             <h5 class="text-uppercase fs-5 mt-3">
                                                 <%# Eval("TenSP") %>
@@ -24,30 +27,33 @@
                                             <span>Màu: <%# Eval("MauSac") %></span>
                                         </div>
                                     </div>
-                                    <div class="product-content">
-                                        <h5 class="element-title text-uppercase fs-5 mt-3">
-                                        </h5>
-                                        <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$95.00</span></a>
-                                    </div>
+                                    <asp:UpdatePanel runat="server">
+                                        <ContentTemplate>
+                                            <div style="min-height: 80px; display: flex; flex-wrap: wrap; align-items: flex-start; margin-top: 0.5rem;">
+                                                <asp:Repeater ID="rptOptions" runat="server"
+                                                    DataSource='<%# Eval("Options") %>'
+                                                    OnItemCommand="rptOptions_ItemCommand"
+                                                    OnItemDataBound="rptOptions_ItemDataBound">
+                                                    <ItemTemplate>
+                                                        <asp:Button
+                                                            ID="btnOption"
+                                                            runat="server"
+                                                            CssClass="btn btn-outline-dark btn-sm m-1"
+                                                            Text='<%# Eval("ChieuDai", "{0}cm") + " x " + Eval("CanNang", "{0}kg") %>'
+                                                            CommandName="SelectOption" />
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
+                                            </div>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
                                 </div>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
-
                 </div>
             </div>
+
             <div class="swiper-pagination"></div>
-        </div>
-        <div class="icon-arrow icon-arrow-left">
-            <svg width="50" height="50" viewBox="0 0 24 24">
-                <use xlink:href="#arrow-left"></use>
-            </svg>
-        </div>
-        <div class="icon-arrow icon-arrow-right">
-            <svg width="50" height="50" viewBox="0 0 24 24">
-                <use xlink:href="#arrow-right"></use>
-            </svg>
-        </div>
         </div>
     </section>
 </asp:Content>

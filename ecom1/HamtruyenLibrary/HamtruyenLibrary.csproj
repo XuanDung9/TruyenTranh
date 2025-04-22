@@ -202,6 +202,7 @@
     <Compile Include="Repo\SystermRepo.cs" />
     <Compile Include="Repo\ThuongHieuRepo.cs" />
     <Compile Include="Repo\UserDeviceRepo.cs" />
+    <Compile Include="Repo\UserRepository.cs" />
     <Compile Include="Repo\VersionRepo.cs" />
     <Compile Include="Repo\VideoBillboardRepo.cs" />
     <Compile Include="Repo\VideoRepo.cs" />
