@@ -17,7 +17,18 @@ namespace ecom1
             {
                 if (Session["CartItemList"] == null)
                 {
-                    Session["CartItemList"] = new List<CartItems>();
+                    CartRepository repo = new CartRepository();
+                    var currentUser = (User)Session["UserInfo"];
+                    var cart = repo.GetById(currentUser.Cart.MongoId);
+                    if (cart.CartItems.Count < 0 || cart.CartItems == null)
+                    {
+                        Session["CartItemList"] = new List<CartItems>();
+                    }
+                    else
+                    {
+                        Session["CartItemList"] = cart.CartItems;
+                    }
+
                 }
                 return (List<CartItems>)Session["CartItemList"];
             }
@@ -49,7 +60,6 @@ namespace ecom1
             var products = repo.GetAll(ipage, ipagesize, out totalRow); // lấy danh sách sản phẩm
             rptProducts.DataSource = products;
             rptProducts.DataBind();
-
         }
 
         protected void rptOptions_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -82,7 +92,7 @@ namespace ecom1
                 {
                     string productIdString = hfProductId.Value;
                     SanPhamRepo spRepo = new SanPhamRepo();
-                    var cart = cartRepo.GetCartByUserId(currentUser.MongoId);
+                    var cart = cartRepo.GetById(currentUser.Cart.MongoId);
                     var selectedProduct = spRepo.GetById(productIdString);
                     if (selectedProduct != null && selectedProduct.Options.Count > optionIndex)
                     {
@@ -103,7 +113,12 @@ namespace ecom1
                             };
                             cart.CartItems.Add(newCartItem);
                         }
+                        double tongTien = cartRepo.ToTalMoney(cart.MongoId);
+                        int tongSanPham = cartRepo.ToTalQuantity(cart);
+                        cart.TongTien = tongTien;
+                        cart.TongSanPham = tongSanPham;
                         cartRepo.Update(cart, cart.MongoId);
+                        lst_CartItem = cart.CartItems; // gán lại cho thằng session để lưu mới 
 
                     }
                 }

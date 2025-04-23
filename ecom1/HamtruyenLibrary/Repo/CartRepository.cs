@@ -32,7 +32,7 @@ namespace HamtruyenLibrary.Repo
                 .Set(c => c.TongTien, cart.TongTien);
             MainDb.Instant.Update<Cart>(query, update);
         }
-        public string ToTalMoney(string idCart)
+        public double ToTalMoney(string idCart)
         {
             IMongoQuery query = Query<Cart>.EQ(c => c.Id, ObjectId.Parse(idCart));
             var cart = MainDb.Instant.Find<Cart>(query).FirstOrDefault();
@@ -51,8 +51,17 @@ namespace HamtruyenLibrary.Repo
                 }
             }
             cart.TongTien = total;
-            return total.ToString("N0");
+            return total;
         }
+
+        public int ToTalQuantity(Cart cart)
+        {
+            if (cart == null || cart.CartItems == null)
+                return 0;
+
+            return cart.CartItems.Sum(item => item.SoLuong);
+        }
+
 
         public Cart GetCartByUserId(string idUser)
         {

@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CartHandler.aspx" />
     <Content Include="css\ajax-loader.gif" />
     <Content Include="css\normalize.css" />
     <Content Include="css\swiper-bundle.min.css" />
@@ -157,6 +158,14 @@
     <Content Include="Index.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CartHandler.aspx.cs">
+      <DependentUpon>CartHandler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CartHandler.aspx.designer.cs">
+      <DependentUpon>CartHandler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CartItemViewModel.cs" />
     <Compile Include="Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -206,7 +215,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Shared\" />
   </ItemGroup>
   <ItemGroup>
