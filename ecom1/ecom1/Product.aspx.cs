@@ -26,11 +26,19 @@ namespace ecom1
                 Session["CartItemList"] = value;
             }
         }
+        User currentUser;
         int ipage = 1; int ipagesize = 30;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                if (Session["UserInfo"] == null)
+                {
+                    Response.Redirect("UserLogin.aspx");
+                    return;
+                }
+
+                currentUser = (User)Session["UserInfo"];
                 LoadListProduct();
             }
         }
@@ -60,26 +68,43 @@ namespace ecom1
 
         protected void rptOptions_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+            currentUser = (User)Session["UserInfo"];
             CartRepository cartRepo = new CartRepository();
             if (e.CommandName == "SelectOption")
             {
                 int optionIndex = Convert.ToInt32(e.CommandArgument);
                 RepeaterItem optionItem = e.Item;
                 Repeater rptOptionsInstance = (Repeater)optionItem.NamingContainer;
-                RepeaterItem productItem = (RepeaterItem)rptOptionsInstance.NamingContainer; 
+                RepeaterItem productItem = (RepeaterItem)rptOptionsInstance.NamingContainer;
                 HiddenField hfProductId = (HiddenField)productItem.FindControl("hfProductId");
 
                 if (hfProductId != null)
                 {
                     string productIdString = hfProductId.Value;
-
                     SanPhamRepo spRepo = new SanPhamRepo();
+                    var cart = cartRepo.GetCartByUserId(currentUser.MongoId);
                     var selectedProduct = spRepo.GetById(productIdString);
                     if (selectedProduct != null && selectedProduct.Options.Count > optionIndex)
                     {
-                        var selectedOption = selectedProduct.Options[optionIndex];
-                        
-                        cartRepo.AddProductToCart(null, productIdString, optionIndex);
+                        cart.CartItems = lst_CartItem;
+                        var existingItem = cart.CartItems.FirstOrDefault(ci => ci.ProductId == productIdString && ci.OptionIndex == optionIndex);
+
+                        if (existingItem != null)
+                        {
+                            existingItem.SoLuong += 1;
+                        }
+                        else
+                        {
+                            var newCartItem = new CartItems
+                            {
+                                ProductId = productIdString,
+                                OptionIndex = optionIndex,
+                                SoLuong = 1
+                            };
+                            cart.CartItems.Add(newCartItem);
+                        }
+                        cartRepo.Update(cart, cart.MongoId);
+
                     }
                 }
                 else
@@ -88,7 +113,5 @@ namespace ecom1
                 }
             }
         }
-
-
     }
 }

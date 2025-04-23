@@ -23,6 +23,15 @@ namespace HamtruyenLibrary.Repo
         {
             return MainDb.Instant.GetById<Cart>(ID);
         }
+        public void Update(Cart cart, string id)
+        {
+            IMongoQuery query = Query<Cart>.EQ(c => c.Id, ObjectId.Parse(id));
+            IMongoUpdate update = Update<Cart>
+                .Set(c => c.CartItems, cart.CartItems)
+                .Set(c => c.TongSanPham, cart.TongSanPham)
+                .Set(c => c.TongTien, cart.TongTien);
+            MainDb.Instant.Update<Cart>(query, update);
+        }
         public string ToTalMoney(string idCart)
         {
             IMongoQuery query = Query<Cart>.EQ(c => c.Id, ObjectId.Parse(idCart));
@@ -52,54 +61,41 @@ namespace HamtruyenLibrary.Repo
             var cart = user.Cart;
             return cart;
         }
-
-        public void AddProductToCart(string idUser, string idProduct, int optionIndex)
+        public void AddToCart(string userId, string idProduct, int optionIndex)
         {
-            UserRepository userRepo = new UserRepository();
-            var cart = GetCartByUserId(idUser);
-            IMongoQuery queryProduct = Query<Products>.EQ(p => p.Id, ObjectId.Parse(idProduct));
-            var product = MainDb.Instant.Find<Products>(queryProduct).FirstOrDefault();
-            if (product == null)
+            SanPhamRepo spRepo = new SanPhamRepo();
+            CartRepository cartRepo = new CartRepository();
+
+            var product = spRepo.GetById(idProduct);
+            var cart = cartRepo.GetCartByUserId(userId);
+
+            if (cart.CartItems == null)
+                cart.CartItems = new List<CartItems>();
+
+            if (product != null && product.Options.Count > optionIndex)
             {
-                throw new Exception("Product is null ");
-            }
-            if (cart == null)
-            {
-                cart = new Cart();
-                cart.CartItems.Add(new CartItems
+                var existingItem = cart.CartItems.FirstOrDefault(ci => ci.ProductId == idProduct && ci.OptionIndex == optionIndex);
+
+                if (existingItem != null)
                 {
-                    ProductId = idProduct,
-                    OptionIndex = optionIndex,
-                    SoLuong = 1
-                });
-                cart.TongSanPham = 1;
-                MainDb.Instant.GetCollection<Cart>().Insert(cart);
-            }
-            else
-            {
-                // kiểm tra trong giỏ hàng đã có sản phẩm đang thêm vào hay chưa 
-                var existingCart = cart.CartItems.FirstOrDefault(ci => ci.ProductId ==idProduct && ci.OptionIndex == optionIndex);
-                if(existingCart != null)
-                {
-                    existingCart.SoLuong += 1;
-                }    
+                    existingItem.SoLuong += 1;
+                }
                 else
                 {
-                    cart.CartItems.Add(new CartItems
+                    var newCartItem = new CartItems
                     {
-                        ProductId =idProduct,
+                        ProductId = idProduct,
                         OptionIndex = optionIndex,
                         SoLuong = 1
-                    });
+                    };
+                    cart.CartItems.Add(newCartItem);
                 }
 
-                cart.TongSanPham = cart.CartItems.Sum(ci => ci.SoLuong);
-                string totalMoneyCart = ToTalMoney(cart.MongoId);
-
-                MainDb.Instant.GetCollection<Cart>().Save(cart);
-
-            }    
+                cartRepo.Update(cart, cart.MongoId);
+            }
         }
+
+
 
     }
 }
