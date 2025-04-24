@@ -25,17 +25,18 @@ namespace HamtruyenLibrary.Repo
         }
         public void Update(Cart cart, string id)
         {
+            var tongSanPham = ToTalQuantity(cart);
+            var tongTien = ToTalMoney(cart);
             IMongoQuery query = Query<Cart>.EQ(c => c.Id, ObjectId.Parse(id));
             IMongoUpdate update = Update<Cart>
                 .Set(c => c.CartItems, cart.CartItems)
-                .Set(c => c.TongSanPham, cart.TongSanPham)
-                .Set(c => c.TongTien, cart.TongTien);
+                .Set(c => c.TongSanPham, tongSanPham)
+                .Set(c => c.TongTien, tongTien);
             MainDb.Instant.Update<Cart>(query, update);
+
         }
-        public double ToTalMoney(string idCart)
+        public double ToTalMoney(Cart cart)
         {
-            IMongoQuery query = Query<Cart>.EQ(c => c.Id, ObjectId.Parse(idCart));
-            var cart = MainDb.Instant.Find<Cart>(query).FirstOrDefault();
             double total = 0;
             if (cart != null || cart.CartItems.Count > 0 || cart.CartItems != null)
             {

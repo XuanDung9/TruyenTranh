@@ -67,7 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CartHandler.aspx" />
     <Content Include="css\ajax-loader.gif" />
     <Content Include="css\normalize.css" />
     <Content Include="css\swiper-bundle.min.css" />
@@ -154,17 +153,11 @@
     <Content Include="style.css" />
     <Content Include="TrangChu.aspx" />
     <Content Include="UserLogin.aspx" />
+    <Content Include="ViewOrder.aspx" />
     <Content Include="Web.config" />
     <Content Include="Index.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CartHandler.aspx.cs">
-      <DependentUpon>CartHandler.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CartHandler.aspx.designer.cs">
-      <DependentUpon>CartHandler.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Models\CartItemViewModel.cs" />
     <Compile Include="Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>
@@ -201,6 +194,13 @@
     </Compile>
     <Compile Include="UserLogin.aspx.designer.cs">
       <DependentUpon>UserLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewOrder.aspx.cs">
+      <DependentUpon>ViewOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewOrder.aspx.designer.cs">
+      <DependentUpon>ViewOrder.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -94,7 +94,7 @@ namespace ecom1
                     SanPhamRepo spRepo = new SanPhamRepo();
                     var cart = cartRepo.GetById(currentUser.Cart.MongoId);
                     var selectedProduct = spRepo.GetById(productIdString);
-                    if (selectedProduct != null && selectedProduct.Options.Count > optionIndex)
+                    if (selectedProduct != null )
                     {
                         cart.CartItems = lst_CartItem;
                         var existingItem = cart.CartItems.FirstOrDefault(ci => ci.ProductId == productIdString && ci.OptionIndex == optionIndex);
@@ -113,10 +113,7 @@ namespace ecom1
                             };
                             cart.CartItems.Add(newCartItem);
                         }
-                        double tongTien = cartRepo.ToTalMoney(cart.MongoId);
-                        int tongSanPham = cartRepo.ToTalQuantity(cart);
-                        cart.TongTien = tongTien;
-                        cart.TongSanPham = tongSanPham;
+
                         cartRepo.Update(cart, cart.MongoId);
                         lst_CartItem = cart.CartItems; // gán lại cho thằng session để lưu mới 
 
@@ -127,6 +124,7 @@ namespace ecom1
                     System.Diagnostics.Debug.WriteLine("Lỗi: Không tìm thấy HiddenField hfProductId.");
                 }
             }
+            LoadListProduct();
         }
     }
 }

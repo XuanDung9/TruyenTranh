@@ -14,10 +14,7 @@
                         <ItemTemplate>
                             <div class="swiper-slide">
                                 <div class="product-item image-zoom-effect link-effect">
-                                    <%-- Lưu Id sản phẩm (thường là ObjectId hoặc string từ MongoDB _id) --%>
-                                    <asp:HiddenField ID="hfProductId" runat="server" Value='<%# Eval("Id") %>' />
-                                    <%--                                                    ^^^^^^^^^^^ THAY ĐỔI Ở ĐÂY --%>
-
+                                    <asp:HiddenField ID="hfProductId" runat="server" Value='<%# Eval("Id") %>' />           
                                     <div class="image-holder">
                                         <asp:Image ID="AnhDaiDien" runat="server" ImageUrl='<%# Eval("AnhDaiDien") %>' />
                                         <div class="product-content">

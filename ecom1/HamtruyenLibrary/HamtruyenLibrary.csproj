@@ -168,6 +168,7 @@
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Moderator.cs" />
     <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Playlist.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Privilege.cs" />
@@ -192,6 +193,7 @@
     <Compile Include="Repo\DesignRepo.cs" />
     <Compile Include="Repo\MenuRepo.cs" />
     <Compile Include="Repo\ModeratorRepo.cs" />
+    <Compile Include="Repo\OrderRepository.cs" />
     <Compile Include="Repo\PinRepo.cs" />
     <Compile Include="Repo\PostRepo.cs" />
     <Compile Include="Repo\QuanRepo.cs" />
