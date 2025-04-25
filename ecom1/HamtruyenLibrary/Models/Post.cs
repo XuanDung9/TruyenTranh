@@ -13,7 +13,7 @@ namespace HamtruyenLibrary.Models
             TieuDe = "";
             NoiDung = "";
             TrangThai = false;
-
+            HinhAnh = new List<string>();
         }
         [BsonElement("TieuDe")]
         public string TieuDe
@@ -35,6 +35,12 @@ namespace HamtruyenLibrary.Models
         }
         [BsonElement("TrangThai")]
         public bool TrangThai
+        {
+            get;
+            set;
+        }
+        [BsonElement("HinhAnh")]
+        public List<string> HinhAnh
         {
             get;
             set;

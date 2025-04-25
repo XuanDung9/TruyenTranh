@@ -15,5 +15,6 @@ namespace ecom1.Models
         public double CanNang { get; set; }
         public int GiaTien { get; set; }
         public int SoLuong { get; set; }
+        public double TongTien => GiaTien * SoLuong;
     }
 }

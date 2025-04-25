@@ -1,4 +1,5 @@
-﻿using ecom1.Models;
+﻿using ecom1.Helper;
+using ecom1.Models;
 using HamtruyenLibrary.Models;
 using HamtruyenLibrary.Repo;
 using System;
@@ -45,7 +46,7 @@ namespace ecom1
                     {
                         TenSP = product.TenSP,
                         ProductId = product.MongoId,
-                        HinhAnh = product.AnhDaiDien,
+                        HinhAnh = $"{ImagePath.Path}" +product.AnhDaiDien,
                         ChieuDai = option.ChieuDai,
                         CanNang = option.CanNang,
                         GiaTien = option.GiaTien,

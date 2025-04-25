@@ -158,6 +158,7 @@
     <Content Include="Index.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\ImagePath.cs" />
     <Compile Include="Models\CartItemViewModel.cs" />
     <Compile Include="Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ecom1.Helper;
 
 namespace ecom1
 {
@@ -58,7 +59,16 @@ namespace ecom1
             long totalRow = 0;
             SanPhamRepo repo = new SanPhamRepo();
             var products = repo.GetAll(ipage, ipagesize, out totalRow); // lấy danh sách sản phẩm
-            rptProducts.DataSource = products;
+            rptProducts.DataSource = products.Select(p => new
+            {
+                p.MongoId,
+                p.TenSP,
+                p.MoTa,
+                p.MauSac,
+                AnhDaiDien = $"{ImagePath.Path}" + p.AnhDaiDien,
+                p.Options 
+            }).ToList();
+
             rptProducts.DataBind();
         }
 
@@ -94,7 +104,7 @@ namespace ecom1
                     SanPhamRepo spRepo = new SanPhamRepo();
                     var cart = cartRepo.GetById(currentUser.Cart.MongoId);
                     var selectedProduct = spRepo.GetById(productIdString);
-                    if (selectedProduct != null )
+                    if (selectedProduct != null)
                     {
                         cart.CartItems = lst_CartItem;
                         var existingItem = cart.CartItems.FirstOrDefault(ci => ci.ProductId == productIdString && ci.OptionIndex == optionIndex);
@@ -116,7 +126,6 @@ namespace ecom1
 
                         cartRepo.Update(cart, cart.MongoId);
                         lst_CartItem = cart.CartItems; // gán lại cho thằng session để lưu mới 
-
                     }
                 }
                 else

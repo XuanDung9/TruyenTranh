@@ -80,7 +80,7 @@ namespace HamtruyenAdmin
         {
             gvAnhSP.DataSource = lst_AnhSanPham.Select((imageURL, index) => new
             {
-                ImageUrl = imageURL
+                ImageUrl = "~/img/" + imageURL
             }).ToList();
             gvAnhSP.DataBind();
         }
@@ -88,12 +88,14 @@ namespace HamtruyenAdmin
         {
             if (fuAnhSanPham.HasFile)
             {
-                string fileName = Server.MapPath("~/img/") + fuAnhSanPham.FileName;
-                fuAnhSanPham.SaveAs(fileName);
-                lst_AnhSanPham.Add("~/img/" + fuAnhSanPham.FileName);
+                string fileName = Path.GetFileName(fuAnhSanPham.FileName);
+                string serverPath = Server.MapPath("~/img/" + fileName);
+                fuAnhSanPham.SaveAs(serverPath);
+                lst_AnhSanPham.Add(fileName);
                 LoadImages();
             }
         }
+
         protected void gvAnhSP_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName.ToLower() == "xoa")
@@ -141,8 +143,16 @@ namespace HamtruyenAdmin
             var lstDanhMuc = danhMucRepo.GetAll();
             long totalrow = 0;
             var lst = repo.GetAll(ipage, ipagesize, out totalrow);
-            var number = lst.Count();
-            gvSanPham.DataSource = lst;
+            gvSanPham.DataSource = lst.Select(sp => new
+            {
+                sp.Id,       
+                AnhDaiDien = "/img/" + sp.AnhDaiDien,
+                sp.TenSP,
+                sp.DanhMuc,
+                sp.MauSac,
+                sp.MoTa,
+                sp.TrangThai
+            }).ToList();
             gvSanPham.DataBind();
             ddlDanhMuc.DataSource = lstDanhMuc;
             ddlDanhMuc.DataTextField = "TenDanhMuc";
@@ -178,7 +188,7 @@ namespace HamtruyenAdmin
                 txtTenSP.Text = pd.TenSP;
                 txtMauSac.Text = pd.MauSac;
                 txtMoTa.InnerText = pd.MoTa;
-                Image1.ImageUrl = pd.AnhDaiDien;
+                Image1.ImageUrl = "~/img/" + pd.AnhDaiDien;
                 if (pd.DanhMuc != null && !string.IsNullOrEmpty(pd.DanhMuc.Id.ToString()))
                 {
                     ddlDanhMuc.ClearSelection();
@@ -186,11 +196,11 @@ namespace HamtruyenAdmin
                 }
                 if (pd.TrangThai == true)
                 {
-                    cbAction.Checked = true; 
+                    cbAction.Checked = true;
                 }
                 else
                 {
-                    cbAction.Checked = false; 
+                    cbAction.Checked = false;
                 }
 
                 lst_AnhSanPham = pd.HinhAnhs.ToList(); // tính ép cho cho mà nó đ ra
@@ -201,7 +211,7 @@ namespace HamtruyenAdmin
                 gvTuyChon.DataSource = lst_Option;
                 gvTuyChon.DataBind();
             }
-     
+            LoadImages();
             ShowEdit();
         }
 
@@ -233,7 +243,7 @@ namespace HamtruyenAdmin
                     string savePath = Path.Combine(folderPath, fileName);
                     fuAnhSP.SaveAs(savePath);
 
-                    imagePath = "~/img/" + fileName;
+                    imagePath = fileName;
 
                 }
                 catch (Exception ex)
@@ -251,10 +261,10 @@ namespace HamtruyenAdmin
                 itemUpdate.HinhAnhs = lst_AnhSanPham;
                 itemUpdate.Options = lst_Option;
                 itemUpdate.TrangThai = cbAction.Checked;
-                if(!string.IsNullOrEmpty(imagePath))
+                if (!string.IsNullOrEmpty(imagePath))
                 {
                     itemUpdate.AnhDaiDien = imagePath;
-                }    
+                }
                 itemUpdate.MauSac = txtMauSac.Text;
                 itemUpdate.MoTa = txtMoTa.InnerText;
                 itemUpdate.DanhMuc = new DanhMuc
@@ -288,14 +298,14 @@ namespace HamtruyenAdmin
             else if (e.CommandName.ToLower() == "khoa")
             {
                 var product = repo.GetById(PID);
-                if(product.TrangThai==true)
+                if (product.TrangThai == true)
                 {
                     repo.SetActiveProduct(product, PID, false);
-                }   
+                }
                 else
                 {
                     repo.SetActiveProduct(product, PID, true);
-                }    
+                }
                 bindData();
             }
 
